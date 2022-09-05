@@ -2,7 +2,7 @@
 
 Updated installer script for the PC-DVD version based on chrll's original script. In addition to installing the widescreen patch, it will also install XInput Fix (see below), Audio Enhacement Pack 2.0 from Mod DB, a No-DVD patch and it will configure controls to match PS2. I tried to make the script as plug and play as possible, including on Steam Deck where it wil set the correct resolution and settings.
 
-To run the script, click the `+` sign to add a game, then select `Install from local install script` and chose the yaml file.
+To run the script, click the `+` sign in Lutris to add a game, then select `Install from local install script` and chose the yaml file.
 
 Note:
 You will be prompted for the following during the install process. These are not included in the installer:
@@ -28,4 +28,6 @@ Should also be compatible with [Silent Hill 3 Audio Enhancement Pack](https://ww
 
 Don't rename `dinput8.dll` from this zip to `d3d8.dll` like some guides and forum posts suggest. It will crash at the start when the Relaoded's ASI loader kicks in.
 
-Source: https://www.pcgamingwiki.com/wiki/Silent_Hill_3#Controller_support
+Sources: 
+https://www.pcgamingwiki.com/wiki/Silent_Hill_3#Controller_support
+https://github.com/ThirteenAG/WidescreenFixesPack/issues/264

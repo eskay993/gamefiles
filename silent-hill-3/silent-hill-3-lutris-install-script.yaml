@@ -118,7 +118,7 @@ script:
       description: |
         Installing Game, this will take a while...
 
-        *** NOTE: On Steam Deck, it may appear as it Lutris has frozen, and the mouse touchpad stops working. Just tap away from Lutris and tap back and it should be fine. Or just leave it to do it's thing! ***
+        *** NOTE: It may appear as if Lutris has frozen, and/or your mouse stops moving. Just Alt-Tab away, or on Steam Deck tap away from Lutris, and Alt-Tab/tap back and it should be fine. Or just wait a few seconds for the script to move on to the next step ***
       executable: $DISC/setup.exe
       name: wineexec
       prefix: $GAMEDIR

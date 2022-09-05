@@ -9,7 +9,7 @@ You will be prompted for the following during the install process. These are not
 
 Also, towards the end of the install process, Reloaded II Mod Loader will launch. Just let it run and do it's updates (important!), then just close it. No need to configure anything in Reloaded. It's done automatically.
 
-The installer also tweaks the settings in `SilentHill3.WidescreenFix.ini` based on u/Betwixt-Two-Ferns's [awesome post on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). Only slight different is I set `FogComplexity = 25` as I found 35 was causing slow downs, even on my desktop with a Ryzen 3600 and a 1080 Ti. Your milage may vary.
+The installer also tweaks the settings in `SilentHill3.WidescreenFix.ini` based on u/Betwixt-Two-Ferns's [awesome post on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). Only slight difference is I set `FogComplexity = 25` as I found 35 was causing slow downs, even on my desktop with a Ryzen 3600 and a 1080 Ti. Your milage may vary.
 
 ### SilentHill3.XInputFix.zip
 

@@ -30,4 +30,4 @@ Don't rename `dinput8.dll` from this zip to `d3d8.dll` like some guides and foru
 
 Sources:<br>
 [PCGamingWiki / Silent Hill 3 / Controller support](https://www.pcgamingwiki.com/wiki/Silent_Hill_3#Controller_support)<br>
-[Silent Hill 2 & 3 - Using fix *.dlls other than "dinput8.dll" crashes at launch](]https://github.com/ThirteenAG/WidescreenFixesPack/issues/264)
+[Silent Hill 2 & 3 - Using fix *.dlls other than "dinput8.dll" crashes at launch](https://github.com/ThirteenAG/WidescreenFixesPack/issues/264)

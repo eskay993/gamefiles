@@ -1,6 +1,6 @@
 ### silent-hill-3-lutris-install-script.yaml
 
-Updated installer script for the PC-DVD version based on chrll's original script. In addition to installing the widescreen patch, it will also install XInput Fix (see below), Audio Enhacement Pack 2.0 from Mod DB, a No-DVD patch and it will configure controls to match PS2 (see notes below). I tried to make the script as plug and play as possible, including on Steam Deck where it wil set the correct resolution and settings.
+Updated installer script for the PC-DVD version based on chrll's original script. In addition to installing the widescreen patch, it will also install XInput Fix (see below), Audio Enhacement Pack 2.0 from Mod DB, a No-DVD patch and it will configure controls to match PS2. I tried to make the script as plug and play as possible, including on Steam Deck where it wil set the correct resolution and settings.
 
 Note:
 You will be prompted for the following during the install process. These are not included in the installer:

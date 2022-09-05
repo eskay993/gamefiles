@@ -14,7 +14,7 @@ The installer also tweaks the settings in `SilentHill3.WidescreenFix.ini` based 
 
 ### SilentHill3.XInputFix.zip
 
-A fix is required for the game to recognize XInput Right Stick, LT/RT, LS/RS and D-pad when assigning controls. XInputPlus has already been set up, so just unzip the file to the game install folder.
+A fix is required for the game to recognize XInput Right Stick, LT/RT, LS/RS and D-pad when assigning controls. XInputPlus has already been set up, so just unzip the file to the game install folder. The Lutris install script above does this automatically.
 
 Also included in the zip is an updated `key.ini` which maps the controls to match PS2 control sheme. 
 

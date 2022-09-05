@@ -164,7 +164,7 @@ script:
       file: sed
   - execute:
       description: Configuring SilentHill3.WidescreenFix.ini...  
-      args: -i -e 's/^FogComplexity = 75/FogComplexity = 35/'
+      args: -i -e 's/^FogComplexity = 75/FogComplexity = 25/'
         '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
       file: sed
   - execute:

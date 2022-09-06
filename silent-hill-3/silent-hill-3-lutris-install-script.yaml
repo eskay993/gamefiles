@@ -268,6 +268,8 @@ script:
       dinput8.dll: n,b
       Dinput.dll: n,b
       XInput1_3.dll: n,b
+      Reloaded.Mod.Loader.Bootstrapper.dll: n,b
+      Reloaded.Mod.Loader.Bootstrapper.asi: n,b
       dsound.dll: n,b
       winegstreamer: b  
     version: lutris-fshack-7.1-x86_64

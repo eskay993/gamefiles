@@ -1,5 +1,5 @@
 # Intro
-Updated Lutris installer script for the PC-DVD version of Silent Hill 3 based on chrll's original Lutris script and Betwixt-Two-Ferns's [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). The game runs at a near solid 60FPS (even on Steam Deck), and everything should be configured out of the box, including widescreen, audio fixes and controller support.
+Updated Lutris installer script for the PC-DVD version of Silent Hill 3 based on chrll's original Lutris script and is inspired by Betwixt-Two-Ferns's awesome [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). The game runs at a near solid 60FPS (even on Steam Deck), and everything should be configured out of the box, including widescreen, audio fixes and controller support.
 
 The script installs the following:
 - No-DVD patch

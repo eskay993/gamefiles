@@ -15,7 +15,7 @@ The script installs the following:
 
 # Install Guide
 
-1. Download [silent-hill-3-lutris-install-script](https://raw.githubusercontent.com/eskay993/gamefiles/main/silent-hill-3/silent-hill-3-lutris-install-script.yaml) installer script from this repo.
+1. Download [silent-hill-3-lutris-install-script.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-lutris-install-script.zip) from this repo and extract it.
 1. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO, and to download the `No-DVD Patch` (these files are not included in this installer).
 2. Run Lutris and click the `+` sign to add a game.
 3. Select `Install from local install script` and point to the yaml script from Step 1.

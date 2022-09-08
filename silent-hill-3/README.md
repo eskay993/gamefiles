@@ -20,8 +20,8 @@ The script installs the following:
 2. Run Lutris and click the `+` sign to add a game.
 3. Select `Install from local install script` and point to the yaml script from Step 1.
 4. Click `Install` on the next screen.
-5. Chose where to install the game, and check any boxes on the left if you want shortcuts added to your Desktop/Steam. Click `Install`.
-6. On the next screen, click `Browse` under `sh3.exe` and select you patched version of `sh3.exe` from the `No-DVD Patch` that you downloaded in Step 1.
+5. Chose where to install the game, tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
+6. On the next screen, click `Browse` under `sh3.exe` and select the patched version of `sh3.exe` from the `No-DVD Patch` that you downloaded in Step 1.
 7. Click `Continue` and wait for the various files to download.
 8. Select your resolution when prompted and click `Continue`.
 9. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.

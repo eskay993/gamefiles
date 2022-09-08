@@ -25,7 +25,7 @@ The script installs the following:
 7. Click `Continue` and wait for the various files to download.
 8. Select your resolution when prompted and click `Continue`.
 9. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.
-10. Let the installer do it's thing. It appear t hang for a bit... just leave it to finish.
+10. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 11. Done!  Run the game and enjoy!
 > Note: Controller must be on before running the game for it to be recognised.
 

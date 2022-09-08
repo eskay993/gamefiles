@@ -21,7 +21,7 @@ The script installs the following:
 3. Select `Install from local install script` and point to the extracted yaml script from Step 1.
 4. Click `Install` on the next screen.
 5. Chose where to install the game, tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
-6. On the next screen, click `Browse` under `sh3.exe` and select the patched version of `sh3.exe` extracted from the `No-DVD Patch` that you downloaded in Step 1.
+6. On the next screen, click `Browse` under `sh3.exe` and select the patched version of `sh3.exe` extracted from the `No-DVD Patch` that you downloaded in Step 2.
 7. Click `Continue` and wait for the various files to download.
 8. Select your resolution when prompted and click `Continue`.
 9. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.

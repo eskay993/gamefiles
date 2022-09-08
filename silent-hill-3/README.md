@@ -5,7 +5,7 @@ The script installs the following:
 - No-DVD patch
 - Widescreen Fix by ThirteenAG
 - Xinput-Plus controller fix (e.g. for Xbox controllers)
-- Audio fixes that correct the pitch of sfx/music (See Version Differences)
+- Audio fixes that correct the pitch of sfx/music
 - Controller mapping applied to match PS2 control scheme
 - Various settings tweaks applied for improved performance
 

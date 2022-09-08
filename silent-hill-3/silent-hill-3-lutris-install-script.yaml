@@ -1,0 +1,275 @@
+game_slug: silent-hill-3
+name: "Silent Hill 3"
+year: 2003
+user: eskay993
+runner: wine
+slug: silent-hill-3-pc-dvd
+version: "PC-DVD"
+description: |
+  Updated installer for the PC-DVD version which will install the widescreen patch as well as XInput Fix, Audio Enhacement Pack 2.0, No-DVD patch and configure controls to match PS2 (see notes below). 
+notes: |
+  You will be prompted for the following during the install process. These are not included in the installer:
+    - A No-DVD patched sh3.exe (Google may help...)
+    - Silent Hill 3 Audio Enhacement Pack v2.0 downloaded from Mod DB:
+      https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack
+
+  Towards the end of the install process, Reloaded II Mod Loader will launch. Just let it run and do it's updates, then just close it.
+script:
+  files:
+  - nodvd_patch: N/A:sh3.exe (No-DVD patched)
+  - audio_patch: N/A:Silent Hill 3 Audio Enhancement Pack Version 2.0 (7z archive from Mod DB)
+  - widescreen_patch: https://github.com/ThirteenAG/WidescreenFixesPack/releases/download/sh3/SilentHill3.WidescreenFix.zip
+  - xinputplus_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/SilentHill3.XInputFix.zip
+  - reloaded_zip:
+        url: https://github.com/Reloaded-Project/Reloaded-II/releases/download/1.20.2/Release.zip
+        filename: Reloaded-II.Mod.Loader.zip
+  game:
+    arch: win32
+    exe: drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win32
+      description: Creating Wine prefix...
+      name: create_prefix
+      prefix: $GAMEDIR
+  - input_menu:
+      description: "Select a resolution for the game:"
+      id: GAMERES
+      # Note: Steam Deck in desktop mode reports res as 800x1280. This is adjusted for later on.
+      options:
+      - 1280x720: 1280x720
+      - 800x1280: 1280x800 (Steam Deck)
+      - 1920x1080: 1920x1080
+      - 2560x1440: 2560x1440
+      - 3840x2160: 3840x2160
+      preselect: $RESOLUTION
+  - insert-disc:
+      description: Waiting for game installer...
+      message: Select the path for the Silent Hill 3 DVD
+      requires: SILENT HILL 3.msi
+  - write_file:
+      content: '[{14D10AAC-9737-454E-A247-8075C26C30E1}-DlgOrder]
+
+        Dlg0={14D10AAC-9737-454E-A247-8075C26C30E1}-SdWelcome-0
+
+        Count=6
+
+        Dlg1={14D10AAC-9737-454E-A247-8075C26C30E1}-SdLicense-0
+
+        Dlg2={14D10AAC-9737-454E-A247-8075C26C30E1}-SdAskDestPath-0
+
+        Dlg3={14D10AAC-9737-454E-A247-8075C26C30E1}-SdComponentTree-0
+
+        Dlg4={14D10AAC-9737-454E-A247-8075C26C30E1}-SdStartCopy-0
+
+        Dlg5={14D10AAC-9737-454E-A247-8075C26C30E1}-SdFinish-0
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdWelcome-0]
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdLicense-0]
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdAskDestPath-0]
+
+        szDir=C:\Program Files\KONAMI\SILENT HILL 3\
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdComponentTree-0]
+
+        szDir=C:\Program Files\KONAMI\SILENT HILL 3\
+
+        Component-type=string
+
+        Component-count=6
+
+        Component-0=Exe
+
+        Component-1=ConfigExe
+
+        Component-2=MainApp
+
+        Component-3=Sound
+
+        Component-4=SoundDemo
+
+        Component-5=Movie
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdStartCopy-0]
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdFinish-0]
+
+        Result=1
+
+        bOpt1=0
+
+        bOpt2=0'
+      file: $GAMEDIR/drive_c/setup.iss
+  - task:
+      args: /s /f1"c:\setup.iss"
+      description: |
+        Installing Game, this will take a while...
+
+        *** NOTE: It may appear as if Lutris has frozen, and/or your mouse stops moving. Just Alt-Tab away, or on Steam Deck tap away from Lutris, and Alt-Tab/tap back and it should be fine. Or just wait a few seconds for the script to move on to the next step ***
+      executable: $DISC/setup.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - extract:
+      description: Installing the widescreen patch...
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
+      file: widescreen_patch
+  - execute:
+      command: mv -f "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/dinput8.dll" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/dsound.dll"
+  - execute:
+      command: mkdir -p "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Mods"
+  - extract:
+      description: Installing Reloaded II Mod Loader...
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/
+      file: reloaded_zip
+  - extract:
+      description: Installing the enhanced audio patch...
+      dst: $CACHE/
+      file: audio_patch
+      format: 7z
+  - move:
+      description: Installing the enhanced audio patch...  
+      src: $CACHE/Silent Hill 3 Audio Enhancement Pack
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Mods/      
+  - extract:
+      description: Installing XInput Fix...
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
+      file: xinputplus_zip
+  - execute: 
+      command: >
+        if [[ $INPUT_GAMERES == "800x1280" ]]; then
+          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2);
+          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1);
+        else
+          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1);
+          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2);
+        fi;
+        sed -i -e "s/^ResX = 0/ResX = $WIDTH/" -e "s/^ResY = 0/ResY = $HEIGHT/" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini";  
+  - execute:
+      description: Configuring SilentHill3.WidescreenFix.ini...  
+      args: -i -e 's/^RenderResX = 0/RenderResX = 1600/' -e 's/^RenderResY = 0/RenderResY = 1000/'
+        '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
+      file: sed
+  - execute:
+      description: Configuring SilentHill3.WidescreenFix.ini...  
+      args: -i -e 's/^FogComplexity = 75/FogComplexity = 25/'
+        '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
+      file: sed
+  - execute:
+      description: Configuring SilentHill3.WidescreenFix.ini...  
+      args: -i -e 's/^DOFRes = 1024/DOFRes = 256/'
+        '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
+      file: sed      
+  - execute:
+      command: mv -f "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe.bak"
+  - copy:
+      description: Applying No-DVD patch...    
+      src: nodvd_patch
+      dst: "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/"
+  - task:
+      arch: win32
+      description: Installing dependencies for Reloaded-II Mod Loader...      
+      executable: $CACHE/Prereqs/VC_redist.x86 .exe
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /install /passive /norestart
+  - task:
+      arch: win32
+      description: Installing dependencies for Reloaded-II Mod Loader...
+      executable: $CACHE/Prereqs/windowsdesktop-runtime-5.0.1-win-x86.exe
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /install /passive /norestart
+  - execute:
+      command: mkdir -p "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Apps/sh3.exe"
+  - write_file:
+      content: |
+        {
+          "AppId": "sh3.exe",
+          "AppName": "SILENT HILL 3",
+          "AppLocation": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\sh3.exe",
+          "AppArguments": "",
+          "AppIcon": "Icon.png",
+          "AutoInject": false,
+          "EnabledMods": [
+            "Silent Hill 3 Audio Enhancement Pack"
+          ],
+          "PluginData": {}
+        }
+      file: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Apps/sh3.exe/AppConfig.json
+  - execute:
+      command: mkdir -p "$GAMEDIR/drive_c/users/$USER/AppData/Roaming/Reloaded-Mod-Loader-II/"
+  - write_file:
+      content: |
+        {
+          "LoaderPath32": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\Loader\\x86\\Reloaded.Mod.Loader.dll",
+          "LoaderPath64": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\Loader\\x64\\Reloaded.Mod.Loader.dll",
+          "LauncherPath": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\Reloaded-II32.exe",
+          "Bootstrapper32Path": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\Loader\\x86\\Bootstrapper\\Reloaded.Mod.Loader.Bootstrapper.dll",
+          "Bootstrapper64Path": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\Loader\\x64\\Bootstrapper\\Reloaded.Mod.Loader.Bootstrapper.dll",
+          "ApplicationConfigDirectory": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\Apps",
+          "ModUserConfigDirectory": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\User\\Mods",
+          "MiscConfigDirectory": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\User\\Misc",
+          "PluginConfigDirectory": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\Plugins",
+          "ModConfigDirectory": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\Mods",
+          "EnabledPlugins": [],
+          "LanguageFile": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\\\Assets\\Languages\\en-GB.xaml",
+          "ThemeFile": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\Reloaded-II\\\\Theme\\Default.xaml",
+          "FirstLaunch": false,
+          "ShowConsole": true,
+          "LogFileCompressTimeHours": 6,
+          "LogFileDeleteHours": 336,
+          "CrashDumpDeleteHours": 24,
+          "NuGetFeeds": [
+            {
+              "Name": "Official Repository",
+              "URL": "http://packages.sewer56.moe:5000/v3/index.json",
+              "Description": "Package repository of Sewer56, the developer of Reloaded. Contains personal and popular community packages."
+            }
+          ],
+          "LoadModsInParallel": true,
+          "ForceModPrereleases": false,
+          "ReloadedProcessListRefreshInterval": 1000,
+          "LoaderSetupTimeout": 30000,
+          "LoaderSetupSleeptime": 32,
+          "ProcessRefreshInterval": 200,
+          "SkipWineLaunchWarning": false
+        }
+      file: $GAMEDIR/drive_c/users/$USER/AppData/Roaming/Reloaded-Mod-Loader-II/ReloadedII.json
+  - task:
+      arch: win32
+      description: |
+        Running Reloaded II Mod Loader...
+
+        *** IMPORTANT: LET RELOADED FINISH IT'S UPDATES, THEN JUST CLOSE IT. ***
+      executable: Reloaded-II32.exe
+      name: wineexec
+      prefix: $GAMEDIR
+      working_dir: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/
+  - execute:
+      command: cp "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Loader/X86/Bootstrapper/Reloaded.Mod.Loader.Bootstrapper.dll" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/Reloaded.Mod.Loader.Bootstrapper.asi"
+  wine:
+    Desktop: false
+    esync: false
+    fsync: false
+    overrides:
+      dinput8.dll: n,b
+      Dinput.dll: n,b
+      XInput1_3.dll: n,b
+      Reloaded.Mod.Loader.Bootstrapper.dll: n,b
+      Reloaded.Mod.Loader.Bootstrapper.asi: n,b
+      dsound.dll: n,b
+      winegstreamer: b  
+    version: lutris-fshack-7.1-x86_64

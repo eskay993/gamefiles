@@ -1,33 +1,43 @@
-### silent-hill-3-lutris-install-script.yaml
+# Intro
+Updated Lutris installer script for the PC-DVD version of Silent Hill 3 based on chrll's original Lutris script and Betwixt-Two-Ferns's [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). The game runs at a near solid 60FPS (even on Steam Deck), and everything should be configured out of the box, including widescreen, audio fixes and controller support.
 
-Updated installer script for the PC-DVD version based on chrll's original script. In addition to installing the widescreen patch, it will also install XInput Fix (see below), Audio Enhacement Pack 2.0 from Mod DB, Reloaded II Mod Loader,a No-DVD patch and it will configure controls to match PS2. I tried to make the script as plug and play as possible, including on Steam Deck where it wil set the correct resolution and settings.
+The script installs the following:
+- No-DVD patch
+- Widescreen Fix by ThirteenAG
+- Xinput-Plus controller fix (e.g. for Xbox controllers)
+- Audio fixes that correct the pitch of sfx/music (See Version Differences)
+- Controller mapping applied to match PS2 control scheme
+- Various settings tweaks applied for improved performance
 
-To run the script, click the `+` sign in Lutris to add a game, then select `Install from local install script` and chose the yaml file.
+<br>
 
-Note:
-You will be prompted for the following during the install process. These are not included in the installer:
-- A No-DVD patched `sh3.exe`. This is required otherwise the game won't run. I can't supply it myself, but Google may help.
-- [Silent Hill 3 Audio Enhacement Pack v2.0](https://www.moddb.com/downloads/start/210428?referer=https%3A%2F%2Fwww.moddb.com%2Fmods%2Fsilent-hill-3-audio-enhancement-pack%2Fdownloads%2Fsilent-hill-3-audio-enhancement-pack-version-2-0) downloaded from Mod DB. I could in theory include this in the install script to download automatically, but not sure if Mod DB allow that.
-- The game install files extracted from the game DVD. See Betwixt-Two-Ferns's guide mentioned below for instructions.
+# Install Guide
 
-Towards the end of the install process, Reloaded II Mod Loader will launch. **Just let it run and do it's updates (important!)**, then just close it. No need to configure anything in Reloaded. It's done automatically.
+1. Download `silent-hill-3-recommended-install-script.yaml` version of the install script from this repo.
+1. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO, and to download the `No-DVD Patch` (these files are not included in this installer).
+2. Run Lutris and click the `+` sign to add a game.
+3. Select `Install from local install script` and point to the yaml script from Step 1.
+4. Click `Install` on the next screen.
+5. Chose where to install the game, and check any boxes on the left if you want shortcuts added to your Desktop/Steam. Click `Install`.
+6. On the next screen, click `Browse` under `sh3.exe` and select you patched version of `sh3.exe` from the `No-DVD Patch` that you downloaded in Step 1.
+7. Click `Continue` and wait for the various files to download.
+8. Select your resolution when prompted and click `Continue`.
+9. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.
+10. Let the installer do it's thing. It appear t hang for a bit... just leave it to finish.
+11. Done!  Run the game and enjoy!
+> Note: Controller must be on before running the game for it to be recognised.
 
-The installer also tweaks the settings in `SilentHill3.WidescreenFix.ini` based on [Betwixt-Two-Ferns's awesome post on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). Only slight difference is I set `FogComplexity = 25` as I found 35 was causing slow downs, even on my desktop with a Ryzen 3600 and a 1080 Ti. Your milage may vary.
+<br>
 
-### SilentHill3.XInputFix.zip
+# Credits
+- ThirteenAG for [Silent Hill 3 Widescreen Fix ](https://thirteenag.github.io/wfp#sh3)
+- Psycho-A for [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/)
+- 0dd14 for [XInput-PLus](https://sites.google.com/site/0dd14lab/xinput-plus)
+- chrll for the original [Silent Hill 3 Lutris script](https://lutr.is/games/silent-hill-3/) that this script expands on
+- Betwixt-Two-Ferns for [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) which this script essentially automates.
 
-> Note: The yaml script does everything below automatically. This is more for reference if you want to do it manually (and a reminder for future me in case I forget!).
-> 
-A fix is required for the game to recognize XInput Right Stick, LT/RT, LS/RS and D-pad when assigning controls. XInputPlus has already been set up, so just unzip the file to the game install folder. 
+<br>
 
-Also included in the zip is an updated `key.ini` which maps the controls to match PS2 control sheme. 
-
-Everything should just work out of the box for any standard XInput controller. No need to configure Steam Input.
-
-Should also be compatible with [Silent Hill 3 Audio Enhancement Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack), however you will need to rename `dinput8.dll` included with the audio pack to `dsound.dll`. 
-
-Don't rename `dinput8.dll` from this zip to `d3d8.dll` like some guides and forum posts suggest. It will crash at the start when the Relaoded's ASI loader kicks in.
-
-Sources:<br>
-[PCGamingWiki / Silent Hill 3 / Controller support](https://www.pcgamingwiki.com/wiki/Silent_Hill_3#Controller_support)<br>
-[Silent Hill 2 & 3 - Using fix *.dlls other than "dinput8.dll" crashes at launch](https://github.com/ThirteenAG/WidescreenFixesPack/issues/264)
+# Addiitonal Resources
+- [PCGamingWiki / Silent Hill 3](https://www.pcgamingwiki.com/wiki/Silent_Hill_3)
+- [Silent Hill 2 & 3 - Using fix *.dlls other than "dinput8.dll" crashes at launch](https://github.com/ThirteenAG/WidescreenFixesPack/issues/264)

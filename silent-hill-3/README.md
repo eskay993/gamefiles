@@ -35,8 +35,8 @@ The script installs the following:
 - ThirteenAG for [Silent Hill 3 Widescreen Fix ](https://thirteenag.github.io/wfp#sh3)
 - Psycho-A for [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/)
 - 0dd14 for [XInput-PLus](https://sites.google.com/site/0dd14lab/xinput-plus)
-- chrll for the original [Silent Hill 3 Lutris script](https://lutr.is/games/silent-hill-3/) that this script expands on
-- Betwixt-Two-Ferns for [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) which this script essentially automates.
+- chrll for the original [Silent Hill 3 Lutris script](https://lutr.is/games/silent-hill-3/), which this script expands upon.
+- Betwixt-Two-Ferns for [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/), which this script essentially automates.
 
 <br>
 

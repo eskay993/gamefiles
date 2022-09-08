@@ -18,10 +18,10 @@ The script installs the following:
 1. Download [silent-hill-3-lutris-install-script.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-lutris-install-script.zip) from this repo and extract it.
 1. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO, and to download the `No-DVD Patch` (these files are not included in this installer).
 2. Run Lutris and click the `+` sign to add a game.
-3. Select `Install from local install script` and point to the yaml script from Step 1.
+3. Select `Install from local install script` and point to the extracted yaml script from Step 1.
 4. Click `Install` on the next screen.
 5. Chose where to install the game, tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
-6. On the next screen, click `Browse` under `sh3.exe` and select the patched version of `sh3.exe` from the `No-DVD Patch` that you downloaded in Step 1.
+6. On the next screen, click `Browse` under `sh3.exe` and select the patched version of `sh3.exe` extracted from the `No-DVD Patch` that you downloaded in Step 1.
 7. Click `Continue` and wait for the various files to download.
 8. Select your resolution when prompted and click `Continue`.
 9. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.

@@ -9,11 +9,13 @@ The script installs the following:
 - Controller mapping applied to match PS2 control scheme
 - Various settings tweaks applied for improved performance
 
+
+
 <br>
 
 # Install Guide
 
-1. Download `silent-hill-3-recommended-install-script.yaml` version of the install script from this repo.
+1. Download [silent-hill-3-recommended-install-script.yaml](https://raw.githubusercontent.com/eskay993/gamefiles/main/silent-hill-3/silent-hill-3-lutris-install-script.yaml) installer script from this repo.
 1. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO, and to download the `No-DVD Patch` (these files are not included in this installer).
 2. Run Lutris and click the `+` sign to add a game.
 3. Select `Install from local install script` and point to the yaml script from Step 1.

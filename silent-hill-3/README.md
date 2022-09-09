@@ -9,15 +9,13 @@ The script installs the following:
 - Controller mapping applied to match PS2 control scheme
 - Various settings tweaks applied for improved performance
 
-
-
 <br>
 
 # Install Guide
 
 1. Download [silent-hill-3-lutris-install-script.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-lutris-install-script.zip) from this repo and extract it.
 1. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO.
-2. Download the `No-DVD Patch` exe for Silent Hill 3. This allows the game to run without the DVD inserted. You will have to track this down yourself. Google may help...
+2. Download `Silent Hill 3 No-DVD Patch` and extract it. This allows the game to run without the DVD inserted. You will have to track this down yourself. Google may help...
 2. Run Lutris and click the `+` sign to add a game.
 3. Select `Install from local install script` and point to the extracted yaml script from Step 1.
 4. Click `Install` on the next screen.

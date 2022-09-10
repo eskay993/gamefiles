@@ -45,7 +45,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 # Credits
 -  ThirteenAG for [Ultimate-ASI-Loader](https://github.com/ThirteenAG/Ultimate-ASI-Loader/)
 -  HunterStanton for [SilentHill4Randomizer](https://github.com/HunterStanton/SilentHill4Randomizer)
-- TimeFreeze for the original [Silent Hill 3 Lutris script](https://lutris.net/games/silent-hill-4-the-room/), which this script expands upon.
+- TimeFreeze for the original [Silent Hill 4 Lutris script](https://lutris.net/games/silent-hill-4-the-room/), which this script expands upon.
 - Betwixt-Two-Ferns for [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/), which this script essentially automates.
 
 <br>

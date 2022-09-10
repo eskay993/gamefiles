@@ -34,7 +34,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 11. Done!  Run the game and enjoy!
 > Note 1: Controller must be on before running the game for it to be recognised.
 
-> Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. I will try to find a fix, but for now use the following handy Community Profile from Betwixt-Two-Ferns' guide:
+> Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. I will try to find a fix, but for now use the following  Community Profile on your Steam Deck, created Betwixt-Two-Ferns:
 >
 > "Community Layouts > SILENT HILL 4 REDDIT. This makes the triggers keyboard bindings instead as they don’t work otherwise. Also maps “maps” and “scrapbooks” to Y, scrapbook is a hold button to trigger
 >

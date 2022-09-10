@@ -14,7 +14,7 @@ credits: |
 script:
   files:
   - gogsetup: N/A:GOG setup executable
-  - asi_loader: https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/v4.68/Ultimate-ASI-Loader.zip
+  - asiloader_zip: https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/v4.68/Ultimate-ASI-Loader.zip
   - settings_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-4/settings/settings.zip
   - randomizer_zip: https://github.com/HunterStanton/SilentHill4Randomizer/releases/download/beta-0.2.1/SH4.Randomizer.0.2.1.zip
   game:
@@ -38,6 +38,18 @@ script:
       - 2560x1440: 2560x1440
       - 3840x2160: 3840x2160
       preselect: $RESOLUTION
+  - input_menu:
+      description: |
+        Would you like to restore 'hautings'?
+
+        Hauntings were in the PS2 version but were cut from the PC version. This patch restores them. You can find out more here:
+
+        https://www.silenthillmemories.net/sh4/hauntings_en.htm
+      id: HAUNTINGS
+      options:
+      - y: "Yes"
+      - n: "No"
+      preselect: y
   - task:
       description: 'Installing Silent Hill 4: The Room...'
       executable: gogsetup
@@ -61,12 +73,10 @@ script:
       name: winetricks
       prefix: $GAMEDIR
   - extract:
-      dst: "$CACHE/"
-      file: asi_loader
-  - execute:
-      command: mv -f "$CACHE/dinput8.dll" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dsound.dll" 
+      dst: $CACHE/asiloader/
+      file: asiloader_zip
   - extract:
-      dst: "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
+      dst: $CACHE/randomizer/
       file: randomizer_zip      
   - extract:
       dst: $CACHE/
@@ -84,27 +94,25 @@ script:
           anisotropic: af_16x
           antialiasing: msaa_4x
   - execute: 
-      command: >
+      command: |
         if [[ $INPUT_GAMERES == "800x1280" ]]; then
-          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2);
-          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1);
-          sed -i -e "s/^display=${INPUT_GAMERES}/display=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dxcfg.ini";            
-          cp -r "$CACHE/1920x1080/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/";
+          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2)
+          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1)
+          sed -i -e "s/^display=${INPUT_GAMERES}/display=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dxcfg.ini"           
+          cp -r "$CACHE/1920x1080/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
         else 
-          cp -r "$CACHE/$INPUT_GAMERES/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/";
-        fi;
+          cp -r "$CACHE/$INPUT_GAMERES/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
+        fi
   - execute:
-      args: -i -e 's/^RandomPlayerModel = 1/RandomPlayerModel = 0/'
-        '$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini'
-      file: sed
-  - execute:
-      args: -i -e 's/^RandomEnemies = 1/RandomEnemies = 0/'
-        '$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini'
-      file: sed
-  - execute:
-      args: -i -e 's/^RandomItems = 1/RandomItems = 0/'
-        '$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini'
-      file: sed            
+      command: |
+        if [[ $INPUT_HAUNTINGS == "y" ]]; then
+          cp -f $CACHE/asiloader/dinput8.dll "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dsound.dll" 
+          cp -r $CACHE/randomizer/* "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
+          sed -i -e 's/^RandomPlayerModel = 1/RandomPlayerModel = 0/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
+          sed -i -e 's/^RandomEnemies = 1/RandomEnemies = 0/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
+          sed -i -e 's/^RandomItems = 1/RandomItems = 0/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
+          sed -i -e 's/^RestoreHauntings = 0/RestoreHauntings = 1/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
+        fi
   wine:
     overrides:
       d3d8.dll: n,b

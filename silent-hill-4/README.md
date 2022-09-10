@@ -25,7 +25,8 @@ The game runs at max 30FPS. There is a 60FPS patch available, but it's break cer
 5. Chose where to install the game, tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
 6. On the next screen, click `Browse` under `GOG setup executable` and select the setup exe from Step 2.
 7. Click `Continue` and wait for the various files to download.
-8. Select your resolution when prompted and click `Continue`.
+8. Select your resolution from the drop-down when prompted and click `Continue`.
+8. Select whether to install the `hauntings restore patch` from the drop-down when prompted and click `Continue`.
 10. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 11. Done!  Run the game and enjoy!
 > Note: Controller must be on before running the game for it to be recognised.

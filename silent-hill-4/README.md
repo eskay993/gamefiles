@@ -34,7 +34,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 11. Done!  Run the game and enjoy!
 > Note 1: Controller must be on before running the game for it to be recognised.
 
-> Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. I will try to find a fix, but for now use the following Community Profile from Betwixt-Two-Ferns' guide:
+> Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. I will try to find a fix, but for now use the following handy Community Profile from Betwixt-Two-Ferns' guide:
 >
 > "Community Layouts > SILENT HILL 4 REDDIT. This makes the triggers keyboard bindings instead as they don’t work otherwise. Also maps “maps” and “scrapbooks” to Y, scrapbook is a hold button to trigger
 >
@@ -51,5 +51,6 @@ On Steam Deck, follow the below steps in Desktop Mode.
 <br>
 
 # Addiitonal Resources
+- [Silent Hill 4: The Room on GOG](https://www.gog.com/game/silent_hill_4_the_room)
 - [PCGamingWiki / Silent Hill 4: The Room](https://www.pcgamingwiki.com/wiki/Silent_Hill_4:_The_Room)
 - [Silent Hill Memories - Hauntings](https://www.silenthillmemories.net/sh4/hauntings_en.htm)

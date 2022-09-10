@@ -12,6 +12,7 @@ The script installs the following:
 <br>
 
 # Install Guide
+On Steam Deck, follow the below steps in Desktop Mode.
 
 1. Download [silent-hill-3-lutris-install-script.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-lutris-install-script.zip) from this repo and extract it.
 1. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO.

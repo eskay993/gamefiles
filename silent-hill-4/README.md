@@ -3,7 +3,8 @@ Updated Lutris installer script for the GOG version of Silent Hill 4 based on Ti
 
 The script installs the following:
 - GOG version of Silent Hill 4
-- Restores missing 'hauntings' from PS2 version
+- Optionally restores missing 'hauntings' from PS2 version
+- Makes a few setting tweaks including closer matching PS2 colours
 
 > Note: Must use the GOG version of the game. The 'haunting' retore patch is specifically designed for it.
 

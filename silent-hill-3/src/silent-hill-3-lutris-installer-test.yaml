@@ -4,26 +4,31 @@ year: 2003
 user: eskay993
 runner: wine
 slug: silent-hill-3-pc-dvd
-version: "PC-DVD with Sound Fix Patch"
+version: "PC-DVD"
 description: |
-  Updated installer for the PC-DVD version which will install the widescreen patch as well as XInput Fix, Silent Hill 3 PC Sound Fix, No-DVD patch and configures controls to match PS2 (see notes below). Works on Steam Deck too.
+  Updated installer for the PC-DVD version which will install the widescreen patch as well as XInput Fix, Audio Enhancement Pack, Reloaded II, No-DVD patch and configure controls to match PS2 (see notes below). Works on Steam Deck too.
 notes: |
   You will be prompted for the following during the install process. These are not included:
     - The original SH3 setup files, extracted from an ISO or the DVD
-    - A No-DVD patched version of sh3.exe (Google may help...)
-credits: |
-    For more info: 
-    https://github.com/eskay993/gamefiles/tree/main/silent-hill-3
+    - A No-DVD patched sh3.exe (Google may help...)
+    - Silent Hill 3 Audio Enhancement Pack downloaded from Mod DB:
+      https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack
+# credits: |
+#     For a guide, credits and more info: 
+#     https://github.com/eskay993/gamefiles/tree/main/silent-hill-3  
 script:
   files:
   - nodvd_patch: N/A:sh3.exe (No-DVD patched)
+  - audio_patch: N/A:Silent Hill 3 Audio Enhancement Pack (7z archive from Mod DB)
+  - dotnet5: https://download.visualstudio.microsoft.com/download/pr/b6fe5f2a-95f4-46f1-9824-f5994f10bc69/db5ec9b47ec877b5276f83a185fdb6a0/windowsdesktop-runtime-5.0.17-win-x86.exe
+  - vcrun: https://aka.ms/vs/17/release/vc_redist.x86.exe
   - widescreen_patch: https://github.com/ThirteenAG/WidescreenFixesPack/releases/download/sh3/SilentHill3.WidescreenFix.zip
   - xinputplus_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/patches/SilentHill3.XInputFix.zip
-  - fixwavs_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/patches/SH3PC.Sound.Fixer_(wine).zip
+  - reloaded_zip: https://github.com/Reloaded-Project/Reloaded-II/releases/download/1.20.3/Release.zip
   game:
     arch: win32
     exe: drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe
-    prefix: $GAMEDIR
+    prefix: $GAMEDIR  
   installer:
   - task:
       arch: win32
@@ -113,34 +118,55 @@ script:
   - task:
       args: /s /f1"c:\setup.iss"
       description: |
-        Installing Game, this will take a while...
+        Installing game. This may take a while...
 
         ****** NOTE: ******
         It may appear as if Lutris has frozen, and/or your mouse stops moving. Just wait for the installer to move on to the next step and should be fine.
       executable: $DISC/setup.exe
       name: wineexec
       prefix: $GAMEDIR
+  - task:
+      arch: win32
+      description: Installing Visual C++ Runtime...
+      executable: vcrun
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /install /silent /norestart
+  - task:
+      arch: win32
+      description: Installing .NET 5.0 Runtime (v5.0.17)...
+      executable: dotnet5
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /install /silent /norestart
   - extract:
-      description: Installing the widescreen patch...
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/
+      file: reloaded_zip        
+  - execute:
+      command: mkdir -p "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Mods"
+  - execute:
+      command: mkdir -p "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Apps/sh3.exe"
+  - execute:
+      command: mkdir -p "$GAMEDIR/drive_c/users/$USER/AppData/Roaming/Reloaded-Mod-Loader-II"
+  - extract:
+      description: Extracting audio enhancement pack...
+      dst: $CACHE/
+      file: audio_patch
+      format: 7z
+  - move:
+      description: Extracting audio enhancement pack...  
+      src: $CACHE/Silent Hill 3 Audio Enhancement Pack
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Mods/
+  - extract:
+      description: Installing widescreen patch...
       dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
       file: widescreen_patch
   - execute:
-      command: mv -f "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/dinput8.dll" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/dsound.dll"     
+      command: mv -f "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/dinput8.dll" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/dsound.dll"      
   - extract:
-      description: Installing XInput Fix...
+      description: Installing controller fix...
       dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
       file: xinputplus_zip
-  - extract:
-      description: Fixing audio files...
-      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
-      file: fixwavs_zip
-  - task:
-      description: Fixing audio files...
-      executable: cmd
-      name: wineexec
-      prefix: $GAMEDIR
-      working_dir: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
-      args: /c fixwavs.bat
   - execute: 
       command: >
         if [[ $INPUT_GAMERES == "800x1280" ]]; then
@@ -150,25 +176,25 @@ script:
           WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1);
           HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2);
         fi;
-        sed -i -e "s/^ResX = 0/ResX = $WIDTH/" -e "s/^ResY = 0/ResY = $HEIGHT/" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini"; 
-        sed -i -e "s/^size=.*/size=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/savedata/disp.ini";  
+        sed -i -e "s/^ResX = 0/ResX = $WIDTH/" -e "s/^ResY = 0/ResY = $HEIGHT/" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini";  
+        sed -i -e "s/^size=.*/size=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/savedata/disp.ini";
   - execute:
-      description: Configuring SilentHill3.WidescreenFix.ini...  
+      description: Configuring settings...  
       args: -i -e 's/^RenderResX = 0/RenderResX = 1600/' -e 's/^RenderResY = 0/RenderResY = 1000/'
         '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
       file: sed
   - execute:
-      description: Configuring SilentHill3.WidescreenFix.ini...  
+      description: Configuring settings...  
       args: -i -e 's/^FogComplexity = 75/FogComplexity = 35/'
         '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
       file: sed
   - execute:
-      description: Configuring SilentHill3.WidescreenFix.ini...  
+      description: Configuring settings...  
       args: -i -e 's/^DOFRes = 1024/DOFRes = 256/'
         '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
       file: sed
   - execute:
-      description: Configuring SilentHill3.WidescreenFix.ini...  
+      description: Configuring settings...  
       args: -i -e 's/^ReduceCutsceneFOV = 0/ReduceCutsceneFOV = 1/'
         '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
       file: sed        
@@ -178,12 +204,40 @@ script:
       description: Applying No-DVD patch...    
       src: nodvd_patch
       dst: "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/"
+  - write_file:
+      content: |
+        {
+          "AppId": "sh3.exe",
+          "AppName": "SILENT HILL 3",
+          "AppLocation": "C:\\Program Files\\KONAMI\\SILENT HILL 3\\sh3.exe",
+          "AppArguments": "",
+          "AppIcon": "Icon.png",
+          "AutoInject": false,
+          "EnabledMods": [
+            "Silent Hill 3 Audio Enhancement Pack"
+          ],
+          "PluginData": {}
+        }
+      file: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Apps/sh3.exe/AppConfig.json    
+  - task:
+      arch: win32
+      description: |
+        Running Reloaded II Mod Loader...
+
+        ****** IMPORTANT: ******
+        LET RELOADED FINISH IT'S UPDATES, THEN CLICK `SKIP TUTORIAL`, THEN JUST CLOSE IT TO CONTINUE.
+      executable: Reloaded-II32.exe
+      name: wineexec
+      prefix: $GAMEDIR
+      working_dir: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/
+  - execute:
+      command: cp "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/Reloaded-II/Loader/X86/Bootstrapper/Reloaded.Mod.Loader.Bootstrapper.dll" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/Reloaded.Mod.Loader.Bootstrapper.asi"
   wine:
     Desktop: false
     esync: false
     fsync: false
     overrides:
-      Dinput8.dll: n,b
+      dinput8.dll: n,b
       Dinput.dll: n,b
       XInput1_3.dll: n,b
       dsound.dll: n,b

@@ -13,7 +13,7 @@ The following fixes and patches are installed:
 
 <a name="versions"></a> 
 # Version Differences
-There are 2 version of the script, the main difference being which sound patch is installed.<br>
+There are 2 versions of the script, the main difference being which sound patch is installed.<br>
 
 ### 1. **silent-hill-3-installer-with-audio-enhancement-pack** ([Install Guide](#eap_guide))<br>
 Try this version first. Installs MarioTainaka's [Audio Enhanced Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack) which  fixes the pitch and uses uncompressed audio files for better sound quality.

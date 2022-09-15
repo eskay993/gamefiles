@@ -21,6 +21,8 @@ Relaoded-II Mod Loader is also installed to automatically load the audio pack.
 
 > As of writing (14-Sep-2022), this version works fine however if Reloaded or the Audio Enhancement Pack introduce something unexpected in a future update, it may break the script.
 
+<br>
+
 ### 2. **silent-hill-3-installer-with-sound-fixer** ([Install Guide](#sf_guide))<br>
 Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/) which directly patches the sound files to fix the pitch, however does not alter the audio compression. Should still lbe good enough for most people, so if the other version does not work for you, try this one.
 
@@ -30,6 +32,8 @@ Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.
 
 <a name="eap_guide"></a> 
 ## Enhanced Audio Pack Installer Guide
+
+Try this version first. If it doesn't work, try the Sound Fixer version below. 
 
 1. Download [silent-hill-3-installer-with-audio-enhancement-pack.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-audio-enhancement-pack.zip) version of the install script from this repo.
 2. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO.
@@ -56,7 +60,7 @@ Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.
 <a name="sf_guide"></a> 
 ## Sound Fixer Patch Installer Guide
 
-This is the recommend process to use, particularly for Steam Deck. See Version Differences for more info.
+Try this version if the Enhanced Audio Pack version above does not work.
 
 1. Download [silent-hill-3-installer-with-sound-fixer.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-sound-fixer.zip) from this repo and extract it.
 2. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO.
@@ -72,7 +76,6 @@ This is the recommend process to use, particularly for Steam Deck. See Version D
 12. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 13. Done!  Run the game and enjoy!
 > Note: Controller must be on before running the game for it to be recognised.
-
 
 #
 

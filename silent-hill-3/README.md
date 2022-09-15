@@ -33,7 +33,7 @@ Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.
 <a name="eap_guide"></a> 
 ## Enhanced Audio Pack Installer Guide
 
-Try this version first. If it doesn't work, try the Sound Fixer version below. See [Version Differences](#versions)
+Try this version first. If it doesn't work, try the Sound Fixer version below. See [Version Differences](#versions).
 
 1. Download [silent-hill-3-installer-with-audio-enhancement-pack.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-audio-enhancement-pack.zip) version of the install script from this repo.
 2. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO.
@@ -60,7 +60,7 @@ Try this version first. If it doesn't work, try the Sound Fixer version below. S
 <a name="sf_guide"></a> 
 ## Sound Fixer Patch Installer Guide
 
-Try this version if the Enhanced Audio Pack version above does not work. See [Version Differences](#versions)
+Try this version if the Enhanced Audio Pack version above does not work. See [Version Differences](#versions).
 
 1. Download [silent-hill-3-installer-with-sound-fixer.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-sound-fixer.zip) from this repo and extract it.
 2. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO.

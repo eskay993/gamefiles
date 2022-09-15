@@ -35,7 +35,7 @@ Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.
 
 Try this version first. If it doesn't work, try the Sound Fixer version below. See [Version Differences](#versions).
 
-1. Download [silent-hill-3-installer-with-audio-enhancement-pack.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-audio-enhancement-pack.zip) from this repo and extract it
+1. Download [silent-hill-3-installer-with-audio-enhancement-pack.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-audio-enhancement-pack.zip) from this repo and extract it.
 2. Follow [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) to  extract the game setup files from your DVD or ISO.
 3. Download `Silent Hill 3 No-DVD Patch` and extract it. This allows the game to run without the DVD inserted. You will have to track this down yourself. Google may help...
 4. Download [Silent Hill 3 Audio Enhancement Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack) from Mod DB. Don't extract it. Just leave as is.

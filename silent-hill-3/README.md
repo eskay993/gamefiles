@@ -48,7 +48,7 @@ Try this version first. If it doesn't work, try the Sound Fixer version below. S
 8. Click `Continue` and wait for the various files to download.
 9. Select your resolution when prompted and click `Continue`.
 10. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.
-11. Let the installer do it's thing. It may appear to hang for a bit... just leave it run.
+11. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 12. Towards the end, `Reloaded-II Mod Loader` will launch and start downloading updates. **IMPORTANT: Let it finish it's updates!**
 > Note: Very occasionally, the updates hang or Reloaded crashes with an error. Just quit everything and start again if this happens. 
 13. Once the updates finish, click `Skip Tutorial` and just close `Reloaded-II`. Wait for the installer to finish up.

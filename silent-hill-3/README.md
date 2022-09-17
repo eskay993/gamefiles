@@ -90,3 +90,4 @@ Try this version if the Enhanced Audio Pack version above does not work. See [Ve
 # Addiitonal Resources
 - [PCGamingWiki / Silent Hill 3](https://www.pcgamingwiki.com/wiki/Silent_Hill_3)
 - [Silent Hill 2 & 3 - Using fix *.dlls other than "dinput8.dll" crashes at launch](https://github.com/ThirteenAG/WidescreenFixesPack/issues/264)
+- [Lutris / Writing Installers](https://github.com/lutris/lutris/blob/master/docs/installers.rst)

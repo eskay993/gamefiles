@@ -54,3 +54,4 @@ On Steam Deck, follow the below steps in Desktop Mode.
 - [Silent Hill 4: The Room on GOG](https://www.gog.com/game/silent_hill_4_the_room)
 - [PCGamingWiki / Silent Hill 4: The Room](https://www.pcgamingwiki.com/wiki/Silent_Hill_4:_The_Room)
 - [Silent Hill Memories - Hauntings](https://www.silenthillmemories.net/sh4/hauntings_en.htm)
+- [Lutris / Writing Installers](https://github.com/lutris/lutris/blob/master/docs/installers.rst)

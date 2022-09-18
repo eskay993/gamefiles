@@ -11,7 +11,7 @@ notes: |
   - The widescreen fix causes FMV cutscenes to align to the left of the screen. They play as normal otherwise.
 script:
   files:
-  - game_zip: N/A:"Psi-Ops The Mindgate Conspiracy.zip" from MajorGeeks.com
+  - game_zip: N/A:"Psi-Ops The Mindgate Conspiracy MajorGeeks.zip" from MajorGeeks.com
   - widescreen_fix: https://github.com/ThirteenAG/WidescreenFixesPack/releases/download/psiops/PsiOpsTheMindgateConspiracy.WidescreenFix.zip
   game:
     exe: $GAMEDIR/drive_c/Games/Psi-Ops The Mindgate Conspiracy/PsiOps.exe

@@ -18,7 +18,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 3. Select `Install from local install script` and point to the extracted yaml script from Step 1.
 4. Click `Install` on the next screen.
 5. Chose where to install the game, tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
-6. On the next screen, click `Browse` under `Psi-Ops The Mindgate Conspiracy.zip` and select the zip from Step 2.
+6. On the next screen, click `Browse` under `Psi-Ops The Mindgate Conspiracy MajorGeeks.zip` and select the zip from Step 2.
 7. Click `Continue` and wait for the various files to download.
 8. Select your preferred language from the drop-down and click `Continue`.
 9. Select your resolution from the drop-down and click `Continue`.

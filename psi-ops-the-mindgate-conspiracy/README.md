@@ -1,11 +1,10 @@
-
-
 Installs the freeware Windows version of the [Psi-Ops: The Mindgate Conspiracy](https://www.majorgeeks.com/files/details/psi_ops_the_mindgate_conspiracy.html) from MajorGeek.com. Also installs the widescreen patch.
 
 
 Notes:
 - You will need to download the game zip yourself from MajorGeeks.com. No need to extract it. 
 - The widescreen fix causes FMV cutscenes to align to the left of the screen. They play as normal otherwise.
+- The game does not have native controller support. You can download my Community Layout on Steam.
 
 <br>
 
@@ -26,7 +25,6 @@ On Steam Deck, follow the below steps in Desktop Mode.
 10. Choose whether you want to skip the intro videos from drop-down and click `Continue`.
 11. Let the installer do it's thing. 
 12. Done!  Run the game and enjoy!
-> Note 1: Controller must be on before running the game for it to be recognised.
 
 <br>
 
@@ -39,4 +37,3 @@ On Steam Deck, follow the below steps in Desktop Mode.
 - [Psi-Ops: The Mindgate Conspiracy](https://www.majorgeeks.com/files/details/psi_ops_the_mindgate_conspiracy.html) on MajorGeeks.com
 - [PCGamingWiki / Psi-Ops: The Mindgate Conspiracy](https://www.pcgamingwiki.com/wiki/Psi-Ops:_The_Mindgate_Conspiracy)
 - [Lutris / Writing Installers](https://github.com/lutris/lutris/blob/master/docs/installers.rst)
-

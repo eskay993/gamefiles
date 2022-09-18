@@ -28,8 +28,8 @@ On Steam Deck, follow the below steps in Desktop Mode.
 5. Chose where to install the game, tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
 6. On the next screen, click `Browse` under `GOG setup executable` and select the setup exe from Step 2.
 7. Click `Continue` and wait for the various files to download.
-8. Select your resolution from the drop-down when prompted and click `Continue`.
-8. Select whether to install the `hauntings restore patch` from the drop-down when prompted and click `Continue`.
+8. Select your resolution from the drop-down and click `Continue`.
+8. Select whether to install the `hauntings restore patch` from the drop-down and click `Continue`.
 10. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 11. Done!  Run the game and enjoy!
 > Note 1: Controller must be on before running the game for it to be recognised.

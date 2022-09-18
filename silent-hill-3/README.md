@@ -44,7 +44,7 @@ Try this version first. If it doesn't work, try the Sound Fixer version below. S
 9. On the next screen, click `Browse` under `sh3.exe` and select you patched version of `sh3.exe` from the `No-DVD Patch` that you downloaded in Step 3.
 10. Click `Browse` under `Silent Hill 3 Audio Enhancement Pack` and point to the file you downloaded in Step 4.
 11. Click `Continue` and wait for the various files to download.
-12. Select your resolution when prompted and click `Continue`.
+12. Select your resolution and click `Continue`.
 13. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.
 14. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 15. Towards the end, `Reloaded-II Mod Loader` will launch and start downloading updates. **IMPORTANT: Let it finish it's updates!**
@@ -69,7 +69,7 @@ Try this version if the Enhanced Audio Pack version above does not work. See [Ve
 7. Chose where to install the game, tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
 8. On the next screen, click `Browse` under `sh3.exe` and select the patched version of `sh3.exe` extracted from the `No-DVD Patch` that you downloaded in Step 3.
 9. Click `Continue` and wait for the various files to download.
-10. Select your resolution when prompted and click `Continue`.
+10. Select your resolution and click `Continue`.
 11. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.
 12. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 13. Done!  Run the game and enjoy!

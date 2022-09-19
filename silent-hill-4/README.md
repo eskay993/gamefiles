@@ -39,7 +39,7 @@ Note 2: Controller works out of the box on desktop. It does not on Steam Deck. N
 
 1. Remap the controls on Steam Deck as follows to match PS2 controls:
 
-| Button | Remp to |
+| Button | Remap to |
 |---|---|
 | Start | Esc |
 | Select | T |

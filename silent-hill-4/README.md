@@ -49,7 +49,7 @@ Note 2: Controller works out of the box on desktop. It does not on Steam Deck. N
 | R3 | TAB |
 | L3 | Nothing |
 
-2. Use `Betwixt-Two-Ferns` Community Profile. Search for `SILENT HILL 4 REDDIT` on your Steam Deck
+2. Use `Betwixt-Two-Ferns` Community Layout. Search for `SILENT HILL 4 REDDIT` on your Steam Deck
 
 <br>
 

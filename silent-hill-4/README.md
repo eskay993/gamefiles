@@ -38,16 +38,16 @@ Note 1: Controller must be on before running the game for it to be recognised.
 Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. You have two options:
 
 1. Remap the controls on Steam Deck as follows to match PS2 controls:
-```
-Start -> Esc 
-Select -> T 
-DPAD -> Arrow keys 
-R2 -> B 
-L2 -> TAB 
-R3 -> TAB 
-L3 -> Nothing
+| Button | Key |
+|---|---|
+| Start | Esc |
+| Select | T |
+| DPAD | Arrow keys |
+| R2 | B |
+| L2 | TAB |
+| R3 | TAB |
+| L3 | Nothing |
 Everything else default controller buttons.
-```
 
 2. Use `Betwixt-Two-Ferns` Community Profile. Search for `SILENT HILL 4 REDDIT` on your Steam Deck
 

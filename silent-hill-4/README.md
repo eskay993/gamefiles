@@ -33,7 +33,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 10. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 11. Done!  Run the game and enjoy!
 
-Note 1:Controller must be on before running the game for it to be recognised.
+Note 1: Controller must be on before running the game for it to be recognised.
 
 Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. You have two options:
 

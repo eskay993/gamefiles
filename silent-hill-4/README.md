@@ -37,7 +37,7 @@ Note 1: Controller must be on before running the game for it to be recognised.
 
 Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. You have two options:
 
-1. Remap the controls on Steam Deck as follows to match PS2 controls (keep everything other button as default):
+1. Remap the controls on Steam Deck as follows to match PS2 controls (keep every other button as default):
 
 | Button | Remap to |
 |---|---|

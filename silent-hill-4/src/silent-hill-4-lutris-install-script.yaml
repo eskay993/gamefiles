@@ -5,7 +5,7 @@ user: eskay993
 runner: wine
 slug: silent-hill-4-gog
 version: "GOG with 'hauntings' resorted"
-description: Updated installer for the GOG version which will also restore missing hauntings that were cut from the PC version.
+description: Updated installer for the GOG version which will tweak colour settings to match PS2, and optionally restore missing hauntings that were cut from the PC version.
 notes: |
     Note: The hauntings restore patch will only work with the GOG version. It will not work with any other version.
 credits: |
@@ -40,9 +40,7 @@ script:
       preselect: $RESOLUTION
   - input_menu:
       description: |
-        Would you like to restore 'hautings'?
-
-        Hauntings were in the PS2 version but were cut from the PC version. This patch restores them. You can find out more here:
+        Would you like to restore 'hauntings'? Hauntings were in the PS2 version but were cut from the PC version. This patch restores them. You can find out more here:
 
         https://www.silenthillmemories.net/sh4/hauntings_en.htm
       id: HAUNTINGS
@@ -100,7 +98,7 @@ script:
           HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1)
           sed -i -e "s/^display=${INPUT_GAMERES}/display=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dxcfg.ini"           
           cp -r "$CACHE/1920x1080/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
-        else 
+        else
           cp -r "$CACHE/$INPUT_GAMERES/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
         fi
   - execute:

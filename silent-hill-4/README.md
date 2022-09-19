@@ -32,13 +32,24 @@ On Steam Deck, follow the below steps in Desktop Mode.
 8. Select whether to install the `hauntings restore patch` from the drop-down and click `Continue`.
 10. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 11. Done!  Run the game and enjoy!
-> Note 1: Controller must be on before running the game for it to be recognised.
 
-> Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. I will try to find a fix, but for now use the following  Community Profile on your Steam Deck, created Betwixt-Two-Ferns:
->
->> "Community Layouts > SILENT HILL 4 REDDIT. This makes the triggers keyboard bindings instead as they don’t work otherwise. Also maps “maps” and “scrapbooks” to Y, scrapbook is a hold button to trigger
->>
->> I also added Long press Start for ESC."
+Note 1:Controller must be on before running the game for it to be recognised.
+
+Note 2: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. You have two options:
+
+1. Remap the controls on Steam Deck as follows to match PS2 controls:
+```
+Start -> Esc 
+Select -> T 
+DPAD -> Arrow keys 
+R2 -> B 
+L2 -> TAB 
+R3 -> TAB 
+L3 -> Nothing
+Everything else default controller buttons.
+```
+
+2. Use `Betwixt-Two-Ferns` Community Profile. Search for `SILENT HILL 4 REDDIT` on your Steam Deck
 
 <br>
 

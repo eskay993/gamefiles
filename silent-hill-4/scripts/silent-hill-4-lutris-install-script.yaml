@@ -1,0 +1,119 @@
+game_slug: silent-hill-4-the-room
+name: "Silent Hill 4: The Room"
+year: 2004
+user: eskay993
+runner: wine
+slug: silent-hill-4-gog
+version: "GOG with 'hauntings' resorted"
+description: Updated installer for the GOG version which will tweak colour settings to match PS2, and optionally restore missing hauntings that were cut from the PC version.
+notes: |
+    Note: The hauntings restore patch will only work with the GOG version. It will not work with any other version.
+credits: |
+    For more info: 
+    https://github.com/eskay993/gamefiles/tree/main/silent-hill-4
+script:
+  files:
+  - gogsetup: N/A:GOG setup executable
+  - asiloader_zip: https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/v4.68/Ultimate-ASI-Loader.zip
+  - settings_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-4/files/settings.zip
+  - randomizer_zip: https://github.com/HunterStanton/SilentHill4Randomizer/releases/download/beta-0.2.1/SH4.Randomizer.0.2.1.zip
+  game:
+    arch: win32
+    exe: drive_c/GOG Games/Silent Hill 4/SILENT HILL 4.exe
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win32
+      description: Creating Wine prefix...
+      name: create_prefix
+      prefix: $GAMEDIR
+  - input_menu:
+      description: "Select a resolution for the game:"
+      id: GAMERES
+      # Note: Steam Deck in desktop mode reports res as 800x1280. This is adjusted for later on.
+      options:
+      - 1280x720: 1280x720
+      - 800x1280: 1280x800 (Steam Deck)
+      - 1920x1080: 1920x1080
+      - 2560x1440: 2560x1440
+      - 3840x2160: 3840x2160
+      preselect: $RESOLUTION
+  - input_menu:
+      description: |
+        Would you like to restore 'hauntings'? Hauntings were in the PS2 version but were cut from the PC version. This patch restores them. You can find out more here:
+
+        https://www.silenthillmemories.net/sh4/hauntings_en.htm
+      id: HAUNTINGS
+      options:
+      - y: "Yes"
+      - n: "No"
+      preselect: y
+  - task:
+      description: 'Installing Silent Hill 4: The Room...'
+      executable: gogsetup
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /SILENT /DIR="C:\GOG Games\Silent Hill 4" /NORESTART /CLOSEAPPLICATIONS
+  - task:
+      app: win7
+      arch: win32
+      name: winetricks
+      prefix: $GAMEDIR
+  - task:
+      app: d3dx9_43
+      arch: win32
+      name: winetricks
+      prefix: $GAMEDIR
+  - task:
+      app: wmp10
+      arch: win32
+      description: Installing wmp10
+      name: winetricks
+      prefix: $GAMEDIR
+  - extract:
+      dst: $CACHE/asiloader/
+      file: asiloader_zip
+  - extract:
+      dst: $CACHE/randomizer/
+      file: randomizer_zip      
+  - extract:
+      dst: $CACHE/
+      file: settings_zip             
+  - write_config:
+      file: $GAMEDIR/drive_c/GOG Games/Silent Hill 4/dxcfg.ini
+      data:
+        dxcfg:
+          display: ${INPUT_GAMERES}@60
+          presentation: fullscreen
+          aspect: enabled
+          scaling: fit
+          vsync: disabled
+          gamma: 1.0
+          anisotropic: af_16x
+          antialiasing: msaa_4x
+  - execute: 
+      command: |
+        if [[ $INPUT_GAMERES == "800x1280" ]]; then
+          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2)
+          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1)
+          sed -i -e "s/^display=${INPUT_GAMERES}/display=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dxcfg.ini"           
+          cp -r "$CACHE/1920x1080/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
+        else
+          cp -r "$CACHE/$INPUT_GAMERES/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
+        fi
+  - execute:
+      command: |
+        if [[ $INPUT_HAUNTINGS == "y" ]]; then
+          cp -f $CACHE/asiloader/dinput8.dll "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dsound.dll" 
+          cp -r $CACHE/randomizer/* "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
+          sed -i -e 's/^RandomPlayerModel = 1/RandomPlayerModel = 0/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
+          sed -i -e 's/^RandomEnemies = 1/RandomEnemies = 0/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
+          sed -i -e 's/^RandomItems = 1/RandomItems = 0/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
+          sed -i -e 's/^RestoreHauntings = 0/RestoreHauntings = 1/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
+        fi
+  wine:
+    overrides:
+      d3d8.dll: n,b
+      dinput8.dll: n,b
+      dsound.dll: n,b
+    version: lutris-fshack-7.1-x86_64    

@@ -1,0 +1,191 @@
+game_slug: silent-hill-3
+name: "Silent Hill 3"
+year: 2003
+user: eskay993
+runner: wine
+slug: silent-hill-3-pc-dvd
+version: "PC-DVD with Sound Fix Patch"
+description: |
+  Updated installer for the PC-DVD version which will install the widescreen patch as well as XInput Fix, Silent Hill 3 PC Sound Fix, No-DVD patch and configures controls to match PS2 (see notes below). Works on Steam Deck too.
+notes: |
+  You will be prompted for the following during the install process. These are not included:
+    - The original SH3 setup files, extracted from an ISO or the DVD
+    - A No-DVD patched version of sh3.exe (Google may help...)
+credits: |
+    For more info: 
+    https://github.com/eskay993/gamefiles/tree/main/silent-hill-3
+script:
+  files:
+  - nodvd_patch: N/A:sh3.exe (No-DVD patched)
+  - widescreen_patch: https://github.com/ThirteenAG/WidescreenFixesPack/releases/download/sh3/SilentHill3.WidescreenFix.zip
+  - xinputplus_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/files/SilentHill3.XInputFix.zip
+  - fixwavs_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/files/SH3PC.Sound.Fixer_(wine).zip
+  game:
+    arch: win32
+    exe: drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win32
+      description: Creating Wine prefix...
+      name: create_prefix
+      prefix: $GAMEDIR
+  - input_menu:
+      description: "Select a resolution for the game:"
+      id: GAMERES
+      # Note: Steam Deck in desktop mode reports res as 800x1280. This is adjusted for later on.
+      options:
+      - 1280x720: 1280x720
+      - 800x1280: 1280x800 (Steam Deck)
+      - 1920x1080: 1920x1080
+      - 2560x1440: 2560x1440
+      - 3840x2160: 3840x2160
+      preselect: $RESOLUTION
+  - insert-disc:
+      description: Waiting for game installer...
+      message: Select the path for the Silent Hill 3 DVD
+      requires: SILENT HILL 3.msi
+  - write_file:
+      content: '[{14D10AAC-9737-454E-A247-8075C26C30E1}-DlgOrder]
+
+        Dlg0={14D10AAC-9737-454E-A247-8075C26C30E1}-SdWelcome-0
+
+        Count=6
+
+        Dlg1={14D10AAC-9737-454E-A247-8075C26C30E1}-SdLicense-0
+
+        Dlg2={14D10AAC-9737-454E-A247-8075C26C30E1}-SdAskDestPath-0
+
+        Dlg3={14D10AAC-9737-454E-A247-8075C26C30E1}-SdComponentTree-0
+
+        Dlg4={14D10AAC-9737-454E-A247-8075C26C30E1}-SdStartCopy-0
+
+        Dlg5={14D10AAC-9737-454E-A247-8075C26C30E1}-SdFinish-0
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdWelcome-0]
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdLicense-0]
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdAskDestPath-0]
+
+        szDir=C:\Program Files\KONAMI\SILENT HILL 3\
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdComponentTree-0]
+
+        szDir=C:\Program Files\KONAMI\SILENT HILL 3\
+
+        Component-type=string
+
+        Component-count=6
+
+        Component-0=Exe
+
+        Component-1=ConfigExe
+
+        Component-2=MainApp
+
+        Component-3=Sound
+
+        Component-4=SoundDemo
+
+        Component-5=Movie
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdStartCopy-0]
+
+        Result=1
+
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdFinish-0]
+
+        Result=1
+
+        bOpt1=0
+
+        bOpt2=0'
+      file: $GAMEDIR/drive_c/setup.iss
+  - task:
+      args: /s /f1"c:\setup.iss"
+      description: |
+        Installing Game, this will take a while...
+
+        ****** NOTE: ******
+        It may appear as if Lutris has frozen, and/or your mouse stops moving. Just wait for the installer to move on to the next step and should be fine.
+      executable: $DISC/setup.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - extract:
+      description: Installing the widescreen patch...
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
+      file: widescreen_patch
+  - execute:
+      command: mv -f "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/dinput8.dll" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/dsound.dll"     
+  - extract:
+      description: Installing XInput Fix...
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
+      file: xinputplus_zip
+  - extract:
+      description: Fixing audio files...
+      dst: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
+      file: fixwavs_zip
+  - task:
+      description: Fixing audio files...
+      executable: cmd
+      name: wineexec
+      prefix: $GAMEDIR
+      working_dir: $GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/
+      args: /c fixwavs.bat
+  - execute: 
+      command: >
+        if [[ $INPUT_GAMERES == "800x1280" ]]; then
+          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2);
+          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1);
+        else
+          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1);
+          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2);
+        fi;
+        sed -i -e "s/^ResX = 0/ResX = $WIDTH/" -e "s/^ResY = 0/ResY = $HEIGHT/" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini"; 
+        sed -i -e "s/^size=.*/size=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/savedata/disp.ini";  
+  - execute:
+      description: Configuring SilentHill3.WidescreenFix.ini...  
+      args: -i -e 's/^RenderResX = 0/RenderResX = 1600/' -e 's/^RenderResY = 0/RenderResY = 1000/'
+        '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
+      file: sed
+  - execute:
+      description: Configuring SilentHill3.WidescreenFix.ini...  
+      args: -i -e 's/^FogComplexity = 75/FogComplexity = 35/'
+        '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
+      file: sed
+  - execute:
+      description: Configuring SilentHill3.WidescreenFix.ini...  
+      args: -i -e 's/^DOFRes = 1024/DOFRes = 256/'
+        '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
+      file: sed
+  - execute:
+      description: Configuring SilentHill3.WidescreenFix.ini...  
+      args: -i -e 's/^ReduceCutsceneFOV = 0/ReduceCutsceneFOV = 1/'
+        '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
+      file: sed        
+  - execute:
+      command: mv -f "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe.bak"
+  - copy:
+      description: Applying No-DVD patch...    
+      src: nodvd_patch
+      dst: "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/"
+  wine:
+    Desktop: false
+    esync: false
+    fsync: false
+    overrides:
+      Dinput8.dll: n,b
+      Dinput.dll: n,b
+      XInput1_3.dll: n,b
+      dsound.dll: n,b
+      winegstreamer: b
+    version: lutris-fshack-7.1-x86_64

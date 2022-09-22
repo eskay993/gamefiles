@@ -3,7 +3,7 @@ Updated Lutris installer script for the 3 CD EU version of Silent Hill 2: Direct
 
 The primary difference between this version and legluondunet's [Silent Hill 2: Director's Cut script](https://lutris.net/games/silent-hill-2-directors-cut//) is that this version does not use Wine Virtual Desktop as this causes cropping issues on Steam Deck. It also uses `lutris-fshack-7.1-x86_64` which seems to be a more stable on Deck.
 
-There is also both an online and offline versions of the script are provided. See Version Differences below.
+Both an online and offline versions of the script are provided. See Version Differences below.
 
 #
 
@@ -18,7 +18,7 @@ The Online Installer downloads around 4GB worth of files, so can take time on sl
 
 
 ### 2. **silent-hill-2-lutris-installer-offline** [ [Download](https://github.com/eskay993/gamefiles/raw/main/silent-hill-2/silent-hill-2-lutris-installer-offline.zip) ]<br>
-Use this offline version if you have already used the Silent Hill 2 Enhanced Edition Online Installer and have everything set up already. This version is useful if you want to quickly then install it again at a later stage, or on another machine.
+Use this offline version if you have already used the Silent Hill 2 Enhanced Edition Online Installer and have everything set up already. This version is useful if you want to quickly install it again at a later stage, or on another machine.
 
 You will need to make a zip of your game folder with Silent Hill 2 Enhanced Edition fully installed. The default install location: is:
 

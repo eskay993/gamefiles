@@ -1,7 +1,7 @@
 # Intro
 Updated Lutris installer script for the 3 CD EU version of Silent Hill 2: Director's Cut that also installs [Silent Hill 2: Enhanced Edition](https://enhanced.townofsilenthill.com/SH2/). 
 
-The primary difference is that this version does not use Wine Virtual Desktop as this causes cropping issues on Steam Deck. It also uses `lutris-fshack-7.1-x86_64` which seems to be a more stable on Deck.
+The primary difference between this version and legluondunet's [Silent Hill 2: Director's Cut script](https://lutris.net/games/silent-hill-2-directors-cut//) is that this version does not use Wine Virtual Desktop as this causes cropping issues on Steam Deck. It also uses `lutris-fshack-7.1-x86_64` which seems to be a more stable on Deck.
 
 There is also both an online and offline versions of the script are provided. See Version Differences below.
 

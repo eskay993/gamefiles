@@ -1,0 +1,158 @@
+game_slug: silent-hill-2-directors-cut
+name: "Silent Hill 2: Enhanced Edition"
+year: 2002
+user: eskay993
+runner: wine
+slug: silent-hill-2-directors-cut-sh2ee-setup
+version: "SH2EE online setup"
+description: |
+  Updated script for Silent Hill 2 - Director's Cut\" 3 CD EU release with Silent Hill 2 Enhancement Edition project. This version does not use Wine Virtual Desktop as it was causing some cropping issues on Steam Deck. It also boots directly into the game rather than a DOS menu.
+notes: |
+  You will need the 3 CD only during install\r\n- Multilanguage: you can choose language to display menus and subtitles during install between English, French, German, Italian and Spanish\r\n- This game supports natively x360 controller"
+script:
+  files:
+  - sh2eesetup: http://www.enhanced.townofsilenthill.com/SH2/files/SH2EEsetup.exe
+  game:
+    exe: $GAMEDIR/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut/sh2pc.exe
+    prefix: $GAMEDIR
+  installer:
+  - input_menu:
+      description: 'Please choose your preferred interface language:'
+      id: LANG
+      options:
+      - '1': English
+      - '2': French
+      - '3': German
+      - '4': Italian
+      - '5': Spanish
+      preselect: 1  
+  - task:
+      arch: win64
+      description: Preparing "Silent Hill 2 - Directors Cut" folder
+      install_gecko: true
+      install_mono: false
+      name: create_prefix
+      prefix: $GAMEDIR
+  - insert-disc:
+      description: Please insert "Silent Hill 2 Director's Cut" CD 1 and press autodetect
+      requires: sh2.ico
+  - merge:
+      description: Copying data from "Silent Hill 2 Director's Cut" CD 1, please wait
+      dst: $GAMEDIR/drive_c/tmp/cd1
+      src: $DISC
+  - insert-disc:
+      description: Please insert "Silent Hill 2 Director's Cut" CD 2 and press autodetect
+      requires: data3.cab
+  - merge:
+      description: Copying data from "Silent Hill 2 Director's Cut" CD 2, please wait
+      dst: $GAMEDIR/drive_c/tmp/cd2
+      src: $DISC
+  - insert-disc:
+      description: Please insert "Silent Hill 2 Director's Cut" CD 3 and press autodetect
+      requires: data4.cab
+  - merge:
+      description: Copying data from "Silent Hill 2 Director's" Cut CD 3, please wait
+      dst: $GAMEDIR/drive_c/tmp/cd3
+      src: $DISC
+  - execute:
+      command: cd "$GAMEDIR/drive_c/tmp"; chmod +rw -R cd1 cd2 cd3 ; mv cd2/* cd1; mv
+        cd3/* cd1;
+  - write_file:
+      content: |
+        [InstallShield Silent]
+        Version=v6.00.000
+        File=Response File
+        [File Transfer]
+        OverwrittenReadOnly=NoToAll
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-DlgOrder]
+        Dlg0={D3C80E77-E549-4F76-BC07-61DDBD950345}-SdWelcome-0
+        Count=8
+        Dlg1={D3C80E77-E549-4F76-BC07-61DDBD950345}-SdLicense-0
+        Dlg2={D3C80E77-E549-4F76-BC07-61DDBD950345}-SdAskDestPath-0
+        Dlg3={D3C80E77-E549-4F76-BC07-61DDBD950345}-SdSetupTypeEx-0
+        Dlg4={D3C80E77-E549-4F76-BC07-61DDBD950345}-SdSelectFolder-0
+        Dlg5={D3C80E77-E549-4F76-BC07-61DDBD950345}-AskYesNo-0
+        Dlg6={D3C80E77-E549-4F76-BC07-61DDBD950345}-AskYesNo-1
+        Dlg7={D3C80E77-E549-4F76-BC07-61DDBD950345}-SdFinishReboot-0
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-SdWelcome-0]
+        Result=1
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-SdLicense-0]
+        Result=1
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-SdAskDestPath-0]
+        szDir=C:\Program Files (x86)\Konami\Silent Hill 2 - Directors Cut
+        Result=1
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-SdSetupTypeEx-0]
+        Result=Movies on Hard Disk
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-SdSelectFolder-0]
+        szFolder=Konami\Silent Hill 2 - Directors Cut
+        Result=1
+        [Application]
+        Name=Silent Hill 2 - Directors Cut
+        Version=1.00.000
+        Company=Konami
+        Lang=0009
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-AskYesNo-0]
+        Result=0
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-AskYesNo-1]
+        Result=1
+        [{D3C80E77-E549-4F76-BC07-61DDBD950345}-SdFinishReboot-0]
+        Result=1
+        BootOption=0
+      file: $GAMEDIR/drive_c/tmp/cd1/setup.iss
+  - task:
+      args: /s /L0009
+      description: Please just click "OK" when a dialog box will ask for Disk 1
+      executable: $GAMEDIR/drive_c/tmp/cd1/setup.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - copy:
+      src: sh2eesetup
+      dst: $GAMEDIR/drive_c/  
+  - task:
+      description: |
+        Installing SH2EE...
+      executable: sh2eesetup
+      name: wineexec
+      prefix: $GAMEDIR
+      return_code: 256
+  - write_file:
+      content: SET DX_CONFIG_LANGUAGE $INPUT_LANG
+      file: $GAMEDIR/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut/language.ini
+  - write_file:
+      content: |
+        SET DX_CONFIG_EFFECT_FOG_ON 1
+        SET DX_CONFIG_EFFECT_SHADOWS_ON 1
+        SET DX_CONFIG_EFFECT_LENS_FLARE_ON 1
+        SET DX_CONFIG_EFFECT_MOTION_BLUR_ON 1
+        SET DX_CONFIG_EFFECT_DEPTH_OF_FIELD_ON 1
+        SET DX_CONFIG_RES 2
+        SET DX_CONFIG_USE_LORES_TEXTURES 0
+        SET DX_CONFIG_3D_SOUND_HARDWARE 1
+        SET DX_CONFIG_3D_SOUND_HARDWARE_AVAILABLE 1
+        SET DX_CONFIG_BRIGHTNESS 3
+        SET DX_CONFIG_SCREEN_POS_X 0
+        SET DX_CONFIG_SCREEN_POS_Y 0
+        SET DX_CONFIG_NOISE 1
+      file: $GAMEDIR/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut/settings.ini
+  - write_file:
+      content: |
+        SET DX_CONFIG_WEAPON_CONTROL 0
+        SET DX_CONFIG_MAP 0
+        SET DX_CONFIG_WALK_RUN 0
+        SET DX_CONFIG_VIEW 0
+        SET DX_CONFIG_BLOOD 0
+        SET DX_CONFIG_BULLET 1
+        SET DX_CONFIG_CONTROL_STYLE 1
+        SET DX_CONFIG_VIBRATION 3
+        SET DX_CONFIG_SUBTITLES 1
+        SET DX_CONFIG_BGM_VOLUME 12
+        SET DX_CONFIG_SE_VOLUME 12
+      file: $GAMEDIR/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut/options.ini
+  wine:
+    Desktop: false
+    overrides:
+      d3d8.dll: n,b
+      dinput8.dll: n,b
+      XInput1_3.dll: n,b
+      dsound.dll: n,b
+    version: lutris-fshack-7.1-x86_64

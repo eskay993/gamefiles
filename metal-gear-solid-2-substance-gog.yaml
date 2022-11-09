@@ -21,17 +21,6 @@ script:
       description: Creating Wine prefix...
       name: create_prefix
       prefix: $GAMEDIR
-  - input_menu:
-      description: "Select a resolution for the game:"
-      id: GAMERES
-      # Note: Steam Deck in desktop mode reports res as 800x1280. This is adjusted for later on.
-      options:
-      - 1280x720: 1280x720
-      - 800x1280: 1280x800 (Steam Deck)
-      - 1920x1080: 1920x1080
-      - 2560x1440: 2560x1440
-      - 3840x2160: 3840x2160
-      preselect: $RESOLUTION
   - task:
       app: quartz
       description: Installing dependencies...

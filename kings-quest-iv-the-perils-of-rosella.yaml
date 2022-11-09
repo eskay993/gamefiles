@@ -1,0 +1,25 @@
+game_slug: kings-quest-iv-the-perils-of-rosella
+name: "King's Quest IV: The Perils of Rosella Retold"
+year: 2021
+user: eskay993
+runner: wine
+slug: kings-quest-iv-the-perils-of-retold-win
+version: KQ4 Retold (Windows)
+description: King's Quest IV Retold" is a point-and-click remake of the fourth chapter in Sierra's classic King's Quest series.
+script:
+  files:
+  - game_zip: N/A:KQ4 Retold (Windows) Zip Archive
+  game:
+    exe: $GAMEDIR/drive_c/KQ4Retold/KQ4Retold.exe
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      description: Creating Wine prefix...
+      name: create_prefix
+      prefix: $GAMEDIR
+  - extract:
+      src: game_zip
+      dst: $GAMEDIR/drive_c/KQ4Retold/
+  wine:
+    version: lutris-fshack-7.1-x86_64

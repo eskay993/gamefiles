@@ -1,0 +1,33 @@
+game_slug: grand-theft-auto-vice-city
+name: "Grand Theft Auto: Vice City - Definitive Edition Patch"
+year: 2002
+user: eskay993
+runner: steam
+slug: grand-theft-auto-vice-city-dep
+version: Steam Proton + DEP
+description: Installs Steam version plus Definitive Edition Patch.
+script:
+  custom-name: "Grand Theft Auto: Vice City - Definitive Edition Patch"
+  game:
+    appid: 12110
+    require-binaries: python3,zenity
+  variables:
+    APPID: 12110
+  # files:
+  # - dep_zip: N/A:Definitive Edition Patch Zip Archive
+  installer:
+  # - execute:
+  #     args: -c "import steam; print(steam.get_steamid(),end = '')" > /home/bass/text.txt
+  #     file: python3
+  #     terminal: true
+  #     env:
+  #       PYTHONPATH: /home/bass/scripts/lib/python3
+  # - execute:
+  #     args: --info --text="Hello!"
+  #     file: zenity
+  #     terminal: false
+  - execute:
+      # command: zenity --info --text="Hello!"
+      # command: echo $PATH  > /home/bass/test.txt
+      command: python3 -c "import sys; print(sys.path)" > /home/bass/test.txt;
+      # command: python3 -c "import steam as steam; print(steam.get_steamid(),end = '')" > /home/bass/test.txt;

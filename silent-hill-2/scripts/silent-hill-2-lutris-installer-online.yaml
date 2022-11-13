@@ -11,7 +11,7 @@ notes: |
   You will need the 3 CD only during install\r\n- Multilanguage: you can choose language to display menus and subtitles during install between English, French, German, Italian and Spanish\r\n- This game supports natively x360 controller"
 script:
   files:
-  - sh2eesetup: http://www.enhanced.townofsilenthill.com/SH2/files/SH2EEsetup.exe
+  - sh2eesetup: https://enhanced.townofsilenthill.com/files/SH2EE/SH2EEsetup.exe
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut/sh2pc.exe
     prefix: $GAMEDIR

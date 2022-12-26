@@ -1,4 +1,13 @@
 
+# Index 
+- [Install Guide](#install-guide)
+- [Run Settings or Switcher tool after install](#run-settings-or-switcher-tool-after-install)
+- [Installing future updates](#installing-future-updates)
+- [Save file location plus WARNING!](#save-file-location-plus-warning)
+
+<br>
+
+# Intro 
 Lutris script to install SP Football Life 2023 by SmokePatch. You can read about it on their website, as well as download the game installer, updates and mods.
 
 [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm)
@@ -6,6 +15,7 @@ Lutris script to install SP Football Life 2023 by SmokePatch. You can read about
 Scroll down to `Download Links` and download both the base game and latest update.
 
 <br>
+
 
 # Install Guide
 
@@ -86,6 +96,21 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 <br>
 
+# Save file location plus WARNING!
+
+> WARNING: Uninstalling the game from Lutris, or deleting the folder where the game is installed will also deleted your save files. Make sure to backup the save folder before removing the game.
+
+To make a backup of your save files, the folder is located in:
+
+`<GAME_INSTALL_PATH>/drive_c/users/deck/Documents/KONAMI/`
+
+For Steam Deck, if following the guide and installing to the default location then this will be:
+
+`/home/deck/Games/sp-football-life-2023/drive_c/users/deck/Documents/KONAMI/`
+
+To restore you save files after a fresh install, just copy the `KONAMI` folder to that location.
+
+<br>
 
 # Credits
 -  SmokePatch for their awesome [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm)

@@ -19,7 +19,7 @@ Scroll down to `Download Links` and download both the base game and latest updat
 
 # Install Guide
 
-This assume you've already downloaded [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) base game and latest update from the [SmokePatch](https://www.pessmokepatch.com/2022/10/spfl23.html) website and extracted both downloads.
+This assumes you've already downloaded [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) base game and latest update from the [SmokePatch](https://www.pessmokepatch.com/2022/10/spfl23.html) website and extracted both downloads.
 
 On Steam Deck, follow the below steps in Desktop Mode.
 

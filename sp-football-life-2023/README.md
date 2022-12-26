@@ -45,7 +45,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 > NOTE: On Steam Deck, `Fullscreen` will be greyed out at first. Change the resolution to `1280x800` and `Fullscreen` will now be selectable.
 
-15. Click `Close` and you're done! You can launch the game from Lutris directly, or add it to Steam by right clicking on the `SP Football Life 2023` banner and choosing `Add shortcut to Steam`. It is recommended to fully exit Steam before adding the shortcut.
+15. Click `Close` and you're done! You can launch the game from Lutris directly, or add it to Steam by right clicking on the `SP Football Life 2023` banner and choosing `Create Steam shortcut`. It is recommended to fully exit Steam before adding the shortcut.
 
 <br>
 

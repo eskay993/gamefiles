@@ -22,11 +22,6 @@ script:
     exe: drive_c/GOG Games/Silent Hill 4/SILENT HILL 4.exe
     prefix: $GAMEDIR
   installer:
-  - task:
-      arch: win32
-      description: Creating Wine prefix...
-      name: create_prefix
-      prefix: $GAMEDIR
   - input_menu:
       description: "Select a resolution for the game:"
       id: GAMERES
@@ -49,27 +44,35 @@ script:
       - n: "No"
       preselect: y
   - task:
-      description: 'Installing Silent Hill 4: The Room...'
-      executable: gogsetup
-      name: wineexec
+      description: Creating Wine prefix...
+      name: create_prefix
       prefix: $GAMEDIR
-      args: /SILENT /DIR="C:\GOG Games\Silent Hill 4" /NORESTART /CLOSEAPPLICATIONS
   - task:
       app: win7
-      arch: win32
+      description: Setting version to win7...      
       name: winetricks
       prefix: $GAMEDIR
   - task:
       app: d3dx9_43
-      arch: win32
+      description: Installing d3dx9_43...
       name: winetricks
       prefix: $GAMEDIR
   - task:
       app: wmp10
-      arch: win32
-      description: Installing wmp10
+      description: Installing wmp10...
+      name: winetricks
+      prefix: $GAMEDIR      
+  - task:
+      app: directshow
+      description: Installing directshow...
       name: winetricks
       prefix: $GAMEDIR
+  - task:
+      description: 'Installing game...'
+      executable: gogsetup
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /SILENT /DIR="C:\GOG Games\Silent Hill 4" /NORESTART /CLOSEAPPLICATIONS      
   - extract:
       dst: $CACHE/asiloader/
       file: asiloader_zip
@@ -111,9 +114,12 @@ script:
           sed -i -e 's/^RandomItems = 1/RandomItems = 0/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
           sed -i -e 's/^RestoreHauntings = 0/RestoreHauntings = 1/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
         fi
+  - execute:
+      # Note: The intro movie m_00.pac crahes the game, so renaming it so that it doesn't play. Other in-game FMVs seems to work fine.
+      command: mv "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac.broken"
   wine:
     overrides:
       d3d8.dll: n,b
       dinput8.dll: n,b
       dsound.dll: n,b
-    version: lutris-fshack-7.1-x86_64    
+    version: lutris-fshack-7.1-x86_64

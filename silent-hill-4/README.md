@@ -1,10 +1,11 @@
 
-Updated Lutris installer script for the GOG version of Silent Hill 4 based on TimeFreeze's original Lutris script and is inspired by Betwixt-Two-Ferns's awesome [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). 
+Updated Lutris installer script for the GOG version of Silent Hill 4 based on TimeFreeze's original Lutris script and inspired by Betwixt-Two-Ferns's awesome [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). 
 
 The script installs the following:
 - GOG version of Silent Hill 4
 - Optionally restores missing 'hauntings' from PS2 version
 - Makes a few setting tweaks including closer matching PS2 colours
+- In-game FMVs now work with the latest version of the script
 
 > Note: Must use the GOG version of the game. The 'haunting' retore patch is specifically designed for it.
 

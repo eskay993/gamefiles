@@ -56,12 +56,7 @@ script:
       app: d3dx9_43
       description: Installing d3dx9_43...
       name: winetricks
-      prefix: $GAMEDIR
-  - task:
-      app: wmp10
-      description: Installing wmp10...
-      name: winetricks
-      prefix: $GAMEDIR      
+      prefix: $GAMEDIR 
   - task:
       app: directshow
       description: Installing directshow...

@@ -92,7 +92,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 4. Run through the installer clicking `Next` and leaving everything as default. 
 
-5. Done! You can confirm you have the latest version in the bottom right of main menu screen of the game.
+5. Done! You can confirm you have the latest version by launching the game and going to `Settings > Game Options > Game Version`.
 
 <br>
 

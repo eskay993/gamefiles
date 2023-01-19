@@ -5,7 +5,7 @@ user: eskay993
 runner: wine
 slug: sp-football-life-2023-win
 version: Windows
-description: Installer for SP Football Life 2023 by Smokepatch"
+description: Installer for SP Football Life 2023 by Smokepatch
 notes:
 script:
   files:

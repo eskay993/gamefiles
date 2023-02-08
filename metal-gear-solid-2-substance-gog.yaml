@@ -22,25 +22,10 @@ script:
       name: create_prefix
       prefix: $GAMEDIR
   - task:
-      app: quartz
+      app: quartz dsound dsdmo directmusic
       description: Installing dependencies...
       name: winetricks
-      prefix: $GAMEDIR          
-  - task:
-      app: dsound
-      description: Installing dependencies...
-      name: winetricks
-      prefix: $GAMEDIR
-  - task:
-      app: dsdmo
-      description: Installing dependencies...
-      name: winetricks
-      prefix: $GAMEDIR
-  - task:
-      app: directmusic
-      description: Installing dependencies...
-      name: winetricks
-      prefix: $GAMEDIR              
+      prefix: $GAMEDIR                     
   - task:
       description: 'Installing game...'
       executable: gogsetup

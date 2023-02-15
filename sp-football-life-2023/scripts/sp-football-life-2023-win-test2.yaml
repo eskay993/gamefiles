@@ -23,11 +23,6 @@ script:
       install_mono: false
       prefix: $GAMEDIR
   - task:
-      description: Configuring prefix...
-      app: win10
-      name: winetricks
-      prefix: $GAMEDIR
-  - task:
       description: |
         Installing dependencies... This may take a while...
 

@@ -70,6 +70,7 @@ For Steam Deck, if following the guide and installing to the default location th
 `/home/deck/Games/sp-football-life-2023/drive_c/users/deck/Documents/KONAMI/`
 
 To restore you save files after a fresh install, just copy the `KONAMI` folder to that location.
+
 <br>
 
 # Run Settings or Switcher tool after install

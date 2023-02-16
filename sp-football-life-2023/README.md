@@ -8,11 +8,9 @@
 <br>
 
 # Intro 
-Lutris script to install SP Football Life 2023 by SmokePatch. You can read about it on their website, as well as download the game installer, updates and mods.
+Lutris script to install SP Football Life 2023 by [SmokePatch](https://www.pessmokepatch.com/). You can read about the game on their website, as well as download the game installer, updates and mods.
 
-[SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm)
-
-Scroll down to `Download Links` and download both the base game and latest update.
+To get the game, go to [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) and scroll down to `Download Links` and download both the base game and latest update.
 
 <br>
 
@@ -30,8 +28,6 @@ On Steam Deck, follow the below steps in Desktop Mode.
 3. Select `Install from local install script` and point to the extracted yaml script from Step 1.
 
 4. Click `Install` on the next screen and choose where to install the game. On Steam Deck, Lutris by default will install the game to `/home/deck/Games/sp-football-life-2023`. Tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
-
-5. You may be prompted to install `mono`. Just click `Install`.
 
 6. On the next screen, click `Browse` under `SPFL23 Setup Exe` and select the base game setup exe that you downloaded and extracted earlier. Filename should be `SPFL23_setup.exe`.
 

@@ -118,7 +118,9 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 2. Right click on the game in Lutris and choose `Browse local files`. Dolphin file browser should open to where the game is installed.
 
-3. Copy the 4 CPK files here (backup the old files just in case)
+3. Navigate to `drive_c/Program Files (x86)/SP Football Life 2023/download`
+
+4. Copy the 4 CPK files here (backup the old files just in case)
 
 <br>
 

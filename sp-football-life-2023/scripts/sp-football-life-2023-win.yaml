@@ -20,6 +20,7 @@ script:
       arch: win64
       description: Creating Wine prefix...
       name: create_prefix
+      install_mono: false
       prefix: $GAMEDIR
   - task:
       description: |

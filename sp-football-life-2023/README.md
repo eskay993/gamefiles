@@ -1,9 +1,11 @@
 
 # Index 
 - [Install Guide](#install-guide)
+- [Save file location plus WARNING!](#save-file-location-plus-warning)
 - [Run Settings or Switcher tool after install](#run-settings-or-switcher-tool-after-install)
 - [Installing future updates](#installing-future-updates)
-- [Save file location plus WARNING!](#save-file-location-plus-warning)
+- [Installing Real Faces mod](#installing-real-faces-mod)
+
 
 <br>
 
@@ -17,7 +19,7 @@ To get the game, go to [SP Football Life 2023](https://www.pessmokepatch.com/202
 
 # Install Guide
 
-This assumes you've already downloaded [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) base game and latest update from the [SmokePatch](https://www.pessmokepatch.com/2022/10/spfl23.html) website and extracted both downloads.
+This assumes you've already downloaded the [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) base game and latest update from the [SmokePatch](https://www.pessmokepatch.com/2022/10/spfl23.html) website and extracted both downloads.
 
 On Steam Deck, follow the below steps in Desktop Mode.
 
@@ -55,6 +57,21 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 <br>
 
+# Save file location plus WARNING!
+
+> WARNING: Uninstalling the game from Lutris, or deleting the folder where the game is installed will also deleted your save files. Make sure to backup the save folder before removing the game.
+
+To make a backup of your save files, the folder is located in:
+
+`<GAME_INSTALL_PATH>/drive_c/users/deck/Documents/KONAMI/`
+
+For Steam Deck, if following the guide and installing to the default location then this will be:
+
+`/home/deck/Games/sp-football-life-2023/drive_c/users/deck/Documents/KONAMI/`
+
+To restore you save files after a fresh install, just copy the `KONAMI` folder to that location.
+<br>
+
 # Run Settings or Switcher tool after install
 If you want to run Settings or the Switcher tool after you've already installed the game, follow these steps:
 
@@ -76,7 +93,6 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 If you have already installed the game and want to install a future update, follow these steps:
 
-
 On Steam Deck, follow the below steps in Desktop Mode.
 
 1. Download and extract the update file from the [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) website
@@ -92,19 +108,17 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 <br>
 
-# Save file location plus WARNING!
+# Installing Real Faces mod
 
-> WARNING: Uninstalling the game from Lutris, or deleting the folder where the game is installed will also deleted your save files. Make sure to backup the save folder before removing the game.
+If you have already installed the game and want to install a the Real Faces facepak mod, follow these steps:
 
-To make a backup of your save files, the folder is located in:
+On Steam Deck, follow the below steps in Desktop Mode.
 
-`<GAME_INSTALL_PATH>/drive_c/users/deck/Documents/KONAMI/`
+1. Download and extract the [SP Football Life 2023: Real Faces](https://www.pessmokepatch.com/2022/08/fl23faces.html) facepak mod. You should have 4 CPK files.
 
-For Steam Deck, if following the guide and installing to the default location then this will be:
+2. Right click on the game in Lutris and choose `Browse local files`. Dolphin file browser should open to where the game is installed.
 
-`/home/deck/Games/sp-football-life-2023/drive_c/users/deck/Documents/KONAMI/`
-
-To restore you save files after a fresh install, just copy the `KONAMI` folder to that location.
+3. Copy the 4 CPK files here (backup the old files just in case)
 
 <br>
 

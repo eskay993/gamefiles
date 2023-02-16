@@ -110,7 +110,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 # Installing Real Faces mod
 
-If you have already installed the game and want to install a the Real Faces facepak mod, follow these steps:
+If you have already installed the game and want to add the Real Faces facepak mod, follow these steps:
 
 On Steam Deck, follow the below steps in Desktop Mode.
 

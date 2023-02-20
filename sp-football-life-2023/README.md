@@ -33,7 +33,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 5. On the next screen, click `Browse` under `SPFL23 Setup Exe` and select the base game setup exe that you downloaded and extracted earlier. Filename should be `SPFL23_setup.exe`.
 
-6. Click `Browse` under `SPFL23 Update Exe` and select the update exe that you downloaded and extracted earlier. As of writing, the latest update is v2.00, so the filename is `SPFL23_200.exe`. The name will be slightly different for future updates.
+6. Click `Browse` under `SPFL23 Update Exe` and select the update exe that you downloaded and extracted earlier. As of writing, the latest update is v3.00, so the filename is `SPFL23_300.exe`. The name will be slightly different for future updates.
 
 7. Click `Continue` to begin the install process. 
 

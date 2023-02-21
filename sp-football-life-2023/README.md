@@ -67,7 +67,7 @@ To make a backup of your save files, the folder is located in:
 
 For Steam Deck, if following the guide and installing to the default location then this will be:
 
-`/home/deck/Games/sp-football-life-2023/drive_c/users/deck/Documents/KONAMI/`
+`/home/deck/Games/sp-football-life-2023/drive_c/users/<USERNAME>/Documents/KONAMI/`
 
 To restore you save files after a fresh install, just copy the `KONAMI` folder to that location.
 

@@ -63,7 +63,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 To make a backup of your save files, the folder is located in:
 
-`<GAME_INSTALL_PATH>/drive_c/users/deck/Documents/KONAMI/`
+`<GAME_INSTALL_PATH>/drive_c/users/<USERNAME>/Documents/KONAMI/`
 
 For Steam Deck, if following the guide and installing to the default location then this will be:
 

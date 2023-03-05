@@ -19,7 +19,7 @@ There are 2 versions of the script, the main difference being which sound patch 
 Try this version first. Installs MarioTainaka's [Audio Enhanced Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack) which  fixes the pitch and uses uncompressed audio files for better sound quality.
 Relaoded-II Mod Loader is also installed to automatically load the audio pack.
 
-> As of writing (14-Sep-2022), this version works fine however if Reloaded or the Audio Enhancement Pack introduce something unexpected in a future update, it may break the script.
+> As of writing (5th March 2023), this version works with v3.0 of the Audio Enhacement Pack, however if Reloaded or the Audio Enhancement Pack introduce something unexpected in a future update, it may break the script.
 
 ### 2. **silent-hill-3-installer-with-sound-fixer** ([Install Guide](#sf_guide))<br>
 Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/) which directly patches the sound files to fix the pitch, however does not alter the audio compression. Should still lbe good enough for most people, so if the other version does not work for you, try this one.

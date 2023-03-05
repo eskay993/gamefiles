@@ -190,10 +190,6 @@ script:
       dst: "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/"
   - execute:
       command: cp "$GAMEDIR/drive_c/users/$USER/Desktop/Reloaded-II/Loader/X86/Bootstrapper/Reloaded.Mod.Loader.Bootstrapper.dll" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/Reloaded.Mod.Loader.Bootstrapper.asi"
-  # - task:
-  #     app: win7
-  #     name: winetricks
-  #     prefix: $GAMEDIR
   wine:
     Desktop: false
     esync: false

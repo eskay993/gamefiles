@@ -5,7 +5,7 @@ user: eskay993
 runner: wine
 slug: metal-gear-solid-2-substance-gog
 version: "GOG with MGS2 V's Fix"
-description: Installer for the GOG version with MGS2 V's Fix
+description: "Installer for the GOG version with MGS2 V's Fix"
 notes:
 script:
   files:

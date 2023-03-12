@@ -4,7 +4,7 @@ year: 2004
 user: eskay993
 runner: wine
 slug: silent-hill-4-gog
-version: "GOG with 'hauntings' resorted"
+version: "G.O.G. with 'hauntings' resorted"
 description: Updated installer for the GOG version which will tweak colour settings to match PS2, and optionally restore missing hauntings that were cut from the PC version.
 notes: |
     Note: The hauntings restore patch will only work with the GOG version. It will not work with any other version.

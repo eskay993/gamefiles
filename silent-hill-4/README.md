@@ -21,7 +21,7 @@ The game runs at max 30FPS. There is a 60FPS patch available, but it's break cer
 
 On Steam Deck, follow the below steps in Desktop Mode.
 
-1. Download [silent-hill-4-lutris-install-script.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-4/silent-hill-4-lutris-install-script.zip) from this repo and extract it.
+1. Download [silent-hill-4-lutris-install-gog.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-4/silent-hill-4-lutris-install-gog.zip) from this repo and extract it.
 1. Downlaad the game install files from GOG. Check [Betwixt-Two-Ferns's guide on r/SteamDeck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) for info.
 2. Run Lutris and click the `+` sign to add a game.
 3. Select `Install from local install script` and point to the extracted yaml script from Step 1.

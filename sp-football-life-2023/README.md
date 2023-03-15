@@ -22,7 +22,7 @@ To get the game, go to [SP Football Life 2023](https://www.pessmokepatch.com/202
 This assumes you've already downloaded the [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) base game and latest update from the [SmokePatch](https://www.pessmokepatch.com/2022/10/spfl23.html) website and extracted both downloads.
 
 On Steam Deck, follow the below steps in Desktop Mode.
-1. Make sure Lutris is up to date. This can fix some issues you might encounter. On Steam Deck, close Lutris, then open the `Discover` app and choose "`Update`" > "`Update All`".
+1. Make sure Lutris is up to date. This can fix some issues you might encounter. On Steam Deck, close Lutris, then open the `Discover` app and choose `Update` > `Update All`.
 
 2. Download [sp-football-life-2023-win.zip](https://github.com/eskay993/gamefiles/raw/main/sp-football-life-2023/sp-football-life-2023-win.zip) from this repo and extract it.
 

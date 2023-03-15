@@ -22,38 +22,39 @@ To get the game, go to [SP Football Life 2023](https://www.pessmokepatch.com/202
 This assumes you've already downloaded the [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) base game and latest update from the [SmokePatch](https://www.pessmokepatch.com/2022/10/spfl23.html) website and extracted both downloads.
 
 On Steam Deck, follow the below steps in Desktop Mode.
+1. Make sure Lutris is up to date. This can fix some issues you might encounter. On Steam Deck, close Lutris, then open the `Discover` app and choose "`Update`" > "`Update All`".
 
-1. Download [sp-football-life-2023-win.zip](https://github.com/eskay993/gamefiles/raw/main/sp-football-life-2023/sp-football-life-2023-win.zip) from this repo and extract it.
+2. Download [sp-football-life-2023-win.zip](https://github.com/eskay993/gamefiles/raw/main/sp-football-life-2023/sp-football-life-2023-win.zip) from this repo and extract it.
 
-2. Run Lutris and click the `+` sign to add a game.
+3. Run Lutris and click the `+` sign to add a game.
 
-3. Select `Install from local install script` and point to the extracted yaml script from Step 1.
+4. Select `Install from local install script` and point to the extracted yaml script from Step 1.
 
-4. Click `Install` on the next screen and choose where to install the game. On Steam Deck, Lutris by default will install the game to `/home/deck/Games/sp-football-life-2023`. Tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
+5. Click `Install` on the next screen and choose where to install the game. On Steam Deck, Lutris by default will install the game to `/home/deck/Games/sp-football-life-2023`. Tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
 
-5. On the next screen, click `Browse` under `SPFL23 Setup Exe` and select the base game setup exe that you downloaded and extracted earlier. Filename should be `SPFL23_setup.exe`.
+6. On the next screen, click `Browse` under `SPFL23 Setup Exe` and select the base game setup exe that you downloaded and extracted earlier. Filename should be `SPFL23_setup.exe`.
 
-6. Click `Browse` under `SPFL23 Update Exe` and select the update exe that you downloaded and extracted earlier. As of writing, the latest update is v3.00, so the filename is `SPFL23_300.exe`. The name will be slightly different for future updates.
+7. Click `Browse` under `SPFL23 Update Exe` and select the update exe that you downloaded and extracted earlier. As of writing, the latest update is v3.00, so the filename is `SPFL23_300.exe`. The name will be slightly different for future updates.
 
-7. Click `Continue` to begin the install process. 
+8. Click `Continue` to begin the install process. 
 
 >Note: The whole install process from start to finish can take 10-15 mins so be patient and let it do it's thing.
 
-8. After the dependencies are installed, the SPFL23 setup window should appear. Just keep clicking `Next` and leave everything as default. The game should start installing.
+9. After the dependencies are installed, the SPFL23 setup window should appear. Just keep clicking `Next` and leave everything as default. The game should start installing.
 
-9. Once the game finishes installing, your web browser will auto-launch to the SmokePatch website. Just close or minimise your browser and return to the setup window.
+10. Once the game finishes installing, your web browser will auto-launch to the SmokePatch website. Just close or minimise your browser and return to the setup window.
 
-10. ```IMPORTANT:``` Before clicking `Exit`, uncheck `Start SP Football Life 2023`. Then click `Exit`.
+11. ```IMPORTANT:``` Before clicking `Exit`, uncheck `Start SP Football Life 2023`. Then click `Exit`.
 
-11. The update setup window should now open. Just keep clicking `Next` and leave everything as default and `Exit`.
+12. The update setup window should now Lutris, . Just keep clicking `Next` and leave everything as default and `Exit`.
 
-12. The `Switcher` window should now launch. This tool allows you to chose how you want the gameplay experience to be. The SmokePatch team have tweaked the gameplay and stats so if you want to try their changes choose the top option. You can read about it on their website. Otherwise choose the PES 2021 option for the default PES experience (my preferred option). You can change this later. Once selected, keep clicking `Next` and `Exit`.
+13. The `Switcher` window should now launch. This tool allows you to chose how you want the gameplay experience to be. The SmokePatch team have tweaked the gameplay and stats so if you want to try their changes choose the top option. You can read about it on their website. Otherwise choose the PES 2021 option for the default PES experience (my preferred option). You can change this later. Once selected, keep clicking `Next` and `Exit`.
 
-13. The `Settings` window should now appear. Choose `Fullscreen` and make any other changes you like. In most cases, the default is fine. Click `Save` and exit.
+14. The `Settings` window should now appear. Choose `Fullscreen` and make any other changes you like. In most cases, the default is fine. Click `Save` and exit.
 
 > NOTE: On Steam Deck, `Fullscreen` will be greyed out at first. Change the resolution to `1280x800` and `Fullscreen` will now be selectable.
 
-14. Click `Close` and you're done! You can launch the game from Lutris directly, or add it to Steam by right clicking on the `SP Football Life 2023` banner and choosing `Create Steam shortcut`. It is recommended to fully exit Steam before adding the shortcut.
+15. Click `Close` and you're done! You can launch the game from Lutris directly, or add it to Steam by right clicking on the `SP Football Life 2023` banner and choosing `Create Steam shortcut`. It is recommended to fully exit Steam before adding the shortcut.
 
 <br>
 
@@ -117,7 +118,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 1. Download and extract the [SP Football Life 2023: Real Faces](https://www.pessmokepatch.com/2022/08/fl23faces.html) facepak mod. You should have 4 CPK files.
 
-2. Right click on the game in Lutris and choose `Browse local files`. Dolphin file browser should open to where the game is installed.
+2. Right click on the game in Lutris and choose `Browse local files`. Dolphin file browser should Lutris,  to where the game is installed.
 
 3. Navigate to `drive_c/Program Files (x86)/SP Football Life 2023/download`
 

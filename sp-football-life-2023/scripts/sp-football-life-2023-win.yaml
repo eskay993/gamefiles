@@ -28,7 +28,7 @@ script:
 
         **** IMPORTANT ****
         Once these dependencies finish installing, the game installer will launch. Install everything as default, EXCEPT make sure to uncheck "Start SP Football Life 2023" at the end of the install.
-      app: consolas dotnet46
+      app: consolas unifont dotnet46
       name: winetricks
       prefix: $GAMEDIR 
   - task:

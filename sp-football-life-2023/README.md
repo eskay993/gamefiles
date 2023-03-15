@@ -46,7 +46,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 11. ```IMPORTANT:``` Before clicking `Exit`, uncheck `Start SP Football Life 2023`. Then click `Exit`.
 
-12. The update setup window should now Lutris, . Just keep clicking `Next` and leave everything as default and `Exit`.
+12. The update setup window should now launch. Just keep clicking `Next` and leave everything as default and `Exit`.
 
 13. The `Switcher` window should now launch. This tool allows you to chose how you want the gameplay experience to be. The SmokePatch team have tweaked the gameplay and stats so if you want to try their changes choose the top option. You can read about it on their website. Otherwise choose the PES 2021 option for the default PES experience (my preferred option). You can change this later. Once selected, keep clicking `Next` and `Exit`.
 

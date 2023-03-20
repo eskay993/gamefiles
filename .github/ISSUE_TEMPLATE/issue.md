@@ -11,7 +11,7 @@ assignees: ''
 - Which game are you trying to install?
 
 
-- What platform/distro are you trying it on (e.g. Steam Deck or Ubuntu 22.10)?
+- What platform/distro are you trying it on (e.g. Steam Deck)?
 
 
 **Issue Description:**

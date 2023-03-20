@@ -6,15 +6,21 @@ labels: ''
 assignees: ''
 ---
 
-If you got an error messsage when trying to install one of the scripts, please provide the following:
+**Details:**
 
-- Which game are you trying to install?
+- Which game are you trying to install?<br>
 
-- What platform are you trying it on (Steam Deck or regular Linux desktop)?
 
-- What steps did you follow before the error occured (if following my guide, which step did it happen on)
+- What platform/distro are you trying it on (e.g. Steam Deck or Ubuntu 22.10)?<br>
 
-- Please paste the full log when the error occurs (not just the error code).
 
-If the issue is something else, please provide as much info as possible of what you tried.
+**Issue Description:**<br>
+
+_Please provide details of what steps you followed and hen the issue occured:_<br>
+
+
+**Error Log:**
+
+_If you got an error message, please paste the full log here (not just the error code)._<br>
+
 

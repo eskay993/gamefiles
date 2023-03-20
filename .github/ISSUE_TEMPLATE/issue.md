@@ -16,7 +16,7 @@ assignees: ''
 
 **Issue Description:**
 
-_Please provide details of what steps you followed and hen the issue occurred:_
+_Please provide details of what steps you followed when the issue occurred:_
 
 
 **Error Log:**

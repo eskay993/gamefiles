@@ -99,7 +99,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 1. Download and extract the update file from the [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) website. Links can be found on the right hand side under `SmokePatch Latest`
 
-2. **Important:** Read the `Install Instructions` section on the page where you downloaded the update. Some updates need an earlier vesion to be installed first before installing the latest. For example, update 3.1 requires 3.0 to be installed first. In this example, follow the below steps to install update 3.0 first, then follow them again to install update 3.1.
+2. **Important:** Read the `Install Instructions` section on the page where you downloaded the update. Some updates need an earlier vesion to be installed first before installing the latest. For example, update 3.10 requires 3.00 to be installed first. In this example, follow the below steps to install update 3.00 first, then follow them again to install update 3.10.
 
 2. Run Lutris and select `SP Football Life 2023` (single click just to highlight it)
 

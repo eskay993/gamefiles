@@ -97,16 +97,19 @@ If you have already installed the game and want to install a future update, foll
 
 On Steam Deck, follow the below steps in Desktop Mode.
 
-1. Download and extract the update file from the [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) website
-1. Run Lutris and select `SP Football Life 2023` (single click just to highlight it)
+1. Download and extract the update file from the [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) website. Links can be found on the right hand side under `SmokePatch Latest`
 
-2. Click the wine glass icon at the bottom and select `Run EXE inside Wine Prefix`
+2. **Important:** Read the `Install Instructions` section on the page where you downloaded the update. Some updates need an earlier vesion to be installed first before installing the latest. For example, update 3.1 requires 3.0 to be installed first. In this example, follow the below steps to install update 3.0 first, then follow them again to install update 3.1.
 
-3. Browse to the extracted update exe downloaded in Step 1. Filename should be something like `SPFL23_XXX.exe`, where XXX is the version number.
+2. Run Lutris and select `SP Football Life 2023` (single click just to highlight it)
 
-4. Run through the installer clicking `Next` and leaving everything as default. 
+3. Click the wine glass icon at the bottom and select `Run EXE inside Wine Prefix`
 
-5. Done! You can confirm you have the latest version by launching the game and going to `Settings > Game Options > Game Version`.
+4. Browse to the extracted update exe downloaded in Step 1. Filename should be something like `SPFL23_XXX.exe`, where XXX is the version number.
+
+5. Run through the installer clicking `Next` and leaving everything as default. 
+
+6. Done! You can confirm you have the latest version by launching the game and going to `Settings > Game Options > Game Version`.
 
 <br>
 

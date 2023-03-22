@@ -1,5 +1,5 @@
 > <mark>Note: Broken FMVs</mark><br>
-There are 2 in-game FMVs that are known to cause the game to crash when they play. The intro FMV (before the main menu screen), and the FMV that plays on level XXX. There may be others beyond this point that crash too. I have not found a fix for this, so as a workaround, this script just disables them by renaming those FMV files so they don't play and the game continues.
+There are 2 in-game FMVs that are known to cause the game to crash when they play. The intro FMV (before the main menu screen), and the FMV that plays on level 4-2. There may be others beyond this point that crash too. I have not found a fix for this, so as a workaround, this script just disables them by renaming those FMV files so they don't play and the game continues.
 
 
 # About

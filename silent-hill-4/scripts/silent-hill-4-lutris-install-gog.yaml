@@ -117,4 +117,4 @@ script:
       d3d8.dll: n,b
       dinput8.dll: n,b
       dsound.dll: n,b
-    version: lutris-fshack-7.1-x86_64
+    version: lutris-7.2-2-x86_64

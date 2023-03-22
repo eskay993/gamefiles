@@ -44,30 +44,20 @@ script:
       - n: "No"
       preselect: y
   - task:
+      arch: win32
       description: Creating Wine prefix...
-      name: create_prefix
-      prefix: $GAMEDIR
+      name: create_prefix   
   - task:
-      app: win7
-      description: Setting version to win7...      
+      app: win7 quartz
+      description: Installing dependencies...      
       name: winetricks
-      prefix: $GAMEDIR
-  - task:
-      app: d3dx9_43
-      description: Installing d3dx9_43...
-      name: winetricks
-      prefix: $GAMEDIR 
-  - task:
-      app: directshow
-      description: Installing directshow...
-      name: winetricks
-      prefix: $GAMEDIR
+      prefix: $GAMEDIR  
   - task:
       description: 'Installing game...'
       executable: gogsetup
       name: wineexec
       prefix: $GAMEDIR
-      args: /SILENT /DIR="C:\GOG Games\Silent Hill 4" /NORESTART /CLOSEAPPLICATIONS      
+      args: /SILENT /DIR="C:\GOG Games\Silent Hill 4" /NORESTART /CLOSEAPPLICATIONS
   - extract:
       dst: $CACHE/asiloader/
       file: asiloader_zip
@@ -88,15 +78,17 @@ script:
           vsync: disabled
           gamma: 1.0
           anisotropic: af_16x
-          antialiasing: msaa_4x
+          antialiasing: msaa_4x  
   - execute: 
       command: |
         if [[ $INPUT_GAMERES == "800x1280" ]]; then
           WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2)
           HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1)
           sed -i -e "s/^display=${INPUT_GAMERES}/display=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dxcfg.ini"           
-          cp -r "$CACHE/1920x1080/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
-        else
+          INPUT_GAMERES="1920x1080"
+        fi
+
+        if ! [ -f "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/save/sh4.sav" ]; then
           cp -r "$CACHE/$INPUT_GAMERES/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
         fi
   - execute:
@@ -110,8 +102,10 @@ script:
           sed -i -e 's/^RestoreHauntings = 0/RestoreHauntings = 1/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
         fi
   - execute:
-      # Note: The intro movie m_00.pac crahes the game, so renaming it so that it doesn't play. Other in-game FMVs seems to work fine.
-      command: mv "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac.broken"
+      # Note: These FMVs crah the game, so renaming it so that they don't play. Other in-game FMVs seems to work fine.
+      command: |
+        mv "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac.broken"
+        mv "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_09.pac" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_09.pac.broken"
   wine:
     overrides:
       d3d8.dll: n,b

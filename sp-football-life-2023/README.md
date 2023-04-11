@@ -19,7 +19,7 @@ To get the game, go to [SP Football Life 2023](https://www.pessmokepatch.com/202
 
 # Install Guide
 
-This guide assumes you already have Lutris istalled on your Steam Deck. If you don't then you can install it from the `Discover` app. Follow the first 1 min of [this guide](https://www.youtube.com/watch?v=537bpLvPu64). Ignore the rest of the video.
+This guide assumes you already have Lutris installed on your Steam Deck. If you don't then you can install it from the `Discover` app. Follow the first 1 min of [this guide](https://www.youtube.com/watch?v=537bpLvPu64). Ignore the rest of the video.
 
 It also assumes you have already downloaded the [SP Football Life 2023](https://www.pessmokepatch.com/2022/10/spfl23.htm) base game and latest update from the [SmokePatch](https://www.pessmokepatch.com/2022/10/spfl23.html) website and extracted both downloads. For a guide on how to download and extract the files, follow the first 2 mins of [this video](https://www.youtube.com/watch?v=ROhjt-0UKkc). Ignore everything after he extracts the files and follow the steps below to continue.
 

@@ -54,4 +54,4 @@ script:
   wine:
     overrides:
       amd_ags_x64.dll: b
-    version: lutris-GE-Proton7-33-x86_64   
+    version: lutris-GE-Proton7-43-x86_64   

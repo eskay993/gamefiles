@@ -5,11 +5,11 @@ user: eskay993
 runner: wine
 slug: final-fight-lns-ultimate-win
 version: Windows
-description:
+description: Download Windows version from https://fflnsultimate.firebaseapp.com
 notes:
 script:
   files:
-  - game: N/A:Final Fight LNS Ultimate V.04 - PC.7z
+  - game: N/A:Final Fight LNS Ultimate - PC.7z
   game:
     arch: win64
     exe: $GAMEDIR/drive_c/Games/FFLNSU/Final Fight LNS Ultimate.exe

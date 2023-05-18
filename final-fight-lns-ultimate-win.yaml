@@ -9,7 +9,7 @@ description: Download Windows version from https://fflnsultimate.firebaseapp.com
 notes:
 script:
   files:
-  - game: N/A:Final Fight LNS Ultimate - PC.7z
+  - gamezip: N/A:Final Fight LNS Ultimate - PC.7z
   game:
     arch: win64
     exe: $GAMEDIR/drive_c/Games/FFLNSU/Final Fight LNS Ultimate.exe
@@ -21,6 +21,6 @@ script:
       name: create_prefix
       prefix: $GAMEDIR     
   - extract:
-      src: game
+      src: gamezip
       dst: $GAMEDIR/drive_c/Games/FFLNSU
       format: 7z

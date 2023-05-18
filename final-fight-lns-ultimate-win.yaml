@@ -1,0 +1,26 @@
+game_slug: final-fight-lns-ultimate
+name: "Final Fight LNS Ultimate"
+year: 2021
+user: eskay993
+runner: wine
+slug: final-fight-lns-ultimate-win
+version: Windows
+description:
+notes:
+script:
+  files:
+  - game: N/A:Final Fight LNS Ultimate V.04 - PC.7z
+  game:
+    arch: win64
+    exe: $GAMEDIR/drive_c/Games/FFLNSU/Final Fight LNS Ultimate.exe
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      description: Creating Wine prefix
+      name: create_prefix
+      prefix: $GAMEDIR     
+  - extract:
+      src: game
+      dst: $GAMEDIR/drive_c/Games/FFLNSU
+      format: 7z

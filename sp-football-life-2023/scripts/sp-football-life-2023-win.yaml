@@ -45,12 +45,15 @@ script:
       description: Running game settings...
       executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/FL23 switcher.exe
       name: wineexec
+      working_dir: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/
       prefix: $GAMEDIR
   - task:
       description: Running game settings...
       executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/Settings.exe
       name: wineexec
+      working_dir: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/
       prefix: $GAMEDIR
   wine:
     overrides:
       amd_ags_x64.dll: b
+    version: lutris-GE-Proton8-5-x86_64

@@ -11,11 +11,23 @@ script:
   files:
   - setup: N/A:SPFL23 Setup Exe
   - update: N/A:SPFL23 Update Exe
+  - settings: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-2023/files/settings.zip
   game:
     arch: win64
     exe: drive_c/Program Files (x86)/SP Football Life 2023/FL_2023 start.exe
     prefix: $GAMEDIR
   installer:
+  - input_menu:
+      description: "Select a resolution for the game:"
+      id: GAMERES
+      # Note: Steam Deck in desktop mode reports res as 800x1280. This is adjusted for later on.
+      options:
+      - 1280x720: 1280x720
+      - 800x1280: 1280x800 (Steam Deck)
+      - 1920x1080: 1920x1080
+      - 2560x1440: 2560x1440
+      - 3840x2160: 3840x2160
+      preselect: $RESOLUTION
   - task:
       arch: win64
       description: Creating Wine prefix...
@@ -30,7 +42,7 @@ script:
         Once these dependencies finish installing, the game installer will launch. Install everything as default, EXCEPT make sure to uncheck "Start SP Football Life 2023" at the end of the install.
       app: consolas unifont dotnet46
       name: winetricks
-      prefix: $GAMEDIR 
+      prefix: $GAMEDIR       
   - task:
       description: Starting game installer...
       executable: setup
@@ -42,18 +54,20 @@ script:
       name: wineexec
       prefix: $GAMEDIR
   - task:
-      description: Running game settings...
+      description: Running gameplay switcher...
       executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/FL23 switcher.exe
       name: wineexec
-      working_dir: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/
       prefix: $GAMEDIR
-  - task:
-      description: Running game settings...
-      executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/Settings.exe
-      name: wineexec
-      working_dir: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/
-      prefix: $GAMEDIR
+  - extract:
+      src: settings
+      dst: $CACHE
+  - execute: 
+      command: |
+        [ $INPUT_GAMERES = "800x1280" ] && INPUT_GAMERES="1280x800"
+        mkdir -p "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
+        cp "${CACHE}/${INPUT_GAMERES}/settings.dat" "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
   wine:
     overrides:
-      amd_ags_x64.dll: b
+      amd_ags_x64: b
+      Settings_b: n
     version: lutris-GE-Proton8-5-x86_64

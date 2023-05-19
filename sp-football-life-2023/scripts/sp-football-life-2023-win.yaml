@@ -63,9 +63,15 @@ script:
       dst: $CACHE
   - execute: 
       command: |
-        [ $INPUT_GAMERES = "800x1280" ] && INPUT_GAMERES="1280x800"
+        if [[ $INPUT_GAMERES == "800x1280" ]]; then
+          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2)
+          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1)
+        else
+          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1)
+          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2)
+        fi
         mkdir -p "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
-        cp "${CACHE}/${INPUT_GAMERES}/settings.dat" "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
+        cp "${CACHE}/${WIDTH}x${HEIGHT}/settings.dat" "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
   wine:
     overrides:
       amd_ags_x64: b

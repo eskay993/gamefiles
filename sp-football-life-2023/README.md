@@ -3,6 +3,7 @@
 - [Install Guide](#install-guide)
 - [Save file location plus WARNING!](#save-file-location-plus-warning)
 - [Run Settings or Switcher tool after install](#run-settings-or-switcher-tool-after-install)
+- [Add SPFL23 to Steam Library / Game Mode](#add-spfl23-to-steam-library--game-mode)
 - [Installing future updates](#installing-future-updates)
 - [Installing Real Faces mod](#installing-real-faces-mod)
 
@@ -35,9 +36,9 @@ Now onto the install guide. On Steam Deck, follow the below steps in Desktop Mod
 
 4. Select `Install from local install script` and point to the extracted yaml script from Step 1.
 
-5. Click `Install` on the next screen and choose where to install the game. On Steam Deck, Lutris by default will install the game to `/home/deck/Games/sp-football-life-2023`. Tick any boxes on the left if you want shortcuts added to your Desktop/Steam, and click `Install`.
+5. Click `Install` on the next screen and choose where to install the game. On Steam Deck, Lutris by default will install the game to `/home/deck/Games/sp-football-life-2023`. Also tick `Create steam shortcut` so the game gets added to your Steam library. 
 
-6. On the next screen, click `Browse` under `SPFL23 Setup Exe` and select the base game setup exe that you downloaded and extracted earlier. Filename should be `SPFL23_setup.exe`.
+6. Click `Install` and on the next screen, click `Browse` under `SPFL23 Setup Exe` and select the base game setup exe that you downloaded and extracted earlier. Filename should be `SPFL23_setup.exe`.
 
 7. Click `Browse` under `SPFL23 Update Exe` and select the update exe that you downloaded and extracted earlier. As of writing, the latest update is v3.00, so the filename is `SPFL23_300.exe`. The name will be slightly different for future updates.
 
@@ -59,7 +60,10 @@ Now onto the install guide. On Steam Deck, follow the below steps in Desktop Mod
 
 14. The `Switcher` window should now launch. This tool allows you to chose how you want the gameplay experience to be. The SmokePatch team have tweaked the gameplay and stats so if you want to try their changes choose the top option. You can read about it on their website. Otherwise choose the PES 2021 option for the default PES experience (my preferred option). You can change this later. Once selected, keep clicking `Next` and `Exit`.
 
-15. Click `Close` and you're done! You can launch the game from Lutris directly, or add it to Steam by right clicking on the `SP Football Life 2023` banner and choosing `Create Steam shortcut`. It is recommended to fully exit Steam before adding the shortcut.
+15. Click `Close` and the game should now appear in Lutris.
+
+> ```IMPORTANT:``` On Steam Deck, you need to play the game in Game Mode, not Desktop Mode. In Desktop Mode, the controller will not be recognised. If you selected `Create steam shortcut` in Step 5 above, then the game should be in your library and you can launch it from Game Mode. If you  did not, or the game is not appearing in your Steam library, then follow [these steps](#add-spfl23-to-steam-library--game-mode) to add it. 
+
 
 <br>
 
@@ -93,6 +97,38 @@ On Steam Deck, follow the below steps in Desktop Mode.
 > Note: If you followed the guide above, and installed the game in the default Lutris location, the full path on Steam Deck will be `/home/deck/Games/sp-football-life-2023/drive_c/Program Files (x86)/SP Football Life 2023/`
 
 4. Choose either `Settings.exe` or `FL23 switcher.exe` to launch the respective exe file and make any changes.
+
+<br>
+
+# Add SPFL23 to Steam Library / Game Mode
+
+This is required to do on Steam Deck to get the controller working. It's an optional step on Linux Desktops.
+
+There are two methods to do this. Try the first, and if it doesn't work, try the second.
+
+Method 1:
+1. Exit Steam and open Lutris
+
+2. Right click on the game and chose `Create steam shortcut`
+
+3. The game should now be in your Steam library. Launch Steam to check.
+
+4. On Steam Deck, launch into Game Mode and test the game to see if your controller is working.
+
+In some instances, the above will not work (e.g. if you have multiple Steam accounts on your device). Try this method if you have issues:
+
+Method 2:
+1. Open Lutris
+
+2. Right click on the game and chose `Create Desktop shortcut`. A shortcut to the game should now be on your desktop.
+
+3. Open Steam, and in the bottom left corner click `Add a Game` and chose `Add a Non-Steam Game`
+
+4. Click `Browse` and navigate to your desktop and choose the shortcut you created above. On Steam Deck, this will be at `/home/deck/Desktop`. If the shortcut is not appearing, choose `All Files` from the `Filter` menu at the bottoom.
+
+5. After selecting the shortcut, click `Add Selected Program` and you should be good to go.
+
+6. On Steam Deck, launch into Game Mode and test the game to see if your controller is working.
 
 <br>
 

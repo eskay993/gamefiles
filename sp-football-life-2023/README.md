@@ -118,17 +118,15 @@ Method 1:
 In some instances, the above will not work (e.g. if you have multiple Steam accounts on your device). Try this method if you have issues:
 
 Method 2:
-1. Open Lutris
+1. In Lutris, right click on the game and chose `Create Desktop shortcut`. A shortcut to the game should now be on your desktop.
 
-2. Right click on the game and chose `Create Desktop shortcut`. A shortcut to the game should now be on your desktop.
+2. Open Steam, and in the bottom left corner click `Add a Game` and chose `Add a Non-Steam Game`
 
-3. Open Steam, and in the bottom left corner click `Add a Game` and chose `Add a Non-Steam Game`
+3. Click `Browse` and navigate to your desktop and choose the shortcut you created above. On Steam Deck, this will be at `/home/deck/Desktop`. If the shortcut is not appearing, choose `All Files` from the `Filter` menu at the bottoom.
 
-4. Click `Browse` and navigate to your desktop and choose the shortcut you created above. On Steam Deck, this will be at `/home/deck/Desktop`. If the shortcut is not appearing, choose `All Files` from the `Filter` menu at the bottoom.
+4. After selecting the shortcut, click `Add Selected Program` and you should be good to go.
 
-5. After selecting the shortcut, click `Add Selected Program` and you should be good to go.
-
-6. On Steam Deck, launch into Game Mode and test the game to see if your controller is working.
+5. On Steam Deck, launch into Game Mode and test the game to see if your controller is working.
 
 <br>
 

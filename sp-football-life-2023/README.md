@@ -122,7 +122,7 @@ Method 2:
 
 2. Open Steam, and in the bottom left corner click `Add a Game` and chose `Add a Non-Steam Game`
 
-3. Click `Browse` and navigate to your desktop and choose the shortcut you created above. On Steam Deck, this will be at `/home/deck/Desktop`. If the shortcut is not appearing, choose `All Files` from the `Filter` menu at the bottoom.
+3. Click `Browse` and navigate to your desktop and choose the shortcut you created above. On Steam Deck, this will be at `/home/deck/Desktop`. If the shortcut is not appearing, choose `All Files` from the `Filter` menu at the bottom.
 
 4. After selecting the shortcut, click `Add Selected Program` and you should be good to go.
 

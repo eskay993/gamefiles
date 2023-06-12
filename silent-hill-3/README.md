@@ -45,12 +45,13 @@ Try this version first. If it doesn't work, try the Sound Fixer version below. S
 10. Click `Browse` under `Silent Hill 3 Audio Enhancement Pack` and point to the file you downloaded in Step 4.
 11. Click `Continue` and wait for the various files to download.
 12. Select your resolution and click `Continue`.
+14. Select max FPS and click `Continue`. Recommend 30 FPS for Steam Deck.
 13. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.
-14. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
+14. Let the installer do it's thing. It may appear to hang for a bit... just leave it to run.
 15. Towards the end, `Reloaded-II Mod Loader` will launch and start downloading updates. **IMPORTANT: Let it finish it's updates!**
 > Note: Very occasionally, the updates hang or Reloaded crashes with an error. Just quit everything and start again if this happens. 
-16. Once the updates finish, click `Skip Tutorial` and just close `Reloaded-II`. Wait for the installer to finish up.
-17. Done! Run the game and enjoy!
+1.  Once the updates finish, just close `Reloaded-II`. Wait for the installer to finish up.
+2.  Done! Run the game and enjoy!
 > Note: Controller must be on before running the game for it to be recognised.
 
 <br>
@@ -70,9 +71,10 @@ Try this version if the Enhanced Audio Pack version above does not work. See [Ve
 8. On the next screen, click `Browse` under `sh3.exe` and select the patched version of `sh3.exe` extracted from the `No-DVD Patch` that you downloaded in Step 3.
 9. Click `Continue` and wait for the various files to download.
 10. Select your resolution and click `Continue`.
-11. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.
-12. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
-13. Done!  Run the game and enjoy!
+11. Select max FPS and click `Continue`. Recommend 30 FPS for Steam Deck.
+12. Click `Browse` and point to the directory of the game's setup files that you extracted in Step 2.
+13. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
+14. Done!  Run the game and enjoy!
 > Note: Controller must be on before running the game for it to be recognised.
 
 #
@@ -82,7 +84,7 @@ Try this version if the Enhanced Audio Pack version above does not work. See [Ve
 - Psycho-A for [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/)
 - MarioTainaka for [Silent Hill 3 Audio Enhancement Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack)
 - 0dd14 for [XInput-Plus](https://sites.google.com/site/0dd14lab/xinput-plus)
-- chrll for the original [Silent Hill 3 Lutris script](https://lutr.is/games/silent-hill-3/) that this build off
+- chrll for the original [Silent Hill 3 Lutris script](https://lutr.is/games/silent-hill-3/) that this script is based on
 - Betwixt-Two-Ferns for [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) which this script essentially automates.
 
 <br>

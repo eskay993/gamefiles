@@ -25,11 +25,6 @@ script:
     exe: drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe
     prefix: $GAMEDIR
   installer:
-  - task:
-      arch: win32
-      description: Creating Wine prefix...
-      name: create_prefix
-      prefix: $GAMEDIR
   - input_menu:
       description: "Select a resolution for the game:"
       id: GAMERES
@@ -41,74 +36,59 @@ script:
       - 2560x1440: 2560x1440
       - 3840x2160: 3840x2160
       preselect: $RESOLUTION
+  - input_menu:
+      description: |
+        Select max FPS for the game:
+
+        Note: For Steam Deck, 30 FPS is recommended for a consistent experience. The game suffers from severe FPS fluctuations if it drops below 50 FPS, which can happen in more intense scenes. 
+      id: FPS
+      options:
+      - "2": 30 FPS (Recommended for Steam Deck)
+      - "1": 60 FPS
+      preselect: "2"      
   - insert-disc:
       description: Waiting for game installer...
       message: Select the path for the Silent Hill 3 DVD
       requires: SILENT HILL 3.msi
+  - task:
+      arch: win32
+      description: Creating Wine prefix...
+      name: create_prefix
+      prefix: $GAMEDIR      
   - write_file:
-      content: '[{14D10AAC-9737-454E-A247-8075C26C30E1}-DlgOrder]
-
+      content: |
+        [{14D10AAC-9737-454E-A247-8075C26C30E1}-DlgOrder]
         Dlg0={14D10AAC-9737-454E-A247-8075C26C30E1}-SdWelcome-0
-
         Count=6
-
         Dlg1={14D10AAC-9737-454E-A247-8075C26C30E1}-SdLicense-0
-
         Dlg2={14D10AAC-9737-454E-A247-8075C26C30E1}-SdAskDestPath-0
-
         Dlg3={14D10AAC-9737-454E-A247-8075C26C30E1}-SdComponentTree-0
-
         Dlg4={14D10AAC-9737-454E-A247-8075C26C30E1}-SdStartCopy-0
-
         Dlg5={14D10AAC-9737-454E-A247-8075C26C30E1}-SdFinish-0
-
         [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdWelcome-0]
-
         Result=1
-
         [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdLicense-0]
-
         Result=1
-
         [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdAskDestPath-0]
-
         szDir=C:\Program Files\KONAMI\SILENT HILL 3\
-
         Result=1
-
         [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdComponentTree-0]
-
         szDir=C:\Program Files\KONAMI\SILENT HILL 3\
-
         Component-type=string
-
         Component-count=6
-
         Component-0=Exe
-
         Component-1=ConfigExe
-
         Component-2=MainApp
-
         Component-3=Sound
-
         Component-4=SoundDemo
-
         Component-5=Movie
-
         Result=1
-
         [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdStartCopy-0]
-
         Result=1
-
         [{14D10AAC-9737-454E-A247-8075C26C30E1}-SdFinish-0]
-
         Result=1
-
         bOpt1=0
-
-        bOpt2=0'
+        bOpt2=0
       file: $GAMEDIR/drive_c/setup.iss
   - task:
       args: /s /f1"c:\setup.iss"
@@ -171,7 +151,12 @@ script:
       description: Configuring SilentHill3.WidescreenFix.ini...  
       args: -i -e 's/^ReduceCutsceneFOV = 0/ReduceCutsceneFOV = 1/'
         '$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini'
-      file: sed        
+      file: sed
+  - execute:
+      description: Configuring SilentHill3.WidescreenFix.ini...  
+      args: -i -e "s/^FrameRateFluctuationFix = ./FrameRateFluctuationFix = $INPUT_FPS/"
+        "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/scripts/SilentHill3.WidescreenFix.ini"
+      file: sed      
   - execute:
       command: mv -f "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe" "$GAMEDIR/drive_c/Program Files/KONAMI/SILENT HILL 3/sh3.exe.bak"
   - copy:
@@ -188,4 +173,4 @@ script:
       XInput1_3.dll: n,b
       dsound.dll: n,b
       winegstreamer: b
-    version: lutris-fshack-7.1-x86_64
+    # version: lutris-fshack-7.1-x86_64

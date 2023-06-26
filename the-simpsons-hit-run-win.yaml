@@ -1,0 +1,367 @@
+game_slug: the-simpsons-hit-run
+name: "The Simpsons: Hit & Run"
+year: 2003
+user: eskay993
+runner: wine
+slug: the-simpsons-hit-win
+version: Windows with Lucas' Mod Launcher
+description:
+notes: 
+script:
+  game:
+    arch: win32
+    exe: drive_c/Program Files/Lucas Simpsons Hit & Run Mod Launcher/Lucas Simpsons Hit & Run Mod Launcher.exe
+    prefix: $GAMEDIR
+    args: -launch
+  files:
+  - setup: N/A:"Setup.exe"
+  - patch:
+      filename: the-simpsons-hit-and-run-patch.tar.xz
+      url: https://lutris.net/files/games/the-simpsons-hit-and-run/the-simpsons-hit-and-run-patch.tar.xz  
+  - launcher: 
+      filename: Lucas' Simpsons Hit & Run Mod Launcher.zip
+      url: https://modbakery.donutteam.com/release/lucas-mod-launcher/branch/46/version/75/file/71/download
+  installer:
+  - input_menu:
+      description: "Select a resolution for the game:"
+      id: GAMERES
+      options:
+      - 1280x720: 1280x720
+      - 800x1280: 1280x800 (Steam Deck)
+      - 1920x1080: 1920x1080
+      - 2560x1440: 2560x1440
+      - 3840x2160: 3840x2160
+      preselect: $RESOLUTION  
+  - task:  
+      arch: win32
+      description: Creating Wine prefix
+      name: create_prefix
+      prefix: $GAMEDIR
+  - task:
+      app: dotnet35
+      description: |
+        Installing .NET 3.5 runtime
+
+        *** IMPORTANT ***
+        When the game installer starts, it may show a black window. Just leave it to finish installing. Click OK when prompted to insert CD 1.
+      name: winetricks
+      prefix: $GAMEDIR
+  - write_file:
+      file: $GAMEDIR/drive_c/setup.iss
+      content: |
+        [InstallShield Silent]
+        Version=v7.00
+        File=Response File
+        [File Transfer]
+        OverwrittenReadOnly=NoToAll
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-DlgOrder]
+        Dlg0={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdWelcome-0
+        Count=14
+        Dlg1={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdLicense2-0
+        Dlg2={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdLicense-0
+        Dlg3={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdSetupTypeEx-0
+        Dlg4={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdAskDestPath2-0
+        Dlg5={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdSetupTypeEx-1
+        Dlg6={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdAskDestPath2-1
+        Dlg7={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdSelectFolder-0
+        Dlg8={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdStartCopy2-0
+        Dlg9={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-MessageBox-0
+        Dlg10={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-MessageBox-1
+        Dlg11={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-MessageBox-2
+        Dlg12={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-MessageBox-3
+        Dlg13={F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdFinish-0
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdWelcome-0]
+        Result=1
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdLicense2-0]
+        Result=1
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdLicense-0]
+        Result=1
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdSetupTypeEx-0]
+        Result=Full
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdAskDestPath2-0]
+        szDir=C:\Program Files\Vivendi Universal Games\The Simpsons Hit & Run
+        Result=12
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdSetupTypeEx-1]
+        Result=Full
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdAskDestPath2-1]
+        szDir=C:\Program Files\Vivendi Universal Games\The Simpsons Hit & Run\
+        Result=1
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdSelectFolder-0]
+        szFolder=Games
+        Result=1
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdStartCopy2-0]
+        Result=1
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-MessageBox-0]
+        Result=1
+        [Application]
+        Name=The Simpsons Hit & Run(TM)
+        Version=1.00.000
+        Company=Vivendi Universal Games
+        Lang=0009
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-MessageBox-1]
+        Result=7
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-MessageBox-2]
+        Result=6
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-MessageBox-3]
+        Result=7
+        [{F79AAB3A-B8B4-4AC7-94AB-1C4C076C6A89}-SdFinish-0]
+        Result=1
+        bOpt1=0
+        bOpt2=0
+        [{8C0028CF-72C7-47CB-BFD4-FCE27AD03901}-DlgOrder]
+        Count=0
+  - task:
+      description: Installing game
+      executable: setup
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /s /f1"c:\setup.iss"
+      exclude_processes: Launch.exe
+  - task:
+      name: winekill
+      prefix: $GAMEDIR  
+  - extract:
+      src: launcher
+      dst: $GAMEDIR/drive_c/Program Files/Lucas Simpsons Hit & Run Mod Launcher/
+  - execute:
+      command: mv "$GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/Simpsons.exe" "$GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/Simpsons.exe.bak"
+  - extract:
+      description: Applying SecuROM removal patch to game EXE.
+      dst: $GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/
+      file: patch
+      format: txz 
+  - write_file:
+      file: $GAMEDIR/drive_c/lucas.reg
+      content: |
+        Windows Registry Editor Version 5.00
+
+        [HKEY_CURRENT_USER\Software\Lucas Stuff]
+
+        [HKEY_CURRENT_USER\Software\Lucas Stuff\Lucas' Simpsons Hit & Run Tools]
+        "Game EXE Path"="C:\\Program Files\\Vivendi Universal Games\\The Simpsons Hit & Run\\Simpsons.exe"
+        "Game Path"="C:\\Program Files\\Vivendi Universal Games\\The Simpsons Hit & Run"
+
+        [HKEY_CURRENT_USER\Software\Lucas Stuff\Lucas' Simpsons Hit & Run Tools\Lucas' Simpsons Hit & Run Mod Launcher]
+        "Close Launcher"=dword:00000001
+        "DidDTCommsPrompt"=""
+        "Information Zoom"="1"
+        "Mods Page"="Settings"
+
+        [HKEY_CURRENT_USER\Software\Lucas Stuff\Lucas' Simpsons Hit & Run Tools\Lucas' Simpsons Hit & Run Mod Launcher\Enabled Mods]
+        "Antialiasing"=""
+        "Direct3D9"=""
+        "XInput"=""
+  - task:
+      name: set_regedit_file
+      filename: $GAMEDIR/drive_c/lucas.reg
+  - write_file:
+      file: $GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/simpsons.ini
+      content: |
+        #Controller
+        buttonmap=0, 0: ( 1 17 0 )
+        buttonmap=0, 1: ( 1 31 0 )
+        buttonmap=0, 2: ( 1 30 0 )
+        buttonmap=0, 3: ( 1 32 0 )
+        buttonmap=0, 4: ( 2 13 0 )
+        buttonmap=0, 5: ( 1 57 0 )
+        buttonmap=0, 6: ( 1 42 0 )
+        buttonmap=0, 7: ( 2 12 0 )
+        buttonmap=0, 8: ( 1 17 0 )
+        buttonmap=0, 9: ( 1 31 0 )
+        buttonmap=0, 10: ( 1 30 0 )
+        buttonmap=0, 11: ( 1 32 0 )
+        buttonmap=0, 12: ( 2 12 0 )
+        buttonmap=0, 13: ( 2 13 0 )
+        buttonmap=0, 14: ( 1 42 0 )
+        buttonmap=0, 15: ( 1 57 0 )
+        buttonmap=0, 16: ( 1 75 0 )
+        buttonmap=0, 17: ( 1 77 0 )
+        buttonmap=0, 18: ( 1 72 0 )
+        buttonmap=0, 19: ( 1 80 0 )
+        buttonmap=0, 20: ( 1 76 0 )
+        buttonmap=0, 21: ( 1 82 0 )
+        buttonmap=0, 22: ( 1 75 0 )
+        buttonmap=0, 23: ( 1 77 0 )
+        buttonmap=0, 24: ( 1 72 0 )
+        buttonmap=0, 25: ( 1 80 0 )
+        buttonmap=0, 26: ( 1 82 0 )
+        buttonmap=1, 0: ( 0 4 0 )   # Walk Forward: ( LS Up )
+        buttonmap=1, 1: ( 0 4 1 )   # Walk Back: ( LS Down )
+        buttonmap=1, 2: ( 0 0 1 )   # Walk Left: ( LS Left )
+        buttonmap=1, 3: ( 0 0 0 )   # Walk Right: ( LS Right )
+        buttonmap=1, 4: ( 0 50 0 )  # Kick: ( X )
+        buttonmap=1, 5: ( 0 48 0 )  # Jump: ( A )
+        buttonmap=1, 6: ( 0 49 0 )  # Sprint: ( B )
+        buttonmap=1, 7: ( 0 51 0 )  # Action: ( Y )
+        buttonmap=1, 8: ( 0 8 1 )   # Accelerate: ( RT )
+        buttonmap=1, 9: ( 0 8 0 )   # Brake: ( LT )
+        buttonmap=1, 10: ( 0 0 1 )  # Steer Left: ( LS Left )
+        buttonmap=1, 11: ( 0 0 0 )  # Steer Right: ( LS Right ) 
+        buttonmap=1, 12: ( 0 51 0 ) # Driving Action / Get Out: ( Y )
+        buttonmap=1, 13: ( 0 50 0 ) # Driving Handbrake: ( X )
+        buttonmap=1, 14: ( 0 52 0 ) # Driving Horn: ( LB )
+        buttonmap=1, 15: ( 0 48 0 ) # Driving Reset Car: ( Back )
+        buttonmap=1, 16: ( 0 12 0 ) # Camera Left: ( RS Right )
+        buttonmap=1, 17: ( 0 12 1 ) # Camera Right: ( RS Left )
+        buttonmap=1, 18: ( 0 16 1 ) # Camera Move Out: ( RS Down )
+        buttonmap=1, 19: ( 0 16 0 ) # Camera Move In: ( RS Up )
+        buttonmap=1, 20: ( 0 8 0 )  # Zoom: ( LT )
+        buttonmap=1, 21: ( 0 8 1 )  # Look Up: ( RT )
+        buttonmap=1, 22: ( 0 12 1 ) # Driving Look Back: ( RS Down )
+        buttonmap=1, 23: ( 0 12 0 ) # Driving Look Up: ( RS Up )
+        buttonmap=1, 24: ( 0 16 1 ) # Driving Look Right: ( RS Right )
+        buttonmap=1, 25: ( 0 16 0 ) # Driving Look Left: ( RS Left )
+        buttonmap=1, 26: ( 0 53 0 ) # Driving Change Camera: ( RB )
+        mouselook=no
+        invertmousex=no
+        invertmousey=no
+        useforcefeedback=yes
+        disabletutorials=no
+        mousesensitivityx=0.350000
+        mousesensitivityy=0.500000
+        wheelsensitivityx=0.500000
+        wheelsensitivityy=1.000000
+
+        #Controller1
+        buttonmap=0, 4: ( 2 13 0 )
+        buttonmap=0, 7: ( 2 12 0 )
+        buttonmap=0, 12: ( 2 12 0 )
+        buttonmap=0, 13: ( 2 13 0 )
+        buttonmap=1, 0: ( 0 4 0 )
+        buttonmap=1, 1: ( 0 4 1 )
+        buttonmap=1, 2: ( 0 0 1 )
+        buttonmap=1, 3: ( 0 0 0 )
+        buttonmap=1, 4: ( 0 50 0 )
+        buttonmap=1, 5: ( 0 48 0 )
+        buttonmap=1, 6: ( 0 49 0 )
+        buttonmap=1, 7: ( 0 51 0 )
+        buttonmap=1, 8: ( 0 8 1 )
+        buttonmap=1, 9: ( 0 8 0 )
+        buttonmap=1, 10: ( 0 0 1 )
+        buttonmap=1, 11: ( 0 0 0 )
+        buttonmap=1, 12: ( 0 51 0 )
+        buttonmap=1, 13: ( 0 50 0 )
+        buttonmap=1, 14: ( 0 52 0 )
+        buttonmap=1, 15: ( 0 54 0 )
+        buttonmap=1, 16: ( 0 12 1 )
+        buttonmap=1, 17: ( 0 12 0 )
+        buttonmap=1, 18: ( 0 16 1 )
+        buttonmap=1, 19: ( 0 16 0 )
+        buttonmap=1, 20: ( 0 8 0 )
+        buttonmap=1, 21: ( 0 8 1 )
+        buttonmap=1, 22: ( 0 12 1 )
+        buttonmap=1, 23: ( 0 12 0 )
+        buttonmap=1, 24: ( 0 16 1 )
+        buttonmap=1, 25: ( 0 16 0 )
+        buttonmap=1, 26: ( 0 53 0 )
+        mouselook=no
+        invertmousex=no
+        invertmousey=no
+        useforcefeedback=yes
+        disabletutorials=no
+        mousesensitivityx=0.350000
+        mousesensitivityy=0.500000
+        wheelsensitivityx=0.500000
+        wheelsensitivityy=1.000000
+
+        #Controller2
+        buttonmap=0, 4: ( 2 13 0 )
+        buttonmap=0, 7: ( 2 12 0 )
+        buttonmap=0, 12: ( 2 12 0 )
+        buttonmap=0, 13: ( 2 13 0 )
+        buttonmap=1, 0: ( 0 4 0 )
+        buttonmap=1, 1: ( 0 4 1 )
+        buttonmap=1, 2: ( 0 0 1 )
+        buttonmap=1, 3: ( 0 0 0 )
+        buttonmap=1, 4: ( 0 50 0 )
+        buttonmap=1, 5: ( 0 48 0 )
+        buttonmap=1, 6: ( 0 49 0 )
+        buttonmap=1, 7: ( 0 51 0 )
+        buttonmap=1, 8: ( 0 8 1 )
+        buttonmap=1, 9: ( 0 8 0 )
+        buttonmap=1, 10: ( 0 0 1 )
+        buttonmap=1, 11: ( 0 0 0 )
+        buttonmap=1, 12: ( 0 51 0 )
+        buttonmap=1, 13: ( 0 50 0 )
+        buttonmap=1, 14: ( 0 52 0 )
+        buttonmap=1, 15: ( 0 54 0 )
+        buttonmap=1, 16: ( 0 12 1 )
+        buttonmap=1, 17: ( 0 12 0 )
+        buttonmap=1, 18: ( 0 16 1 )
+        buttonmap=1, 19: ( 0 16 0 )
+        buttonmap=1, 20: ( 0 8 0 )
+        buttonmap=1, 21: ( 0 8 1 )
+        buttonmap=1, 22: ( 0 12 1 )
+        buttonmap=1, 23: ( 0 12 0 )
+        buttonmap=1, 24: ( 0 16 1 )
+        buttonmap=1, 25: ( 0 16 0 )
+        buttonmap=1, 26: ( 0 53 0 )
+        mouselook=no
+        invertmousex=no
+        invertmousey=no
+        useforcefeedback=yes
+        disabletutorials=no
+        mousesensitivityx=0.350000
+        mousesensitivityy=0.500000
+        wheelsensitivityx=0.500000
+        wheelsensitivityy=1.000000
+
+        #Controller3
+        buttonmap=0, 4: ( 2 13 0 )
+        buttonmap=0, 7: ( 2 12 0 )
+        buttonmap=0, 12: ( 2 12 0 )
+        buttonmap=0, 13: ( 2 13 0 )
+        buttonmap=1, 0: ( 0 4 0 )
+        buttonmap=1, 1: ( 0 4 1 )
+        buttonmap=1, 2: ( 0 0 1 )
+        buttonmap=1, 3: ( 0 0 0 )
+        buttonmap=1, 4: ( 0 50 0 )
+        buttonmap=1, 5: ( 0 48 0 )
+        buttonmap=1, 6: ( 0 49 0 )
+        buttonmap=1, 7: ( 0 51 0 )
+        buttonmap=1, 8: ( 0 8 1 )
+        buttonmap=1, 9: ( 0 8 0 )
+        buttonmap=1, 10: ( 0 0 1 )
+        buttonmap=1, 11: ( 0 0 0 )
+        buttonmap=1, 12: ( 0 51 0 )
+        buttonmap=1, 13: ( 0 50 0 )
+        buttonmap=1, 14: ( 0 52 0 )
+        buttonmap=1, 15: ( 0 54 0 )
+        buttonmap=1, 16: ( 0 12 1 )
+        buttonmap=1, 17: ( 0 12 0 )
+        buttonmap=1, 18: ( 0 16 1 )
+        buttonmap=1, 19: ( 0 16 0 )
+        buttonmap=1, 20: ( 0 8 0 )
+        buttonmap=1, 21: ( 0 8 1 )
+        buttonmap=1, 22: ( 0 12 1 )
+        buttonmap=1, 23: ( 0 12 0 )
+        buttonmap=1, 24: ( 0 16 1 )
+        buttonmap=1, 25: ( 0 16 0 )
+        buttonmap=1, 26: ( 0 53 0 )
+        mouselook=no
+        invertmousex=no
+        invertmousey=no
+        useforcefeedback=yes
+        disabletutorials=no
+        mousesensitivityx=0.350000
+        mousesensitivityy=0.500000
+        wheelsensitivityx=0.500000
+        wheelsensitivityy=1.000000
+
+        #Sound
+        sfx=0.880000
+        music=0.840000
+        ambience=0.750000
+        dialogue=1.000000
+        car=0.880000
+
+        #System
+        display=fullscreen
+        resolution=${INPUT_GAMERES}
+        bpp=32
+        gamma=1.000000
+  - execute: 
+      command: |
+        if [[ $INPUT_GAMERES == "800x1280" ]]; then
+            sed -i -e "s/^resolution=.*/resolution=1280x800/" "$GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/Simpsons.exe" "$GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/simpsons.ini"
+        fi

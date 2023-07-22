@@ -363,5 +363,5 @@ script:
   - execute: 
       command: |
         if [[ $INPUT_GAMERES == "800x1280" ]]; then
-            sed -i -e "s/^resolution=.*/resolution=1280x800/" "$GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/Simpsons.exe" "$GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/simpsons.ini"
+            sed -i -e "s/^resolution=.*/resolution=1280x800/" "$GAMEDIR/drive_c/Program Files/Vivendi Universal Games/The Simpsons Hit & Run/simpsons.ini"
         fi

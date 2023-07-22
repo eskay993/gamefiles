@@ -23,16 +23,17 @@ script:
     prefix: $GAMEDIR
   installer:
   - input_menu:
-      description: "Select a resolution for the game:"
+      description: |
+        Select a resolution for the game:
+
+        NOTE: For Steam Deck, choose 1920x1080.
       id: GAMERES
       # Note: Steam Deck in desktop mode reports res as 800x1280. This is adjusted for later on.
       options:
-      - 1280x720: 1280x720
-      - 800x1280: 1280x800 (Steam Deck)
       - 1920x1080: 1920x1080
       - 2560x1440: 2560x1440
       - 3840x2160: 3840x2160
-      preselect: $RESOLUTION
+      preselect: 1920x1080
   - input_menu:
       description: |
         Would you like to restore 'hauntings'? Hauntings were in the PS2 version but were cut from the PC version. This patch restores them. You can find out more here:
@@ -81,15 +82,8 @@ script:
           antialiasing: msaa_4x  
   - execute: 
       command: |
-        if [[ $INPUT_GAMERES == "800x1280" ]]; then
-          WIDTH=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 2)
-          HEIGHT=$(echo -n $INPUT_GAMERES | cut -d 'x' -f 1)
-          sed -i -e "s/^display=${INPUT_GAMERES}/display=${WIDTH}x${HEIGHT}/" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/dxcfg.ini"           
-          INPUT_GAMERES="1920x1080"
-        fi
-
         if ! [ -f "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/save/sh4.sav" ]; then
-          cp -r "$CACHE/$INPUT_GAMERES/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
+          cp -r "$CACHE/${INPUT_GAMERES}/save" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/"
         fi
   - execute:
       command: |
@@ -102,7 +96,7 @@ script:
           sed -i -e 's/^RestoreHauntings = 0/RestoreHauntings = 1/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
         fi
   - execute:
-      # Note: These FMVs crah the game, so renaming it so that they don't play. Other in-game FMVs seems to work fine.
+      # Note: These FMVs crash the game, so renaming it so that they don't play. Other in-game FMVs seems to work fine.
       command: |
         mv "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac.broken"
         mv "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_09.pac" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_09.pac.broken"

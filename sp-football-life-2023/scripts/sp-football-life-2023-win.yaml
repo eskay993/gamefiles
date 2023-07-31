@@ -76,4 +76,4 @@ script:
     overrides:
       amd_ags_x64: b
       Settings_b: n
-    version: lutris-GE-Proton8-5-x86_64
+    version: lutris-GE-Proton8-12-x86_64

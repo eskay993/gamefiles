@@ -12,5 +12,5 @@ and have fullscreen enabled.
 <GAME_INSTALL_PATH>/drive_c/users/<USER>>/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/
 ```
 
-### Stead Deck Users:
-Use the `settings.dat` from the `1280x800` folder.
+### Steam Deck Users:
+Use the `settings.dat` from the `800x1280` folder.

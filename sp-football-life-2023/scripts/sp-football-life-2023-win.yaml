@@ -8,64 +8,87 @@ version: Windows
 description: Installer for Football Life 2023 by SmokePatch. Download the game and latest update from pessmokepatch.com.
 notes:
 script:
-files:
-- setup: N/A:SPFL23 Setup Exe
-- update: N/A:SPFL23 Update Exe
-- settings: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-2023/files/settings.zip
-game:
-  arch: win64
-  exe: drive_c/Program Files (x86)/SP Football Life 2023/FL_2023 start.exe
-  prefix: $GAMEDIR
-installer:
-- input_menu:
-    description: "Select a resolution for the game:"
-    id: GAMERES
-    # Note: Steam Deck in desktop mode reports res as 800x1280.
-    options:
-    - 1280x720: 1280x720
-    - 800x1280: 1280x800 (Steam Deck)
-    - 1920x1080: 1920x1080
-    - 2560x1440: 2560x1440
-    - 3840x2160: 3840x2160
-    preselect: $RESOLUTION
-- task:
+  files:
+  - setup: N/A:SPFL23 Setup Exe
+  - update: N/A:SPFL23 Update Exe
+  - settings: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-2023/files/settings.zip
+  game:
     arch: win64
-    description: Creating Wine prefix...
-    name: create_prefix
+    exe: drive_c/Program Files (x86)/SP Football Life 2023/FL_2023 start.exe
     prefix: $GAMEDIR
-- task:
-    description: |
-      Installing dependencies... This may take a while...
+  installer:
+  - input_menu:
+      description: "Select a resolution for the game:"
+      id: GAMERES
+      # Note: Steam Deck in desktop mode reports res as 800x1280.
+      options:
+      - 1280x720: 1280x720
+      - 800x1280: 1280x800 (Steam Deck)
+      - 1920x1080: 1920x1080
+      - 2560x1440: 2560x1440
+      - 3840x2160: 3840x2160
+      preselect: $RESOLUTION
+  - task:
+      arch: win64
+      description: Creating Wine prefix...
+      name: create_prefix
+      prefix: $GAMEDIR
+  - task:
+      description: |
+        Installing dependencies... This may take a while...
 
-      **** IMPORTANT ****
-      Once these dependencies finish installing, the game installer will launch. Install everything as default, EXCEPT make sure to uncheck "Start SP Football Life 2023" at the end of the install.
-    app: consolas unifont dotnet46
-    name: winetricks
-    prefix: $GAMEDIR       
-- task:
-    description: Starting game installer...
-    executable: setup
-    name: wineexec
-    prefix: $GAMEDIR
-- task:
-    description: Starting update installer...
-    executable: update
-    name: wineexec
-    prefix: $GAMEDIR
-- task:
-    description: Running gameplay switcher...
-    executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/FL23 switcher.exe
-    name: wineexec
-    prefix: $GAMEDIR
-- extract:
-    src: settings
-    dst: $CACHE
-- execute: 
-    command: |
-      mkdir -p "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
-      cp "${CACHE}/${INPUT_GAMERES}/settings.dat" "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
-wine:
-  overrides:
-    amd_ags_x64: b
-    Settings_b: n
-  version: lutris-GE-Proton8-13-x86_64
+        **** IMPORTANT ****
+        Once these dependencies finish installing, the game installer will launch. Install everything as default, EXCEPT make sure to uncheck "Start SP Football Life 2023" at the end of the install.
+      app: consolas unifont dotnet46
+      name: winetricks
+      prefix: $GAMEDIR       
+  - task:
+      description: Starting game installer...
+      executable: setup
+      name: wineexec
+      prefix: $GAMEDIR
+  - task:
+      description: Starting update installer...
+      executable: update
+      name: wineexec
+      prefix: $GAMEDIR
+  - task:
+      description: Running gameplay switcher...
+      executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/FL23 switcher.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - extract:
+      src: settings
+      dst: $CACHE   
+  - execute: 
+      command: |
+        mkdir -p "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
+        cp "${CACHE}/${INPUT_GAMERES}/settings.dat" "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
+        if [[ ${INPUT_GAMERES} == "800x1280" ]]; then
+          cd "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/SiderAddons"
+          match=$(grep "lua.module =" sider.ini | tail -n1)
+          sed -i -e "/$match/ s/\(.*\)\(lua.module.*\)/\1\2\n\1lua.module = \"aspectratio.lua\"/" sider.ini
+        fi
+  - write_file:
+      file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2023/SiderAddons/modules/aspectratio.lua
+      content: |
+        -- Based on lua by Durandil67
+
+        local m = { version = "1.0" }
+
+        function m.init(ctx)
+            local addr = memory.search_process("\x80\x7B\x7C\x00\x0F\x28")
+            if addr then
+                log(string.format("found magic string at: %s", memory.hex(addr)))
+                memory.write(addr, "\x80\x7B\x7C\x01\x0F\x28")
+            else
+                error("unable to find magic string")
+            end
+        end
+
+        return m
+  wine:
+    overrides:
+      amd_ags_x64: b
+      Settings_b: n
+    version: lutris-GE-Proton8-13-x86_64

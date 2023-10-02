@@ -132,8 +132,8 @@ Method 2:
 Sometimes Lutris doesn't download needed files correctly. If you have any random errors during install, or during launching of the game, then always try clearing Lutris cache first to see if it fixes things.
 
 1. Close Lutris (important!)
-2. Open `Dolphin` file nrowser and navigate to `~/.var/app/net.lutris.Lutris/cache/lutris`
-3. Delete all the files here (it's safe to do so)
+2. Open `Dolphin` file browser and navigate to `~/.var/app/net.lutris.Lutris/cache/lutris`. Depending on how you installed Lutris, the cache folder may be here instead: `~/.cache/lutris`
+3. Delete all the files in this folder (it's safe to do so)
 4. Launch Lutris again and you should see it downloading stuff at the start
 5. Try what you were doing again and see if it fixes the issue
 

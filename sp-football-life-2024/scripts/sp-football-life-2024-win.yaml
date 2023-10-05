@@ -15,6 +15,7 @@ script:
   - dotnet: https://download.microsoft.com/download/C/3/A/C3A5200B-D33C-47E9-9D70-2F7C65DAAD94/NDP46-KB3045557-x86-x64-AllOS-ENU.exe
   - vcrun_x86: https://aka.ms/vs/17/release/vc_redist.x86.exe
   - vcrun_x64: https://aka.ms/vs/17/release/vc_redist.x64.exe
+  - fonts: N/A:fonts.zip
   - settings: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-20${VERSION}/files/settings.zip
   game:
     arch: win64
@@ -37,11 +38,14 @@ script:
       description: Creating Wine prefix
       name: create_prefix
       prefix: $GAMEDIR
+  - extract:
+        src: fonts
+        dst: $GAMEDIR/drive_c/windows/Fonts/      
   - task:
       description: Installing dependencies...
       app: remove_mono win7
       name: winetricks
-      prefix: $GAMEDIR
+      prefix: $GAMEDIR      
   - task:
       description: Installing Microsoft .NET Framework...
       executable: dotnet
@@ -61,10 +65,9 @@ script:
       prefix: $GAMEDIR
       args: /silent /norestart
   - task:
-      description: Installing fonts...
-      app: consolas unifont win10
+      app: win10
       name: winetricks
-      prefix: $GAMEDIR         
+      prefix: $GAMEDIR
   - task:
       description: Starting game installer...
       executable: setup
@@ -110,4 +113,4 @@ script:
     overrides:
       amd_ags_x64: b
       Settings_b: n
-    version: lutris-GE-Proton8-15-x86_64
+    version: wine-ge-8-17-x86_64

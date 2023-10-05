@@ -15,7 +15,7 @@ script:
   - dotnet: https://download.microsoft.com/download/C/3/A/C3A5200B-D33C-47E9-9D70-2F7C65DAAD94/NDP46-KB3045557-x86-x64-AllOS-ENU.exe
   - vcrun_x86: https://aka.ms/vs/17/release/vc_redist.x86.exe
   - vcrun_x64: https://aka.ms/vs/17/release/vc_redist.x64.exe
-  - fonts: N/A:fonts.zip
+  - fonts: https://github.com/eskay993/gamefiles/raw/main/tools/fonts.zip
   - settings: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-20${VERSION}/files/settings.zip
   game:
     arch: win64

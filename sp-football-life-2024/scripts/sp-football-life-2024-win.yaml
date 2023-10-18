@@ -5,7 +5,7 @@ user: eskay993
 runner: wine
 slug: sp-football-life-2024-win
 version: Windows
-description: Installer for Football Life 2024 by SmokePatch. Download the game and latest update from pessmokepatch.com.
+description: Installer for Football Life 2024 by SmokePatch. Download the game from pessmokepatch.com.
 notes:
 script:
   variables:
@@ -113,4 +113,4 @@ script:
     overrides:
       amd_ags_x64: b
       Settings_b: n
-    version: wine-ge-8-17-x86_64
+    version: wine-ge-8-20-x86_64

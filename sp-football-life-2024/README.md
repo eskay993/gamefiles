@@ -1,9 +1,11 @@
 <h1>SP Football Life 2024</h1>
 <h3>Steam Deck / Linux Installer</h3>
+## How to install the controller button mod
 
 - [Install Guide](#install-guide)
 - [Useful info](#useful-info)
   - [How to install updates](#how-to-install-updates)
+  - [How to install the controller button mod](#how-to-install-the-controller-button-mod)
   - [How to backup / restore your game saves](#how-to-backup--restore-your-game-saves)
   - [How to run `Settings` or `Switcher` tool](#how-to-run-settings-or-switcher-tool)
   - [How to add SPFL to Steam Library / Game Mode](#how-to-add-spfl-to-steam-library--game-mode)

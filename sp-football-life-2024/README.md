@@ -90,7 +90,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 2. Run Lutris and select `SP Football Life 2024` (single click just to highlight it)
 3. Click the wine glass icon at the bottom and select `Run EXE inside Wine Prefix`
 4. Browse to the extracted exe from Step 1. Filename should be `FL_controller.exe`.
-5. Run through the installer and chose which button layout.
+5. Run through the installer and chose which button layout you want.
 6. When it asks you where SP Football Life is installed, click the browse button and select `C:\Program Files (x86)\SP Football Life 2024`. Or you can manually type it or copy/paste it into the box. If it already has the correct path filled in, then you can just click `Next`.
 6. Keep clicking `Next` and `Exit` at the end and done!
 

@@ -82,7 +82,7 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 ## How to install the controller button mod
 
-SmokePatch have a mod that can change your button layout to PS3, PS4, PS5 or XBox button layout. To install it, follow these steps.
+SmokePatch have a mod that can change your button layout to PS3, PS4, PS5 or Xbox button layout. To install it, follow these steps.
 
 On Steam Deck, follow the below steps in Desktop Mode.
 

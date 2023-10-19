@@ -71,13 +71,26 @@ If you have already installed the game and want to install a future update, foll
 On Steam Deck, follow the below steps in Desktop Mode.
 
 1. Download and extract the update file from the [SP Football Life 2024](https://www.pessmokepatch.com/2023/09/spfl24.html) website. Links can be found on the right hand side under `SmokePatch Latest`
-2. **Important:** Read the `Install Instructions` section on the page where you downloaded the update. Some updates need an earlier version to be installed first before installing the latest. For example, update 3.10 requires 3.00 to be installed first. In this example, follow the below steps to install update 3.00 first, then follow them again to install update 3.10.
+2. **Important:** Read the `Install Instructions` section on the page where you downloaded the update. Some updates need an earlier version to be installed first before installing the latest. As an example, update 2.10 might require 2.00 to be installed first. In this example, follow the below steps to install update 2.00 first, then follow them again to install update 2.10.
 3. Run Lutris and select `SP Football Life 2024` (single click just to highlight it)
 4. Click the wine glass icon at the bottom and select `Run EXE inside Wine Prefix`
 5. Browse to the extracted update exe downloaded in Step 1. Filename should be something like `SPFL24_XXX.exe`, where XXX is the version number.
 6. Run through the installer clicking `Next` and leaving everything as default. 
 7. Done! You can confirm you have the latest version by launching the game and going to `Settings > Game Options > Game Version`.
 
+## How to install the controller button mod
+
+SmokePatch have a mod that can change your button layout to PS3, PS4, PS5 or XBox button layout. To install it, follow these steps.
+
+On Steam Deck, follow the below steps in Desktop Mode.
+
+1. Download and extract [SmokePatch Controller Buttons](https://www.pessmokepatch.com/2017/03/smoke-buttons.html) mod from their website.
+2. Run Lutris and select `SP Football Life 2024` (single click just to highlight it)
+3. Click the wine glass icon at the bottom and select `Run EXE inside Wine Prefix`
+4. Browse to the extracted exe from Step 1. Filename should be `FL_controller.exe`.
+5. Run through the installer and chose which button layout.
+6. When it asks you where SP Football Life is installed, click the browse button and select `C:\Program Files (x86)\SP Football Life 2024`. Or you can manually type it or copy/paste it into the box. If it already has the correct path filled in, then you can just click `Next`.
+6. Keep clicking `Next` and `Exit` at the end and done!
 
 ## How to backup / restore your game saves
 

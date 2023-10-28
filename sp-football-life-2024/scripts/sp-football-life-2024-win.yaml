@@ -113,4 +113,3 @@ script:
     overrides:
       amd_ags_x64: b
       Settings_b: n
-    version: wine-ge-8-20-x86_64

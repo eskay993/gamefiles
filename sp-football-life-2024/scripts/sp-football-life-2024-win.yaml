@@ -113,3 +113,4 @@ script:
     overrides:
       amd_ags_x64: b
       Settings_b: n
+    dxvk_version: 2.2

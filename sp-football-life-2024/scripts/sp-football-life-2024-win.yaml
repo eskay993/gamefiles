@@ -110,6 +110,8 @@ script:
 
         return m
   wine:
+    dxvk: true
+    dxvk_version: v2.2
     overrides:
       amd_ags_x64: b
       Settings_b: n

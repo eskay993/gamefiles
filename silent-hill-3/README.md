@@ -109,7 +109,7 @@ Try this version if the Enhanced Audio Pack version above does not work. See [Ve
 
 # Credits
 - ThirteenAG for [Silent Hill 3 Widescreen Fix ](https://thirteenag.github.io/wfp#sh3)
-- Steam006 for his [Silent Hill 3 PC Fix](https://community.pcgamingwiki.com/files/file/1331-silent-hill-3-pc-fix-by-steam006/)
+- Steam006 his [Silent Hill 3 PC Fix](https://community.pcgamingwiki.com/files/file/1331-silent-hill-3-pc-fix-by-steam006/)
 - Psycho-A for [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/)
 - MarioTainaka for [Silent Hill 3 Audio Enhancement Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack)
 - 0dd14 for [XInput-Plus](https://sites.google.com/site/0dd14lab/xinput-plus)

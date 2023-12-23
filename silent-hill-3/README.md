@@ -24,7 +24,7 @@ Relaoded-II Mod Loader is also installed to automatically load the audio pack. T
 > As of writing (21st Dec 2023), this version works with v3.2 of the Audio Enhacement Pack, however if Reloaded or the Audio Enhancement Pack introduce something unexpected in a future update, it may break the script.
 
 ### 2. **silent-hill-3-installer-with-sound-fixer** ([Install Guide](#sf_guide))<br>
-Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/) which directly patches the sound files to fix the pitch. The result is not as good as the other Audio Enhacement Pack, but still much better than the stock audio. This version is a backup option in case the other version does not work for you.
+Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/) which directly patches the sound files to fix the pitch. The result is not as good as the Audio Enhacement Pack, but still much better than the stock audio. This version is a backup option in case the other version does not work for you.
 
 #
 
@@ -64,11 +64,11 @@ Try this version first. If it doesn't work, try the Sound Fixer version below. S
 
 14. Let the installer do it's thing. It may appear to hang for a bit... just leave it to run.
 
-15. Towards the end, `Reloaded-II Mod Loader` will launch and start downloading updates. **IMPORTANT: Let it finish it's updates! You should see if download a couple of things then just sit there.**
+15. Towards the end, `Reloaded-II Mod Loader` will launch and start downloading updates. **IMPORTANT: Let it finish it's updates! You should see it download a couple of things then just sit there.**
 
-16.  Once the updates finish, just close `Reloaded-II`. Wait for the installer to finish up.
+16. Once the updates finish, just close `Reloaded-II`. Wait for the installer to finish up.
 
-17.  Done! Run the game and enjoy!
+17. Done! Run the game and enjoy!
 
 
 <br>

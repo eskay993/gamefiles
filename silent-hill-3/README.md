@@ -35,28 +35,28 @@ Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.
 
 Try this version first. If it doesn't work, try the Sound Fixer version below. See [Version Differences](#versions).
 
-1. Download [silent-hill-3-installer-with-audio-enhancement-pack.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-audio-enhancement-pack.zip) from this repo and extract it. You shoudl have a `.yaml` file.
+1. Download [silent-hill-3-installer-with-audio-enhancement-pack.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-audio-enhancement-pack.zip) from this repo and extract it. You should now have a `.yaml` file.
 
 2. Download [Silent Hill 3 PC Fix by Steam006](https://community.pcgamingwiki.com/files/file/1331-silent-hill-3-pc-fix-by-steam006/) from PCGamingWiki.
  Do not extract the zip.
 
 3. (Optional) The script will automatically download [Silent Hill 3 Audio Enhancement Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack) from Mod DB during the install, but if you have slow internet, you may want to download it yourself beforehand as it's nearly 500MB. Do not extract the zip.
 
-4. Extract the content of the game ISO. On Windows, you can do this with WinRAR or 7zip. On Linux, Ark should be able to.
+4. Extract the content of the game ISO. On Windows, you can do this with WinRAR or 7zip. On Linux, Ark should be able to do this.
 
 5. Run Lutris and click the `+` sign to add a game.
 
-6. Select `Install from local install script` and point to the yaml file from Step 1, then click `Install` 
+6. Select `Install from local install script` and point to the yaml file from Step 1, then click `Install` and `Install` again on the next screen.
 
-7. Chose where to install the game, and check any boxes on the left that you want. For Steam Deck, click `Create steam shortcut` so the game will be available in your library in Game Mode. Click `Install`, then `Install` again on the next screen.
+7. Chose where to install the game, and check any boxes on the left that you want. For Steam Deck, click `Create steam shortcut` so the game will be available in your library in Game Mode. Click `Continue`.
 
 8. Click `Browse` under `Silent Hill 3 Installer` and select `setup.exe` from the DVD/ISO files that you extracted in Step 4.
 
 9. Click `Browse` under `Silent_Hill_3_PC_Fix-Steam006.zip` and select the zip you downloaded in Step 2.
 
-10. (Optional) If you downloaded the audio pack yourself from Mod DB in Step 3, then under `Silent Hill 3 Audio Enhancement Pack` change the `Source` to `Select File` from the drop-down menu. Then click `Browse` and select the file you downloaded.
+10. (Optional) If you downloaded the audio pack yourself from Mod DB in Step 3, then under `Silent Hill 3 Audio Enhancement Pack` change the "Source" from `Download` to `Select File` from the drop-down menu. Then click `Browse` and select the file you downloaded.
 
-11. Click `Continue` and wait for the various files to download.
+11. Click `Install` and wait for the various files to download.
 
 12. Select your prefered language from the drop-down menu then click `Continue`.
 
@@ -78,24 +78,24 @@ Try this version first. If it doesn't work, try the Sound Fixer version below. S
 
 Try this version if the Enhanced Audio Pack version above does not work. See [Version Differences](#versions).
 
-1. Download [silent-hill-3-installer-with-sound-fixer.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-sound-fixer.zip) from this repo and extract it.
+1. Download [silent-hill-3-installer-with-sound-fixer.zip](https://github.com/eskay993/gamefiles/raw/main/silent-hill-3/silent-hill-3-installer-with-sound-fixer.zip) from this repo and extract it. You should now have a `.yaml` file.
 
 2. Download [Silent Hill 3 PC Fix by Steam006](https://community.pcgamingwiki.com/files/file/1331-silent-hill-3-pc-fix-by-steam006/) from PCGamingWiki.
  Do not extract the zip.
 
-3. Extract the content of the game ISO. On Windows, you can do this with WinRAR or 7zip. On Linux, Ark should be able to.
+3. Extract the content of the game ISO. On Windows, you can do this with WinRAR or 7zip. On Linux, Ark should be able to do this.
 
 4. Run Lutris and click the `+` sign to add a game.
 
-5. Select `Install from local install script` and point to the yaml file  from Step 1, then click `Install` 
+5. Select `Install from local install script` and point to the yaml file  from Step 1, then click `Install`, then `Install` again on the next screen.
 
-6. Chose where to install the game, and check any boxes on the left that you want. For Steam Deck, click `Create steam shortcut` so the game will be available in your library in Game Mode. Click `Install`, then `Install` again on the next screen.
+6. Chose where to install the game, and check any boxes on the left that you want. For Steam Deck, click `Create steam shortcut` so the game will be available in your library in Game Mode. Click `Continue`.
 
 7. Click `Browse` under `Silent Hill 3 Installer` and select `setup.exe` from the DVD/ISO files that you extracted in Step 3.
 
 8. Click `Browse` under `Silent_Hill_3_PC_Fix-Steam006.zip` and select the zip you downloaded in Step 2.
 
-9. Click `Continue` and wait for the various files to download.
+9. Click `Install` and wait for the various files to download.
 
 10. Select your prefered language from the drop-down menu then click `Continue`.
 

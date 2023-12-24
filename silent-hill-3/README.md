@@ -114,7 +114,7 @@ Try this version if the Enhanced Audio Pack version above does not work. See [Ve
 - MarioTainaka for [Silent Hill 3 Audio Enhancement Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack)
 - 0dd14 for [XInput-Plus](https://sites.google.com/site/0dd14lab/xinput-plus)
 - chrll for the original [Silent Hill 3 Lutris script](https://lutr.is/games/silent-hill-3/) that this script is based on
-- Betwixt-Two-Ferns for [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) which this script essentially automates.
+- Betwixt-Two-Ferns for [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/) which inspired these script.
 
 <br>
 

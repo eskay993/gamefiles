@@ -30,14 +30,7 @@ script:
   - task:
       app: win7
       name: winetricks
-      prefix: $GAMEDIR
-  - execute:
-      command: |
-        dpi=96
-        [[ $RESOLUTION_HEIGHT == "1080" ]] && dpi=120
-        [[ $RESOLUTION_HEIGHT == "1440" ]] && dpi=144
-        [[ $RESOLUTION_HEIGHT == "2160" ]] && dpi=216
-        WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f      
+      prefix: $GAMEDIR     
   - extract:
       description: Installing SWOS 96/97
       src: swos9697

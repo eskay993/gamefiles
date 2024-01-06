@@ -1,11 +1,15 @@
 
 # Index 
+- [Index](#index)
+- [Intro](#intro)
 - [Install Guide](#install-guide)
 - [Save file location plus WARNING!](#save-file-location-plus-warning)
 - [Run Settings or Switcher tool after install](#run-settings-or-switcher-tool-after-install)
 - [Add SPFL23 to Steam Library / Game Mode](#add-spfl23-to-steam-library--game-mode)
 - [Installing future updates](#installing-future-updates)
 - [Installing Real Faces mod](#installing-real-faces-mod)
+- [Credits](#credits)
+- [Additional Resources](#additional-resources)
 
 
 <br>
@@ -158,13 +162,13 @@ If you have already installed the game and want to add the Real Faces facepak mo
 
 On Steam Deck, follow the below steps in Desktop Mode.
 
-1. Download and extract the [SP Football Life 2023: Real Faces](https://www.pessmokepatch.com/2022/08/fl23faces.html) facepak mod. You should have 4 CPK files.
-
-2. Right click on the game in Lutris and choose `Browse local files`. Dolphin file browser should Lutris,  to where the game is installed.
-
+1. Download and extract the [SP Football Life: Real Faces](https://www.pessmokepatch.com/2022/08/fl23faces.html) mod plus any mod updates. Once extracted, you should have a bunch of CPK files.
+   
+2. Right click on the game in Lutris and choose `Browse local files`. Dolphin file browser should open to where the game is installed.
+   
 3. Navigate to `drive_c/Program Files (x86)/SP Football Life 2023/download`
-
-4. Copy the 4 CPK files here (backup the old files just in case)
+   
+4. Copy all the CPK files here (backup the old files just in case)
 
 <br>
 

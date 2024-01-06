@@ -1,0 +1,45 @@
+game_slug: sensible-world-of-soccer-9697
+name: "Sensible World of Soccer"
+year: 2023
+user: eskay993
+runner: wine
+slug: sensible-world-of-soccer-9697-win
+version: "Windows"
+description: |
+  Requires SWOS 2020 launcher, as well as an original copy of SWOS 96/97 for PC. See SWOS 2020 link above for info on obtaining both.
+credits: |
+  SWOS 2020 downlaod and info:
+  https://www.sensiblesoccer.de/swos-2020
+script:
+  variables:
+    SUBDIR: SWOS 2020
+    EXE: gameLauncher.exe
+  files:
+  - swos2020: N/A:SWOS 2020 setup exe
+  - swos9697: N/A:Original SWOS 96/97 (GOG setup exe or zip with game files)
+  game:
+    arch: win32
+    exe: drive_c/Games/$SUBDIR/$EXE
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win32
+      description: Creating Wine prefix
+      name: create_prefix
+      prefix: $GAMEDIR
+  - task:
+      app: win7
+      name: winetricks
+      prefix: $GAMEDIR     
+  - extract:
+      description: Installing SWOS 96/97
+      src: swos9697
+      dst: $GAMEDIR/drive_c/Games/SWOS 96-97/
+  - task:
+      description: |
+        Installing SWOS 2020
+        
+        During install, SWOS 96/97 will be automatically detected, Press OK when prompted to continue.
+      executable: swos2020
+      args: /S
+      name: wineexec

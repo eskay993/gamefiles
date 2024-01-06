@@ -1,6 +1,5 @@
 <h1>SP Football Life 2024</h1>
 <h3>Steam Deck / Linux Installer</h3>
-## How to install the controller button mod
 
 - [Install Guide](#install-guide)
 - [Useful info](#useful-info)
@@ -9,6 +8,7 @@
   - [How to backup / restore your game saves](#how-to-backup--restore-your-game-saves)
   - [How to run `Settings` or `Switcher` tool](#how-to-run-settings-or-switcher-tool)
   - [How to add SPFL to Steam Library / Game Mode](#how-to-add-spfl-to-steam-library--game-mode)
+  - [How to install Real Faces mod](#how-to-install-real-faces-mod)
   - [How to clear your Lutris cache](#how-to-clear-your-lutris-cache)
 - [Troubleshooting](#troubleshooting)
     - [I've getting errors during the install... help!](#ive-getting-errors-during-the-install-help)
@@ -142,6 +142,17 @@ Method 2:
 4. After selecting the shortcut, click `Add Selected Program` and you should be good to go.
 5. On Steam Deck, launch into Game Mode and test the game to see if your controller is working.
 
+
+## How to install Real Faces mod
+If you have already installed the game and want to add the Real Faces facepak mod, follow these steps:
+
+On Steam Deck, follow the below steps in Desktop Mode.
+
+1. Download and extract the [SP Football Life: Real Faces](https://www.pessmokepatch.com/2022/08/fl23faces.html) mod plus any mod updates. Once extracted, you should have a bunch of CPK files.
+2. Right click on the game in Lutris and choose `Browse local files`. Dolphin file browser should open to where the game is installed.
+3. Navigate to `drive_c/Program Files (x86)/SP Football Life 2024/download`
+4. Copy all the CPK files here (backup the old files just in case)
+   
 
 ## How to clear your Lutris cache
 Sometimes Lutris doesn't download needed files correctly. If you have any random errors during install, or during launching of the game, then always try clearing Lutris cache first to see if it fixes things.

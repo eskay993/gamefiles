@@ -12,7 +12,7 @@ Make sure you download these before starting the install process. More info is o
 
 2. Make sure you have both files listed above on your Steam Deck. In your Downloads folder or Desktop should be fine.
 
-3. Download the [install script](https://github.com/eskay993/gamefiles/raw/main/swos-2020-install-script.zip) from this repo and extract it. You should have a `.yaml` file. 
+3. Download the [install script](https://github.com/eskay993/gamefiles/raw/main/swos-2020/swos-2020-install-script..zip) from this repo and extract it. You should have a `.yaml` file. 
 
 4. Install `Lutris` from the Discover Store.
 

@@ -3,7 +3,7 @@ Install script and guide for installing [SWOS 2020](https://www.sensiblesoccer.d
 ## **Pre-requisites**
 
 Make sure you download these before starting the install process. More info is on the [SWOS United](https://www.sensiblesoccer.de/swos-2020) website.
-- SWOS 2020 Windows installer from the4 [SWOS United - DOWNLOAD](https://www.sensiblesoccer.de/swos-2020) page.
+- SWOS 2020 Windows installer from the [SWOS United - DOWNLOAD](https://www.sensiblesoccer.de/swos-2020) page.
   
 - Original copy of SWOS 96/97 as detailed on the [SWOS United - DOWNLOAD](https://www.sensiblesoccer.de/swos-2020) page. The site has 3 links to choose from and they all work with this script (I personally use the GOG version and downloaded the setup exe from my GOG library)
 

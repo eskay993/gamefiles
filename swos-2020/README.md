@@ -30,7 +30,7 @@ Make sure you download these before starting the install process. More info is o
 
 11. Done!
 
-You can test it's working in Desktop Mode by double clicking the game in Lutris, or just straight into Game Mode and launch it there. In Game Mode you can use the touch screen to navigate the launcher.
+You can test it's working in Desktop Mode by double clicking the game in Lutris, or jump straight into Game Mode and launch it there. In Game Mode you can use the touch screen to navigate the launcher.
 
 A few things to do post install after launching the game:
 - In the launcher, choose `1280x720` as your resolution.

@@ -66,8 +66,8 @@ script:
       name: winetricks
       prefix: $GAMEDIR
   - extract:
-        src: fonts
-        dst: $GAMEDIR/drive_c/windows/Fonts/
+      src: fonts
+      dst: $GAMEDIR/drive_c/windows/Fonts/
   - task:
       description: Installing fonts...
       name: set_regedit

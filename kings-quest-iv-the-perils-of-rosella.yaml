@@ -22,4 +22,4 @@ script:
       src: game_zip
       dst: $GAMEDIR/drive_c/KQ4Retold/
   wine:
-    version: lutris-fshack-7.1-x86_64
+    version: lutris-fshack-7.2-x86_64

@@ -42,5 +42,4 @@ script:
       msacm32: n,b
       Dinput: n,b
       Dinput8: n,b
-      XInput1_3: n,b                  
-    version: lutris-GE-Proton7-28-x86_64   
+      XInput1_3: n,b

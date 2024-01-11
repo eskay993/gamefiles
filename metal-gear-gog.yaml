@@ -28,4 +28,3 @@ script:
     overrides:
       d3d8.dll: n,b
       dinput.dll: n,b
-    version: lutris-GE-Proton7-33-x86_64   

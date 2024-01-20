@@ -41,21 +41,23 @@ This guide assumes you're installing on a Steam Deck. The steps are the same for
 
 6. On the next screen. choose where to install the game. On Steam Deck, Lutris by default will install the game to `/home/deck/Games/sp-football-life-2024`. Also tick `Create steam shortcut` so the game gets added to your Steam library. Click `Install` 
 
-7. On the next screen, click `Browse` under `SPFL24_setup.exe` and select the `SPFL24_setup.exe` from the files you extracted step 2. Click `Continue`.
+7. On the next screen, click `Browse` under `SPFL24_setup.exe` and select the `SPFL24_setup.exe` from the files you extracted step 2. Click `Continue` and wait for the various files to download.
    
 8. On the next screen, select the resolution you want from the dropdown menu. On Steam Deck, this should default to `1280x800`.
 
-9.  Click `Continue` to begin the install process. You may get a popup asking you to install mono. Just click cancel if you do. 
-    
-10. After the dependencies are installed, the SPFL setup window should appear. Just keep clicking `Next` and leave everything as default. The game should start installing. Click `Exit` when it's done.
-    
-11. Next, the `Settings` window *might* open. Just close it if it does. The settings will be configured automatically later.
+9. Next, select the controller style you want in the menus. For Steam Deck, choose `Xbox Controller`.
 
-12. The `Switcher` window should now launch. This tool allows you to chose how you want the gameplay experience to be. The SmokePatch team have tweaked the gameplay and stats so if you want to try their changes choose the top option. You can read about it on their website. Otherwise choose the PES 2021 option for the default PES experience (my preferred option). You can change this later. Once selected, keep clicking `Next` and `Exit`.
-
-13. Click `Close` and the game should now appear in Lutris.
+10.  Click `Continue` to begin the install process. You may get a popup asking you to install mono. Just click cancel if you do. 
     
-14.  Read the **important** notes below! And check [Troubleshooting](#troubleshooting) if you have any issues.
+11. After the dependencies are installed, the SPFL setup window should appear. Just keep clicking `Next` and leave everything as default. The game should start installing. Click `Exit` when it's done.
+    
+12. Next, the `Settings` window *might* open. Just close it if it does. The settings will be configured automatically later.
+
+13. The `Switcher` window should now launch. This tool allows you to chose how you want the gameplay experience to be. The SmokePatch team have tweaked the gameplay and stats so if you want to try their changes choose the top option. You can read about it on their website. Otherwise choose the PES 2021 option for the default PES experience (my preferred option). You can change this later. Once selected, keep clicking `Next` and `Exit`.
+
+14. Click `Close` and the game should now appear in Lutris.
+    
+15.  Read the **important** notes below! And check [Troubleshooting](#troubleshooting) if you have any issues.
 
 > ```IMPORTANT:``` On Steam Deck, you need to play the game in Game Mode, not Desktop Mode. In Desktop Mode, the controller will not be recognised. If you selected `Create steam shortcut` in step 6 above, then the game should be in your library and you can launch it from Game Mode. If you  did not, or the game is not appearing in your Steam library, then follow [these steps](#add-spfl24-to-steam-library--game-mode) to add it. 
 

@@ -1,5 +1,5 @@
 game_slug: sp-football-life-2024
-name: "Football Life 2024"
+name: "SP Football Life 2024"
 year: 2023
 user: eskay993
 runner: wine
@@ -94,13 +94,13 @@ script:
       prefix: $GAMEDIR
   - extract:
       src: settings
-      dst: $CACHE
+      dst: $CACHE/settings/
   - execute:
       command: |
         mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules"
         mkdir -p "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
-        cp "${CACHE}/${INPUT_GAMERES}/settings.dat" "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
-        if [[ ${INPUT_GAMERES} == "800x1280" ]]; then
+        cp "$CACHE/settings/$INPUT_GAMERES/settings.dat" "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
+        if [[ $INPUT_GAMERES == "800x1280" ]]; then
           cd "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons"
           match=$(grep "lua.module =" sider.ini | tail -n1)
           sed -i -e "/$match/ s/\(.*\)\(lua.module.*\)/\1\2\n\1lua.module = \"aspectratio.lua\"/" sider.ini

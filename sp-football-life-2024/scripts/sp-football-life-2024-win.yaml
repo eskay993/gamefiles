@@ -17,6 +17,7 @@ script:
   - vcrun_x64: https://aka.ms/vs/17/release/vc_redist.x64.exe
   - fonts: https://github.com/eskay993/gamefiles/raw/main/tools/fonts.zip
   - settings: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-20${VERSION}/files/settings.zip
+  - controller: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-20${VERSION}/files/controller.zip
   game:
     arch: win64
     exe: drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL 20${VERSION} start.exe
@@ -33,6 +34,18 @@ script:
       - 2560x1440: 2560x1440
       - 3840x2160: 3840x2160
       preselect: $RESOLUTION
+  - input_menu:
+      description: |
+        Select a controller button layout and style: 
+        
+        For Steam Deck, choose "Xbox Controller"
+      id: CONTROLLER
+      options:
+      - ps3: PS3 Controller
+      - ps4: PS4 Controller
+      - ps5: PS5 Controller
+      - xbox: Xbox Controller
+      preselect: xbox
   - task:
       arch: win64
       description: Creating Wine prefix
@@ -123,6 +136,12 @@ script:
         end
 
         return m
+  - extract:
+      src: controller
+      dst: $CACHE/controller/
+  - copy:
+      src: $CACHE/controller/$INPUT_CONTROLLER/SMK_Addcontrol.cpk
+      dst: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/download/
   wine:
     dxvk: true
     dxvk_version: v2.2

@@ -12,6 +12,10 @@ script:
     VERSION: 24
   files:
   - setup: N/A:SPFL${VERSION}_setup.exe
+  - dotnet: https://download.microsoft.com/download/C/3/A/C3A5200B-D33C-47E9-9D70-2F7C65DAAD94/NDP46-KB3045557-x86-x64-AllOS-ENU.exe
+  - vcrun_x86: https://aka.ms/vs/17/release/vc_redist.x86.exe
+  - vcrun_x64: https://aka.ms/vs/17/release/vc_redist.x64.exe
+  - fonts: https://github.com/eskay993/gamefiles/raw/main/tools/fonts.zip
   - settings: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-20${VERSION}/files/settings.zip
   - controller: https://github.com/eskay993/gamefiles/raw/main/sp-football-life-20${VERSION}/files/controller.zip
   game:
@@ -48,20 +52,49 @@ script:
       name: create_prefix
       prefix: $GAMEDIR    
   - task:
-      description: Installing Microsoft .NET Runtimes...
-      app: dotnet46
+      description: Installing dependencies...
+      app: remove_mono win7
       name: winetricks
-      prefix: $GAMEDIR
+      prefix: $GAMEDIR      
   - task:
-      description: Installing Microsoft VC++ Runtimes...
-      app: vcrun2019
+      description: Installing Microsoft .NET Framework...
+      executable: dotnet
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /q /norestart
+  - task:
+      description: Installing Microsoft Visual C++ Redistributable (x86)...
+      executable: vcrun_x86
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /silent /norestart
+  - task:
+      description: Installing Microsoft Visual C++ Redistributable (x64)...
+      executable: vcrun_x64
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /silent /norestart
+  - task:
+      app: win10
       name: winetricks
       prefix: $GAMEDIR
+  - extract:
+      src: fonts
+      dst: $GAMEDIR/drive_c/windows/Fonts/
   - task:
       description: Installing fonts...
-      app: unifont consolas
-      name: winetricks
-      prefix: $GAMEDIR  
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Consolas Regular (TrueType)
+      value: "consolas.ttf"
+      type: REG_SZ
+  - task:
+      description: Installing fonts...
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Unifont (TrueType)
+      value: "unifont.ttf"
+      type: REG_SZ      
   - task:
       description: Starting game installer...
       executable: setup

@@ -10,7 +10,7 @@ Note: Installing the REbirth patch overrides the additions that GOG made to the 
 
 3. Download the [Unofficial Mediakite 1.01 Patch for USA](https://www.nexusmods.com/residentevil1996/mods/25?tab=files) which allows the REbirth patch to work with the USA version of the game. Do not unzip the file.
 
-4. Download the install script [resident-evil-gog.zip](https://github.com/eskay993/gamefiles/blob/main/resident-evil/resident-evil-gog.zip) from this repo and extract it. Should be a `.yaml` file.
+4. Download the install script [resident-evil-gog.zip](https://github.com/eskay993/gamefiles/raw/main/resident-evil/resident-evil-gog.zip) from this repo and extract it. Should be a `.yaml` file.
 
 5. Install `Lutris` from the Discover Store.
 

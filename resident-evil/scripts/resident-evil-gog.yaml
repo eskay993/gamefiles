@@ -7,11 +7,11 @@ gogslug: resident_evil
 slug: resident-evil-gog
 version: GOG with Classic REbirth
 notes: |
-  Installs English/USA version from GOG and applies the Classic REbirth patch with working FMVs. You will need:
+  Installs English/USA version from GOG and applies the Classic REbirth patch with working high quality FMVs. 
+  
+  You will need to following:
   - The game setup exe downloaded from your GOG library. 
   - The "Unofficial Mediakite 1.01 Patch for USA" zip file from Nexus Mods.
-
-  Note: The new settings added in the GOG version (dxcfg.exe) aren't compatible with REbirth. Only REbirth changes and fixes will be available (including working FMVs)
 script:
   variables:
     SUBDIR: Resident Evil
@@ -22,6 +22,9 @@ script:
   - rebirth: 
       filename: re1_classic_rebirth_ 2020-12-06.7z
       url: https://classicrebirth.com/index.php/download/resident-evil-dll-fix-for-classic-edition/?wpdmdl=381&refresh=64cbde86b005c1691082374
+  - movies:
+      url: https://www.moddb.com/downloads/re1-classic-rebirth-high-quality-video-pack
+      filename: movie_pack.7z
   game:
     exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
@@ -37,17 +40,17 @@ script:
         [[ $pixels -gt 1000 ]] && dpi=120
         [[ $pixels -gt 1400 ]] && dpi=144
         [[ $pixels -gt 2100 ]] && dpi=216
-        WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f          
-  - task:
-      description: Installing game...
-      args: /SILENT /DIR="C:\Games\$SUBDIR" /NORESTART /CLOSEAPPLICATIONS 
-      executable: setup
-      name: wineexec
-      prefix: $GAMEDIR
+        WINEPREFIX="$GAMEDIR" "$WINEBIN" reg add "HKCU\Control Panel\Desktop" /v LogPixels /t REG_DWORD /d $dpi /f
   - execute:
-      command: |
-        mv "$GAMEDIR/drive_c/Games/$SUBDIR/ResidentEvil.exe" "$GAMEDIR/drive_c/Games/$SUBDIR/ResidentEvil.exe.bak"
-        mv "$GAMEDIR/drive_c/Games/$SUBDIR/ddraw.dll" "$GAMEDIR/drive_c/Games/$SUBDIR/ddraw.dll.bak"
+       command: mkdir -p "$GAMEDIR/drive_c/Games/$SUBDIR"
+  - extract:
+      src: setup
+      dst: $CACHE
+      format: gog
+  - move: 
+      description: Copying game files...
+      src: $CACHE/USA
+      dst: $GAMEDIR/drive_c/Games/$SUBDIR/
   - extract:
       src: patch
       dst: $CACHE
@@ -64,8 +67,13 @@ script:
       src: rebirth
       dst: $GAMEDIR/drive_c/Games/$SUBDIR/
       format: 7z
+  - execute:
+       command: mv -v "$GAMEDIR/drive_c/Games/$SUBDIR/USA/Movie" "$GAMEDIR/drive_c/Games/$SUBDIR/USA/Movie.bak"
+  - extract:
+      src: movies
+      dst: $GAMEDIR/drive_c/Games/$SUBDIR/movie/
+      format: 7z
   wine:
     dgvoodoo2: true
     overrides:
       ddraw: n,b
-      #dinput: n,b

@@ -31,3 +31,8 @@ Note: Installing the REbirth patch overrides the additions that GOG made to the 
 For info on REbirth and the various settings, see [Classic REbirth](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/).
 
 One note - The default contoller mapping will be off on Steam Deck. You can either remap in Steam's overay, or click remap in the REbirth setting window. I may do a version of the script that auto-fixes this for Steam Deck.
+
+# Credits
+- The Classic REbirth Team for the awesome [Classic REbirth Patch for Resident Evil](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/)
+- Alexkander on NexusMods for the [Unofficial Mediakite 1.01 Patch for USA](https://www.nexusmods.com/residentevil1996/mods/25?tab=files)
+- GOG for modernising this game convinsing Capcom to release this it :) Chapeau!

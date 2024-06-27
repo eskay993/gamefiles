@@ -35,4 +35,4 @@ One note - The default contoller mapping will be off on Steam Deck. You can eith
 # Credits
 - The Classic REbirth Team for the awesome [Classic REbirth Patch for Resident Evil](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/)
 - Alexkander on NexusMods for the [Unofficial Mediakite 1.01 Patch for USA](https://www.nexusmods.com/residentevil1996/mods/25?tab=files)
-- GOG for modernising the game convinsing Capcom to release it :) Chapeau!
+- GOG for modernising the game and convinsing Capcom to release it :) Chapeau!

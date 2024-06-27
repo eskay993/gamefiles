@@ -1,5 +1,7 @@
 Installs the [GOG version of Resident Evil](https://www.gog.com/game/resident_evil) and applies the [Classic REbirth](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/) patch. This is needed to get FMVs to play, which do not work with the vanilla GOG version. This may be fixed in future either by GOG (unlikely) or an update to Proton/Wine.
 
+This also installs [RE1 Classic REbirth High Quality video pack](https://www.moddb.com/downloads/re1-classic-rebirth-high-quality-video-pack) for 30fps videos with slightly higher res.
+
 Note: Installing the REbirth patch overrides the additions that GOG made to the game, so running `dxcfg.exe` and making changes won't do anything. Hopefully in future a mod comes out that incorporates the best of both GOG's fixes and REbirth.
 
 
@@ -28,11 +30,12 @@ Note: Installing the REbirth patch overrides the additions that GOG made to the 
 
 12. Done! When you now launch the game you should get the REbirth settings window.
 
-For info on REbirth and the various settings, see [Classic REbirth](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/).
+For info on the Classic REbirth patch and the various settings, see [Classic REbirth](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/).
 
 One note - The default contoller mapping will be off on Steam Deck. You can either remap in Steam's overay, or click remap in the REbirth setting window. I may do a version of the script that auto-fixes this for Steam Deck.
 
 # Credits
-- The Classic REbirth Team for the awesome [Classic REbirth Patch for Resident Evil](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/)
+- The Classic REbirth team for the awesome [Classic REbirth Patch for Resident Evil](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/)
+- Loboto3 for [RE1 Classic REbirth High Quality video pack](https://www.moddb.com/downloads/re1-classic-rebirth-high-quality-video-pack) 
 - Alexkander on NexusMods for the [Unofficial Mediakite 1.01 Patch for USA](https://www.nexusmods.com/residentevil1996/mods/25?tab=files)
-- GOG for modernising the game and convinsing Capcom to release it :) Chapeau!
+- GOG for modernising the game and convincing Capcom to release it :) Chapeau!

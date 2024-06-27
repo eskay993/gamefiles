@@ -68,4 +68,4 @@ script:
     dgvoodoo2: true
     overrides:
       ddraw: n,b
-      dinput: n,b
+      #dinput: n,b

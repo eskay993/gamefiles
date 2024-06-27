@@ -6,7 +6,7 @@ Note: Installing the REbirth patch overrides the additions that GOG made to the 
 ## **Install Guide (Steam Deck)**
 1. Switch to Desktop Mode on Steam Deck.
 
-2. Download the English/USA version of Resident Evil offline installer files from your GOG account - [setup_resident_evil_1.0_(72738).exe](https://www.gog.com/downloads/resident_evil/en1installer0) and [setup_resident_evil_1.0_(72738)-1.bin](https://www.gog.com/downloads/resident_evil/en1installer1). You need to be logged-in to your account for the links to work. 
+2. Download the English/USA version of Resident Evil offline installer files from your GOG account - [setup_resident_evil_1.0_(72738).exe](https://www.gog.com/downloads/resident_evil/en1installer0) and [setup_resident_evil_1.0_(72738)-1.bin](https://www.gog.com/downloads/resident_evil/en1installer1). You need to be logged-in to your account and own the game for the links to work. 
 
 3. Download the [Unofficial Mediakite 1.01 Patch for USA](https://www.nexusmods.com/residentevil1996/mods/25?tab=files) which allows the REbirth patch to work with the USA version of the game. Do not unzip the file.
 

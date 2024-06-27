@@ -1,6 +1,6 @@
 Installs the [GOG version of Resident Evil](https://www.gog.com/game/resident_evil) and applies the [Classic REbirth](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/) patch. This is needed to get FMVs to play, which do not work with the vanilla GOG version. This may be fixed in future either by GOG (unlikely) or an update to Proton/Wine.
 
-This also installs [RE1 Classic REbirth High Quality video pack](https://www.moddb.com/downloads/re1-classic-rebirth-high-quality-video-pack) for 30fps videos with slightly higher res.
+This also installs [RE1 Classic REbirth High Quality video pack](https://www.moddb.com/downloads/re1-classic-rebirth-high-quality-video-pack) for 30fps videos upscaled to 640x480.
 
 Note: Installing the REbirth patch overrides the additions that GOG made to the game, so running `dxcfg.exe` and making changes won't do anything. Hopefully in future a mod comes out that incorporates the best of both GOG's fixes and REbirth.
 

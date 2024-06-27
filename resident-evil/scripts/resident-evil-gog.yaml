@@ -17,7 +17,7 @@ script:
     SUBDIR: Resident Evil
     EXE: ResidentEvil.exe
   files:
-  - setup: N/A:GOG setup exe for $SUBDIR
+  - setup: N/A:GOG setup exe for Resident Evil
   - patch: N/A:Unofficial MediaKite 1.01 patch zip file
   - rebirth: 
       filename: re1_classic_rebirth_ 2020-12-06.7z

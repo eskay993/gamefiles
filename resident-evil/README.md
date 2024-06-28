@@ -26,9 +26,11 @@ Note: Installing the REbirth patch overrides the additions that GOG made to the 
 
 10. Click the `...` button under `Unofficial MediaKite 1.01 patch zip file` and select the zip file you downloaded in step 3.
 
-11. Click `Install` and let it do it's thing. 
+10. Choose whether or not to enable high quality movies / FMVs. If you are unsure, choose yes.
 
-12. Done! When you now launch the game you should get the REbirth settings window.
+12. Click `Install` and let it do it's thing. 
+
+13. Done! When you now launch the game you should get the REbirth settings window.
 
 For info on the Classic REbirth patch and the various settings, see [Classic REbirth](https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/).
 

@@ -22,13 +22,23 @@ script:
   - rebirth: 
       filename: re1_classic_rebirth_ 2020-12-06.7z
       url: https://classicrebirth.com/index.php/download/resident-evil-dll-fix-for-classic-edition/?wpdmdl=381&refresh=64cbde86b005c1691082374
-  - movies:
+  - movie_pack:
       url: https://www.moddb.com/downloads/re1-classic-rebirth-high-quality-video-pack
       filename: movie_pack.7z
   game:
     exe: drive_c/Games/$SUBDIR/$EXE
     prefix: $GAMEDIR
   installer:
+  - input_menu:
+      description: |
+        Enable high quality movies / full motion videos?
+
+        The original PC port has low res and low fps movies, even compared to the PS1 original. Choose yes to enable high quality videos, no for the "authentic" PC port experience.
+      id: MOVIES
+      options:
+      - "yes": "Yes"
+      - "no": "No"
+      preselect: "yes"    
   - task:
       description: Creating Wine prefix
       name: create_prefix
@@ -67,12 +77,16 @@ script:
       src: rebirth
       dst: $GAMEDIR/drive_c/Games/$SUBDIR/
       format: 7z
-  - execute:
-       command: mv -v "$GAMEDIR/drive_c/Games/$SUBDIR/USA/Movie" "$GAMEDIR/drive_c/Games/$SUBDIR/USA/Movie.bak"
   - extract:
-      src: movies
-      dst: $GAMEDIR/drive_c/Games/$SUBDIR/movie/
+      src: movie_pack
+      dst: $CACHE/movie
       format: 7z
+  - execute:
+      command: |
+        if [[ $INPUT_MOVIES == "yes" ]]; then
+          mv -v "$GAMEDIR/drive_c/Games/$SUBDIR/USA/Movie" "$GAMEDIR/drive_c/Games/$SUBDIR/USA/Movie.bak"
+          mv -v $CACHE/movie "$GAMEDIR/drive_c/Games/$SUBDIR/"
+        fi
   wine:
     dgvoodoo2: true
     overrides:

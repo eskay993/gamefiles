@@ -17,21 +17,21 @@ script:
   files:
   - sh2ee_zip: N/A:Silent Hill 2 Enhanced Edition Pre-installed Archive
   game:
-    exe: $GAMEDIR/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut/sh2pc.exe
+    exe: $GAMEDIR/drive_c/Games/Silent Hill 2 - Enhanced Edition/sh2pc.exe
     prefix: $GAMEDIR
   installer:
   - task:
       arch: win64
-      description: Preparing "Silent Hill 2 - Directors Cut" folder
+      description: Preparing "Silent Hill 2 - Enhanced Edition" folder
       install_gecko: true
       install_mono: false
       name: create_prefix
       prefix: $GAMEDIR
   - execute:
-      command: mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut"
+      command: mkdir -p "$GAMEDIR/drive_c/Games/Silent Hill 2 - Enhanced Edition"
   - extract:
       file: sh2ee_zip
-      dst: $GAMEDIR/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut/
+      dst: $GAMEDIR/drive_c/Games/Silent Hill 2 - Enhanced Edition/
   wine:
     Desktop: false
     overrides:
@@ -39,4 +39,3 @@ script:
       dinput8.dll: n,b
       XInput1_3.dll: n,b
       dsound.dll: n,b
-  version: lutris-fshack-7.2-x86_64

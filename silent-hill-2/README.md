@@ -16,8 +16,6 @@ If you are installing for the first time, use this online version. It run the Si
 
 The Online Installer downloads around 4GB worth of files, so can take time on slower internet (like mine!)
 
-Before you begin, make sure to copy files from all 3 CDs into the same folder. The script will ask for the `Setup.exe` from this folder.
-
 
 ### 2. **silent-hill-2-lutris-installer-offline** [ [Download](https://github.com/eskay993/gamefiles/raw/main/silent-hill-2/silent-hill-2-lutris-installer-offline.zip) ]<br>
 Use this offline version if you have already used the Silent Hill 2 Enhanced Edition Online Installer and have everything set up already. This version is useful if you want to quickly install it again at a later stage, or on another machine.
@@ -25,7 +23,7 @@ Use this offline version if you have already used the Silent Hill 2 Enhanced Edi
 You will need to make a zip of your game folder with Silent Hill 2 Enhanced Edition fully installed. The default install location is:
 
 ```
-<PATH_TO_GAMEDIR>/drive_c/Games/Silent Hill 2 - Enhanced Edition/
+<PATH_TO_GAMEDIR>/drive_c/Program Files (x86)/Konami/Silent Hill 2 - Directors Cut/
 ```
 
 Zip up all the files inside there. The root of the zip should look something like this:

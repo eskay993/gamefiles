@@ -1,0 +1,150 @@
+game_slug: sp-football-life-2025
+name: "SP Football Life 2025"
+year: 2024
+user: eskay993
+runner: wine
+slug: sp-football-life-2025-win
+version: Windows
+description: Installer for Football Life 2025 by SmokePatch. Download the game from pessmokepatch.com.
+notes:
+script:
+  variables:
+    VERSION: 25
+  files:
+  - setup: N/A:SPFL${VERSION}_setup.exe
+  - dotnet: https://download.microsoft.com/download/C/3/A/C3A5200B-D33C-47E9-9D70-2F7C65DAAD94/NDP46-KB3045557-x86-x64-AllOS-ENU.exe
+  - vcrun_x86: https://aka.ms/vs/17/release/vc_redist.x86.exe
+  - vcrun_x64: https://aka.ms/vs/17/release/vc_redist.x64.exe
+  - fonts: https://github.com/eskay993/gamefiles/raw/main/tools/fonts.zip
+  - settings: https://github.com/eskay993/gamefiles/raw/main/tools/sp-football-life/settings.zip
+  - controller: https://github.com/eskay993/gamefiles/raw/main/tools/sp-football-life/controller.zip
+  game:
+    arch: win64
+    exe: drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL 20${VERSION} start.exe
+    prefix: $GAMEDIR
+  installer:
+  - input_menu:
+      description: "Select a resolution for the game:"
+      id: GAMERES
+      # Note: Steam Deck in desktop mode reports res as 800x1280.
+      options:
+      - 1280x720: 1280x720
+      - 800x1280: 1280x800 (Steam Deck)
+      - 1920x1080: 1920x1080
+      - 2560x1440: 2560x1440
+      - 3840x2160: 3840x2160
+      preselect: $RESOLUTION
+  - input_menu:
+      description: |
+        Select a controller button layout and style: 
+        
+        For Steam Deck, choose "Xbox Controller"
+      id: CONTROLLER
+      options:
+      - ps3: PS3 Controller
+      - ps4: PS4 Controller
+      - ps5: PS5 Controller
+      - xbox: Xbox Controller
+      preselect: xbox
+  - task:
+      arch: win64
+      description: Creating Wine prefix
+      name: create_prefix
+      prefix: $GAMEDIR    
+  - task:
+      description: Installing dependencies...
+      app: remove_mono win7
+      name: winetricks
+      prefix: $GAMEDIR      
+  - task:
+      description: Installing Microsoft .NET Framework...
+      executable: dotnet
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /q /norestart
+  - task:
+      description: Installing Microsoft Visual C++ Redistributable (x86)...
+      executable: vcrun_x86
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /silent /norestart
+  - task:
+      description: Installing Microsoft Visual C++ Redistributable (x64)...
+      executable: vcrun_x64
+      name: wineexec
+      prefix: $GAMEDIR
+      args: /silent /norestart
+  - task:
+      app: win10
+      name: winetricks
+      prefix: $GAMEDIR
+  - extract:
+      src: fonts
+      dst: $GAMEDIR/drive_c/windows/Fonts/
+  - task:
+      description: Installing fonts...
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Consolas Regular (TrueType)
+      value: "consolas.ttf"
+      type: REG_SZ
+  - task:
+      description: Installing fonts...
+      name: set_regedit
+      path: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts
+      key: Unifont (TrueType)
+      value: "unifont.ttf"
+      type: REG_SZ      
+  - task:
+      description: Starting game installer...
+      executable: setup
+      name: wineexec
+      prefix: $GAMEDIR
+  - task:
+      description: Running gameplay switcher...
+      executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - extract:
+      src: settings
+      dst: $CACHE/settings/
+  - execute:
+      command: |
+        mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules"
+        mkdir -p "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
+        cp "$CACHE/settings/$INPUT_GAMERES/settings.dat" "$GAMEDIR/drive_c/users/$USER/Documents/KONAMI/eFootball PES 2021 SEASON UPDATE/"
+        if [[ $INPUT_GAMERES == "800x1280" ]]; then
+          cd "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons"
+          match=$(grep "lua.module =" sider.ini | tail -n1)
+          sed -i -e "/$match/ s/\(.*\)\(lua.module.*\)/\1\2\n\1lua.module = \"aspectratio.lua\"/" sider.ini
+        fi
+  - write_file:
+      file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules/aspectratio.lua
+      content: |
+        -- Based on lua by Durandil67
+
+        local m = { version = "1.0" }
+
+        function m.init(ctx)
+            local addr = memory.search_process("\x80\x7B\x7C\x00\x0F\x28")
+            if addr then
+                log(string.format("found magic string at: %s", memory.hex(addr)))
+                memory.write(addr, "\x80\x7B\x7C\x01\x0F\x28")
+            else
+                error("unable to find magic string")
+            end
+        end
+
+        return m
+  - extract:
+      src: controller
+      dst: $CACHE/controller/
+  - copy:
+      src: $CACHE/controller/$INPUT_CONTROLLER/SMK_Addcontrol.cpk
+      dst: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/download/
+  wine:
+    dxvk: true
+    dxvk_version: v2.2
+    overrides:
+      amd_ags_x64: b
+      Settings_b: n

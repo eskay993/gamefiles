@@ -59,7 +59,7 @@ This guide assumes you're installing on a Steam Deck. The steps are the same for
     
 15.  Read the **important** notes below! And check [Troubleshooting](#troubleshooting) if you have any issues.
 
-> ```IMPORTANT:``` On Steam Deck, you need to play the game in Game Mode, not Desktop Mode. In Desktop Mode, the controller will not be recognised. If you selected `Create steam shortcut` in step 6 above, then the game should be in your library and you can launch it from Game Mode. If you  did not, or the game is not appearing in your Steam library, then follow [these steps](#add-spfl25-to-steam-library--game-mode) to add it. 
+> ```IMPORTANT:``` On Steam Deck, you need to play the game in Game Mode, not Desktop Mode. In Desktop Mode, the controller will not be recognised. If you selected `Create steam shortcut` in step 6 above, then the game should be in your library and you can launch it from Game Mode. If you  did not, or the game is not appearing in your Steam library, then follow [these steps](#how-to-add-spfl-to-steam-library--game-mode) to add it. 
 
 > ```IMPORTANT:``` When you launch the game, you *might* get a warning about not enough VRAM. You can safely just click `Ignore` and continue. You can get rid of this warning by going into your Steam Deck BIOS and changing the `UMA Frame Buffer Size` to `2G`, but it's not necessary and beyond the scope of this guide.
 

@@ -64,13 +64,15 @@ if ! [ -d ${install_dir} ]; then
    exit 1
 fi
 
+echo "Found game in '${install_dir}'"
+
 pushd "${install_dir}"/IMAGE/MOVIE >/dev/null
-[ -d BACKUP ] || mkdir -p BACKUP
+[ -d BACKUP ] || mkdir -v BACKUP
 
 for fmv in *.wmv; do
    codec="$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=noprint_wrappers=1:nokey=1 ${fmv})"
    if [[ "${codec}" == "mpeg4" ]]; then
-      echo "Skipping ${fmv}: Video already encoded as mpeg4."
+      echo "Skipping ${fmv}: Video already encoded as mpeg4"
       continue
    fi
    echo "Transcoding ${fmv}..."

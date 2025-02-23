@@ -28,3 +28,9 @@ You can also pass the location of your install to the script as well
 ```
 ./onimusha-fmv-fix.sh "/path/to/onimusha/game"
 ```
+
+or directly from github....
+
+```
+curl -s https://raw.githubusercontent.com/eskay993/gamefiles/refs/heads/main/onimusha-warlords-hd/onimusha-fmv-fix.sh | bash -s "/path/to/onimusha/game"
+```

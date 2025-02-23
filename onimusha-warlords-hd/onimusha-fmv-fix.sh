@@ -17,7 +17,7 @@
 # ./onimusha-fmv-fix.sh
 #
 # Or if you're feeling lazy, just install the game in Steam then in a terminal run:
-# curl -s https://github.com/eskay993/gamefiles/blob/main/onimusha-warlords-hd/scripts/onimusha-fmv-fix.sh | bash
+# curl -s https://raw.githubusercontent.com/eskay993/gamefiles/refs/heads/main/onimusha-warlords-hd/onimusha-fmv-fix.sh | bash
 #
 # You can also pass the location of your install to the script as well
 # (useful for non Steam installs):

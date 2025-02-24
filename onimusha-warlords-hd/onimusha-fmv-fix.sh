@@ -22,6 +22,10 @@
 # You can also pass the location of your install to the script as well
 # (useful for non Steam installs):
 # ./onimusha-fmv-fix.sh "/path/to/onimusha/game"
+#
+# or
+#
+# curl -s https://raw.githubusercontent.com/eskay993/gamefiles/refs/heads/main/onimusha-warlords-hd/onimusha-fmv-fix.sh | bash -s "/path/to/onimusha/game"
 
 
 STEAM_ROOT="$HOME/.steam/root"
@@ -52,6 +56,10 @@ function steam_library() {
   echo "$path"
 }
 
+if ! command -v ffmpeg >/dev/null; then
+   echo "Missing ffmpeg. Please install it first and try again."
+   exit 1
+fi
 
 if [ -n "$1" ]; then
    install_dir="$1"

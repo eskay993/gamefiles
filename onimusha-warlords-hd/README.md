@@ -1,3 +1,6 @@
+### Note: I have since found that GE-Proton9-9 (and exactly this version) works with FMVs out of the box without needing to re-encode. Others have reported ealier versions of GE-Proton9 work as well, although they did not for me. Later versions do not work it seems. Try GE-Proton9-9 first before using the script.
+
+
 Script to fix FMVs not playing in Onimusha Warlords by re-encoding the
 videos from vc1 to mpgeg4. The script should find your Steam install of
 the game automatically.

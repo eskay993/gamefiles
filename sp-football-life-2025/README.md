@@ -59,11 +59,14 @@ This guide assumes you're installing on a Steam Deck. The steps are the same for
     
 15.  Read the **important** notes below! And check [Troubleshooting](#troubleshooting) if you have any issues.
 
-> ```IMPORTANT:``` On Steam Deck, you need to play the game in Game Mode, not Desktop Mode. In Desktop Mode, the controller will not be recognised. If you selected `Create steam shortcut` in step 6 above, then the game should be in your library and you can launch it from Game Mode. If you  did not, or the game is not appearing in your Steam library, then follow [these steps](#how-to-add-spfl-to-steam-library--game-mode) to add it. 
+> [!IMPORTANT]
+> On Steam Deck, you need to play the game in Game Mode, not Desktop Mode. In Desktop Mode, the controller will not be recognised. If you selected `Create steam shortcut` in step 6 above, then the game should be in your library and you can launch it from Game Mode. If you  did not, or the game is not appearing in your Steam library, then follow [these steps](#how-to-add-spfl-to-steam-library--game-mode) to add it. 
 
-> ```IMPORTANT:``` When you launch the game, you *might* get a warning about not enough VRAM. You can safely just click `Ignore` and continue. You can get rid of this warning by going into your Steam Deck BIOS and changing the `UMA Frame Buffer Size` to `2G`, but it's not necessary and beyond the scope of this guide.
+> [!IMPORTANT]
+> When you launch the game, you *might* get a warning about not enough VRAM. You can safely just click `Ignore` and continue. You can get rid of this warning by going into your Steam Deck BIOS and changing the `UMA Frame Buffer Size` to `2G`, but it's not necessary and beyond the scope of this guide.
 
-> ```IMPORTANT:``` If game looks dark and you get flickering / missing textures during a match then Lutris probably did not download dxvk properly. Clear your Lutris cache following [these steps](#how-to-clear-your-lutris-cache) and try again.
+> [!IMPORTANT]
+> If game looks dark and you get flickering / missing textures during a match then Lutris probably did not download dxvk properly. Clear your Lutris cache following [these steps](#how-to-clear-your-lutris-cache) and try again.
 
 
 # Useful info
@@ -97,7 +100,8 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 ## How to backup / restore your game saves
 
-> WARNING: Uninstalling the game from Lutris, or deleting the folder where the game is installed will also deleted your save files. Make sure to backup the save folder before removing the game.
+> [!WARNING]
+> Uninstalling the game from Lutris, or deleting the folder where the game is installed will also deleted your save files. Make sure to backup the save folder before removing the game.
 
 To make a backup of your save files, the folder is located in:
 
@@ -118,9 +122,10 @@ On Steam Deck, follow the below steps in Desktop Mode.
 1. Run Lutris and select `SP Football Life 2025` (single click just to highlight it)
 2. Click the wine glass icon at the bottom and select `Run EXE inside Wine Prefix`
 3. Browse to `<GAME_INSTALL_PATH>/drive_c/Program Files (x86)/SP Football Life 2025`
-> Note: If you followed the guide above, and installed the game in the default Lutris location, the full path on Steam Deck will be `/home/deck/Games/sp-football-life-2025/drive_c/Program Files (x86)/SP Football Life 2025/`
 4. Choose either `Settings.exe` or `FL25 switcher.exe` to launch the respective exe file and make any changes.
 
+> [!Note]
+> If you followed the guide above, and installed the game in the default Lutris location, the full path on Steam Deck will be `/home/deck/Games/sp-football-life-2025/drive_c/Program Files (x86)/SP Football Life 2025/`
 
 ## How to add SPFL to Steam Library / Game Mode
 

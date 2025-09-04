@@ -1,7 +1,9 @@
+> Update 04/09/2025: Updated to work with latest Lutris and Reloaded (as of writing)
+
 > Update 21/12/2023: Both scripts have now been updated to use Steem006's [Silent Hill 3 PC Fix](https://community.pcgamingwiki.com/files/file/1331-silent-hill-3-pc-fix-by-steam006/), which introduces additional fixes and performs better on Steam Deck.
 
 # Intro
-Updated Lutris installer script for the PC-DVD version of Silent Hill 3 based on chrll's original Lutris script and is inspired by Betwixt-Two-Ferns's awesome [The Definitive Guide to Setting up Silent Hill 1-4 on Steam Deck](https://www.reddit.com/r/SteamDeck/comments/wziuwc/the_definitive_guide_to_setting_up_silent_hill_14/). The game runs at a near solid 60FPS (even on Steam Deck), and everything should be configured out of the box, including widescreen, audio fixes and controller support.
+Lutris install script for SILENT HILL 3 on PC. The game runs at a near solid 60FPS (even on Steam Deck), and everything should be configured out of the box, including widescreen, audio fixes and controller support.
 
 The following fixes and patches are installed:
 - Silent Hill 3 PC Fix by Steam006 ([link](https://community.pcgamingwiki.com/files/file/1331-silent-hill-3-pc-fix-by-steam006/))
@@ -21,10 +23,10 @@ There are 2 versions of the script, the main difference being which sound patch 
 Try this version first. Installs MarioTainaka's [Audio Enhanced Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack) which  fixes the pitch and uses uncompressed audio files for better sound quality.
 Relaoded-II Mod Loader is also installed to automatically load the audio pack. This version can be a bit fiddly to install, so if it doesn't work for you, try the other version below.
 
-> As of writing (21st Dec 2023), this version works with v3.2 of the Audio Enhacement Pack, however if Reloaded or the Audio Enhancement Pack introduce something unexpected in a future update, it may break the script.
+> As of writing (4th Sep 2025), this works with Audio Enhancement Pack v3.4 and Reloaded v1.29.2. Newer versions should still break, but also they may not.
 
 ### 2. **silent-hill-3-installer-with-sound-fixer** ([Install Guide](#sf_guide))<br>
-Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/) which directly patches the sound files to fix the pitch. The result is not as good as the Audio Enhacement Pack, but still much better than the stock audio. This version is a backup option in case the other version does not work for you.
+Installs Psycho-A's [Silent Hill 3 PC Sound Fix](https://community.pcgamingwiki.com/files/file/1867-silent-hill-3-pc-sound-fix/) which directly patches the sound files to fix the pitch. The result is not as good as the Audio Enhancement Pack, but still much better than the stock audio. This version is a backup option in case the other version does not work for you.
 
 #
 
@@ -40,7 +42,7 @@ Try this version first. If it doesn't work, try the Sound Fixer version below. S
 2. Download [Silent Hill 3 PC Fix by Steam006](https://community.pcgamingwiki.com/files/file/1331-silent-hill-3-pc-fix-by-steam006/) from PCGamingWiki.
  Do not extract the zip.
 
-3. (Optional) The script will automatically download [Silent Hill 3 Audio Enhancement Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack) from Mod DB during the install, but if you have slow internet, you may want to download it yourself beforehand as it's nearly 500MB. Do not extract the zip.
+3. Download [Silent Hill 3 Audio Enhancement Pack](https://www.moddb.com/mods/silent-hill-3-audio-enhancement-pack). There are 2 versions - Grab the one wihtout Reloaded.
 
 4. Extract the content of the game ISO. On Windows, you can do this with WinRAR or 7zip. On Linux, Ark should be able to do this.
 
@@ -52,24 +54,32 @@ Try this version first. If it doesn't work, try the Sound Fixer version below. S
 
 8. Click `Browse` under `Silent Hill 3 Installer` and select `setup.exe` from the DVD/ISO files that you extracted in Step 4.
 
-9. Click `Browse` under `Silent_Hill_3_PC_Fix-Steam006.zip` and select the zip you downloaded in Step 2.
+9. Click `Browse` under `Silent_Hill_3_PC_Fix-Steam006.zip` and select the Steam006 PC fix zip you downloaded in Step 2.
 
-10. (Optional) If you downloaded the audio pack yourself from Mod DB in Step 3, then under `Silent Hill 3 Audio Enhancement Pack` change the "Source" from `Download` to `Select File` from the drop-down menu. Then click `Browse` and select the file you downloaded.
+10. Click `Browse` under `Silent Hill 3 Audio Enhancement Pack` and select the audio enhancement 7z file you downloaded in Step 3.
 
-11. Click `Install` and wait for the various files to download.
+11. Click `Install` and wait for the other files to download.
 
 12. Select your prefered language from the drop-down menu then click `Continue`.
 
 13. Select your resolution and click `Continue`. Automatic is recommended.
 
-14. Let the installer do it's thing. It may appear to hang for a bit... just leave it to run.
+14. When SILENT HILL 3 actually starts it's install, the sceen will go black. That's fine. It's running in the background and should only take around 30 seconds. You can alt-tab to get back to your desktop if you like, or just wait.
 
-15. Towards the end, `Reloaded-II Mod Loader` will launch and start downloading updates. **IMPORTANT: Let it finish it's updates! You should see it download a couple of things then just sit there.**
+15. Towards the end, `Reloaded-II Mod Loader` will launch and start downloading updates. You should see it download a couple of things then just sit there. Once it's finished, click close on Reloaded to continue.
+> [!Important]
+> Sometimes updates don't get trigger properly. If this happens, or you are not sure, close Reloaded, continue on with the rest of the steps.
 
-16. Once the updates finish, just close `Reloaded-II`. Wait for the installer to finish up.
+16. After Reloaded, the script does a few more things then it's done. Next check everything is working.
 
-17. Done! Run the game and enjoy!
+17. Click Play on the game in Lutris. A popup should appear with `SILENT HILL 3` and `Reloaded` as options. Choose `SILENT HILL 3`.
 
+18. If the very first screen you see says "Silent Hill Audio Enhancement Pack" then you're good! If you get a Reloaded popup error message, or you see a white screen with the KONAMI logo then Reloaded did not download what it needs. Follow these steps to try and resolve it:
+    - Close the game if it's running.
+    - Launch the game again from Lutris.
+    - Select `Realoded II Mod Loader` from the menu
+    - Once it launches leave it a few seconds and check to see if it triggers some downloads. You should see 2-3 quick popups flash with download progress bars.
+    - Close Reloaded and try again
 
 <br>
 

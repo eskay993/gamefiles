@@ -4,5 +4,5 @@ If using the SPFL install script, these are all installed automatically.
 
 - `settings.zip` - Preconfigured settings for various resolutions. Useful for those struggling to open Settings.exe on Linux/Steam Deck.
 - `controller.zip` - Various controller button prompts. Useful for those having trouble opening the controller config exe or want to change the button prompts quickly. - UNTESTED ON FL26
-- `SPFL_AspectRatio_Fix.zip` - Changes aspect ratio to 16:10. Useful for Steam Deck.
+- `SPFL_AspectRatio_Fix.zip` - Add support from 16:10 screens (e.g. Stem Deck) and ultrawides to remove black bars during matches.
 - `fonts.zip` - Fonts needed for Settings.exe and sider. 

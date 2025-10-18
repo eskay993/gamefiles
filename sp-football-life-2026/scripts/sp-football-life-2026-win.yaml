@@ -147,9 +147,12 @@ script:
       description: Making bash script executable...
       command: |
         chmod +x $GAMEDIR/FL${VERSION}_start.sh
+  system:
+    env:
+      ENABLE_GAMESCOPE_WSI: '0'
   wine:
     dxvk: true
-    # dxvk_version: v2.2
+    #dxvk_version: v2.2
     overrides:
       steam_api64: n,b
       wininet: n,b

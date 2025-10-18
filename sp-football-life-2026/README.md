@@ -103,7 +103,7 @@ To restore you save files after a fresh install, just copy the `KONAMI` folder t
 
 ## How to run `Settings` or `Switcher` tool
 
-The a new 2026 script comes with a menu that lets you choose to run Settings or Switcher right from Lutris. 
+The new 2026 script comes with a menu that lets you choose to run Settings or Switcher right from Lutris. 
 
 In Desktop Mode, just launch the game in Lutris and select the option you want from the popup. 
 

@@ -139,12 +139,27 @@ Sometimes Lutris doesn't download needed files correctly. If you have any random
 5. Try what you were doing again and see if it fixes the issue
 
 # Troubleshooting
-### I've getting errors during the install... help!
+## I've getting errors during the install... help!
 First thing to try is [clear your Lutris cache](#how-to-clear-your-lutris-cache). Also make sure Lutris is fully updated using `Discover`. If you still have issues after this, then post an issue [here](https://github.com/eskay993/gamefiles/issues/new?assignees=&labels=&projects=&template=issue.md&title=) with the full error log (all the orange text in the Lutris window)
 
-### Black screen with audio on Steam Deck
+## Black screen with audio on Steam Deck
 
-I'm not sure why this happens. This can happen when running the game through Lutris in Game Mode. As a workaround, I create a script to bypass Lutris. Do this:
+For some people, when launching the game in Game Mode you might get a black screen while still hearing the audio in the background. This is related to the flatpak version of gamescope installed alongside Lutris.
+
+The latest version of the yaml script should address this, but for anyone still experiencing it, here are 2 solutions. Try them in order:
+
+#### Solution 1:
+
+Launch the game with `ENABLE_GAMESCOPE_WSI=0`. To do this:
+
+- In Desktop Mode, right click the game in Lutris and choose `Configure` then `System Options`
+- Scroll down to Environment Variables and click the `Add`button
+- Under Key, put `ENABLE_GAMESCOPE_WS`
+- Under Value, put `0`
+
+#### Solution 2
+
+I create a bash script that bypasses Lutris completely. Change your Steam shortcut for the game to point to this script following these steps:
 
 - In Desktop Mode, open Steam
 - Right click on you SP Football Life 2026 game and go to Properties
@@ -154,13 +169,13 @@ I'm not sure why this happens. This can happen when running the game through Lut
 
 Now try it in Game Mode.
 
-### My controller is not being detected
+## My controller is not being detected
 You're probably playing in Desktop mode. It is recommended you play in Game Mode. To add the game to Game Mode, follow [these steps](#how-to-add-spfl-to-steam-library--game-mode). If you really want to play in Desktop mode. then hold down the `Start` button on the Steam Deck for a few seconds and it should switch the controller to Controller Mode. Hold `Start` again to switch back to Desktop Mode when you're done. 
 
 ### The gameplay is flickering or missing texture during a match
 If game looks dark and you get flickering / missing textures during a match then Lutris probably did not download dxvk properly. Clear your Lutris cache following [these steps](#how-to-clear-your-lutris-cache) and try again.
 
-### I'm still seeing black borders even with the aspect ratio patch
+## I'm still seeing black borders even with the aspect ratio patch
 The aspect ratio patch only works during matches. It does not worn in menus. So you will see black bars in the menus, but the matches should be in full screen with no black bars.
 
 # Credits

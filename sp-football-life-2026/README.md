@@ -103,13 +103,9 @@ To restore you save files after a fresh install, just copy the `KONAMI` folder t
 
 ## How to run `Settings` or `Switcher` tool
 
-The is a new 2026 script comes with a menu that lets you choose to run Settings or Switcher right from Lutris. Just launch the game in Lutris and select the option you want from the popup. 
+The a new 2026 script comes with a menu that lets you choose to run Settings or Switcher right from Lutris. 
 
-> [!Note]
->
-> This only works in Desktop Mode on Steam Deck / Steam OS
-
-
+In Desktop Mode, just launch the game in Lutris and select the option you want from the popup. 
 
 ## How to add SPFL to Steam Library / Game Mode
 

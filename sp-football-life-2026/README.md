@@ -103,19 +103,13 @@ To restore you save files after a fresh install, just copy the `KONAMI` folder t
 
 ## How to run `Settings` or `Switcher` tool
 
-The is a new menu that lets you choose to run Settings or Switcher. Jsut laucnh the game in Lutris and select the option you want from the popup.
-
-If you want to run them manually, here's how:
-
-On Steam Deck, follow the below steps in Desktop Mode.
-
-1. Run Lutris and select `SP Football Life 2026` (single click just to highlight it)
-2. Click the wine glass icon at the bottom and select `Run EXE inside Wine Prefix`
-3. Browse to `<GAME_INSTALL_PATH>/drive_c/Program Files (x86)/SP Football Life 2026`
-4. Choose either `Settings.exe` or `FL26 switcher.exe` to launch the respective exe file and make any changes.
+The is a new 2026 script comes with a menu that lets you choose to run Settings or Switcher right from Lutris. Just launch the game in Lutris and select the option you want from the popup. 
 
 > [!Note]
-> If you followed the guide above, and installed the game in the default Lutris location, the full path on Steam Deck will be `/home/deck/Games/sp-football-life-2026/drive_c/Program Files (x86)/SP Football Life 2026/`
+>
+> This only works in Desktop Mode on Steam Deck / Steam OS
+
+
 
 ## How to add SPFL to Steam Library / Game Mode
 

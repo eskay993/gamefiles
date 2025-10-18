@@ -25,7 +25,7 @@ script:
     prefix: $GAMEDIR
   installer:
   - task:
-      description: Creating Wine prefix
+      description: Creating prefix...
       name: create_prefix
       prefix: $GAMEDIR
   - task:
@@ -49,6 +49,7 @@ script:
       name: wineexec
       prefix: $GAMEDIR
   - execute:
+      description: Renaming dlls...
       command: |
         cp -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll.bak"
         mv -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/wininet.dll"
@@ -58,6 +59,7 @@ script:
       name: wineexec
       prefix: $GAMEDIR
   - execute:
+      description: Setting up aspect ratio fix...
       command: |
         mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules"
         ratio=$(awk -v w="$RESOLUTION_WIDTH" -v h="$RESOLUTION_HEIGHT" 'BEGIN { printf "%.4f", w / h }')
@@ -68,6 +70,7 @@ script:
           sed -i -e "/$match/ s/\(.*\)\(lua.module.*\)/\1\2\n\1lua.module = \"aspectratio.lua\"/" sider.ini
         fi
   - write_file:
+      description: Writting aspectratio.lua...
       file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules/aspectratio.lua
       content: |
         -- Based on lua by Durandil67
@@ -86,6 +89,7 @@ script:
 
         return m
   - write_file:
+      description: Writting bat file...
       file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL_20${VERSION}.bat
       content: |
         @echo off
@@ -108,8 +112,9 @@ script:
         ping -n 3 127.0.0.1 >nul
         echo sider active...
         echo Launching FL...
-        start "" %fl%        
+        start "" %fl%
   - write_file:
+      description: Writting bash script...
       file: $GAMEDIR/FL${VERSION}_start.sh
       content: |
         #!/bin/bash
@@ -139,11 +144,12 @@ script:
         # Command
         "$WINEBIN" '$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL 20${VERSION} start.exe'
   - execute:
+      description: Making bash script executable...
       command: |
         chmod +x $GAMEDIR/FL${VERSION}_start.sh
   wine:
     dxvk: true
-    dxvk_version: v2.2
+    # dxvk_version: v2.2
     overrides:
       steam_api64: n,b
       wininet: n,b

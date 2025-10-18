@@ -157,6 +157,8 @@ Launch the game with `ENABLE_GAMESCOPE_WSI=0`. To do this:
 - Under Key, put `ENABLE_GAMESCOPE_WS`
 - Under Value, put `0`
 
+<img src="https://raw.githubusercontent.com/eskay993/gamefiles/refs/heads/main/tools/images/gamescope_env_var.jpg" width="500">
+
 #### Solution 2
 
 I create a bash script that bypasses Lutris completely. Change your Steam shortcut for the game to point to this script following these steps:

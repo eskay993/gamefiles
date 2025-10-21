@@ -40,7 +40,7 @@ script:
       prefix: $GAMEDIR
   - task:
       description: Installing other requirements...
-      app: vcrun2022 consolas unifont win10
+      app: vcrun2022 unifont win10
       name: winetricks
       prefix: $GAMEDIR
   - task:

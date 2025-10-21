@@ -8,6 +8,8 @@ assignees: ''
 
 **Details:**
 
+IMPORTANT: Please do not just provide an error code. Error codes on their own do not help identify any issues. Please fill in the below as best you can, including providing full logs.
+
 - Which game are you trying to install?
 
 
@@ -23,7 +25,7 @@ _Please provide details of what steps you followed when the issue occurred:_
 
 ```
 
-_If you got an error message, please paste the full log here (not just the error code)._
+_If you got an error message, please paste the full log it here below this line (NOT just the error codes)_ 
 
 
 ```

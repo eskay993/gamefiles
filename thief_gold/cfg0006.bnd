@@ -1,0 +1,155 @@
+; Steam Bindings
+
+bind + "gamma_delta -0.025"
+bind - "gamma_delta 0.025"
+bind / +leanleft
+bind /+alt "render_info 10"
+bind 0+alt show_poly
+bind 1 "inv_select sword"
+bind 1+alt "game_mode 320,240"
+bind 2 "inv_select blackjack"
+bind 2+alt "game_mode 400,300"
+bind 3 "inv_select broadhead"
+bind 3+alt "game_mode 512,384"
+bind 4 "inv_select water"
+bind 4+alt "game_mode 640,480"
+bind 5 "inv_select firearr"
+bind 5+alt "game_mode 800,600"
+bind 6 "inv_select eartharrow"
+bind 6+alt show_poly_edges
+bind 7 "inv_select gasarrow"
+bind 7+alt show_all_edges
+bind 8 "inv_select ropearrow"
+bind 8+alt show_cell
+bind 9 "inv_select noise"
+bind 9+alt show_mip
+bind : edit_command
+bind = "gamma_delta -0.025"
+bind ?+alt "render_info 30"
+bind [ prev_weapon
+bind \ drop_item
+bind ] next_weapon
+bind ` clear_weapon
+bind `+alt+shift screen_dump
+bind a +moveleftfast
+bind alt +slideon
+bind backspace clear_item
+bind c +moverightfast
+bind ctrl crouch
+bind d +moverightfast
+bind d+alt+ctrl "dump_cmds cmd.txt"
+bind del prev_weapon
+bind down +backfast
+bind e +leanright
+bind e+alt edit_mode
+bind e+shift "+fly -1"
+bind end +leanforward
+bind end+alt+ctrl+shift win_mission
+bind esc sim_menu
+bind f crouch
+bind f1 "inv_select healingpotion"
+bind f1+alt mono_debug
+bind f1+alt+ctrl "edit_mode 640,480"
+bind f10 screen_dump
+bind f11 quick_save
+bind f12 quick_load
+bind f2 "inv_select airpotion"
+bind f2+alt+ctrl "edit_mode 800,600"
+bind f3 "inv_select holyh2o"
+bind f3+alt+ctrl "edit_mode 1024,768"
+bind f4 "inv_select lockpicksm"
+bind f5 "inv_select lockpicklg"
+bind f6 "inv_select flashbomb"
+bind f7 "inv_select gasmine"
+bind f8 "inv_select mine"
+bind g +lookdown
+bind g+alt game_mode
+bind home "move_game_camera 0.0,0.0,0.0"
+bind ins clear_weapon
+bind joy_axisx +joyxaxis
+bind joy_axisy +joyforward
+bind keypad_center +forward
+bind keypad_del lookcenter
+bind keypad_down +backfast
+bind keypad_end +leanright
+bind keypad_enter crouch
+bind keypad_home "inv_select lockpicksm"
+bind keypad_ins +jump
+bind keypad_left "inv_select lockpicklg"
+bind keypad_minus +block
+bind keypad_pgdn +moverightfast
+bind keypad_pgup +leanright
+bind keypad_right +turnrightfast
+bind keypad_slash "cycle_item -1"
+bind keypad_star "cycle_item 1"
+bind keypad_up +walkfast
+bind l+alt quick_load
+bind lalt +slideon
+bind left +moveleftfast
+bind m automap
+bind mouse1 +use_weapon
+bind mouse2 +use_item
+bind mouse3 +block
+bind mouse_axisx mturn
+bind mouse_axisy mlook
+bind mouse_wheel_down prev_item
+bind mouse_wheel_up next_item
+bind n "inv_select compass2"
+bind n+alt+shift "patrol_test 2"
+bind o objectives
+bind o+alt+ctrl "rend_name_toggle 23"
+bind o+ctrl lit_obj_toggle
+bind p unfly
+bind p+alt+ctrl+shift fake_physics
+bind p+ctrl "history_cmd -1"
+bind pgdn next_weapon
+bind pgup automap
+bind print_screen screen_dump
+bind q +leanleft
+bind q+alt foot_sounds
+bind q+shift "+fly 1"
+bind r drop_item
+bind r+alt+shift draw_path_cells
+bind ralt +slideon
+bind right +moverightfast
+bind s +backfast
+bind s+alt quick_save
+bind s+alt+ctrl+shift stats_full
+bind s+alt+shift show_stats
+bind shift +creepon
+bind space +jump
+bind t +lookup
+bind t+alt+ctrl+shift time_stats
+bind t+alt+shift draw_path_cell_links
+bind tab "cycle_item 1"
+bind tab+shift "cycle_item -1"
+bind u+alt+shift path_test
+bind up +walkfast
+bind v lookcenter
+bind v+alt+shift dark_version
+bind w +walkfast
+bind w+alt+shift +leanforward
+bind x +backfast
+bind x+alt+shift quit_game
+bind z +moveleftfast
+bind ~ clear_weapon
+
+bow_zoom 1
+joystick_enable 0
+mouse_invert 1
+lookspring 0
+freelook 1
+mouse_sensitivity 2.50000000
+mouse_sensitivity_y_scale 1
+mouse_sensitivity_use_aspect 0
+crouch_unmount 1
+joy_rotate 0
+joystick_sensitivity 1.0
+joystick_deadzone 0.05
+rudder_sensitivity 1.0
+rudder_deadzone 0.05
+mwheel_deadzone 0
+auto_equip 1
+auto_search 1
+goal_notify 1
+climb_touch 0

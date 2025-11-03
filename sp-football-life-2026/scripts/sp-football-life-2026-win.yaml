@@ -146,7 +146,7 @@ script:
   - execute:
       description: Making bash script executable...
       command: |
-        chmod +x $GAMEDIR/FL${VERSION}_start.sh
+        chmod +x "$GAMEDIR/FL${VERSION}_start.sh"
   system:
     env:
       ENABLE_GAMESCOPE_WSI: '0'

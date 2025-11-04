@@ -160,4 +160,4 @@ script:
       Dinput: n,b
       XInput1_3: n,b
       winegstreamer: b
-    version: lutris-fshack-7.2-x86_64
+    version: wine-10.16-staging-amd64-wow64

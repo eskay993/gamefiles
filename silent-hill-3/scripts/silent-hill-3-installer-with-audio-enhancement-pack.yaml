@@ -203,5 +203,4 @@ script:
       XInput1_3: n,b
       version: n,b
       winegstreamer: b
-    version:
-      wine-10.8-staging-tkg-ntsync
+    version: wine-10.16-staging-amd64-wow64

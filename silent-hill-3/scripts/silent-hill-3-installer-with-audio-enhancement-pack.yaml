@@ -25,7 +25,7 @@ script:
   game:
     exe: drive_c/Games/SILENT HILL 3/sh3.exe
     launch_configs:
-    - exe:  $GAMEDIR//drive_c/users/$USER/Desktop/Reloaded-II/Reloaded-II32.exe
+    - exe:  $GAMEDIR//drive_c/Reloaded-II/Reloaded-II32.exe
       name: Relaoded-II Mod Loader
     prefix: $GAMEDIR
   installer:
@@ -109,11 +109,11 @@ script:
       prefix: $GAMEDIR
   - execute:
       command: |
-        mkdir -p "$GAMEDIR/drive_c/users/$USER/Desktop/Reloaded-II/Mods"
-        mkdir -p "$GAMEDIR/drive_c/users/$USER/Desktop/Reloaded-II/Apps/sh3.exe"
+        mkdir -p "$GAMEDIR/drive_c/Reloaded-II/Mods"
+        mkdir -p "$GAMEDIR/drive_c/Reloaded-II/Apps/sh3.exe"
         mkdir -p "$GAMEDIR/drive_c/users/$USER/AppData/Roaming/Reloaded-Mod-Loader-II"
   - write_file:
-      file: $GAMEDIR/drive_c/users/$USER/Desktop/Reloaded-II/Apps/sh3.exe/AppConfig.json
+      file: $GAMEDIR/drive_c/Reloaded-II/Apps/sh3.exe/AppConfig.json
       content: |
         {
           "AppId": "sh3.exe",
@@ -142,19 +142,43 @@ script:
   - move:
       description: Setting up audio enhancement pack...
       src: $CACHE/Silent Hill 3 Audio Enhancement Pack
-      dst: $GAMEDIR/drive_c/users/$USER/Desktop/Reloaded-II/Mods/
+      dst: $GAMEDIR/drive_c/Reloaded-II/Mods/
   - task:
       description: |
-        Installing Reloaded II Mod Loader. This can several minutes so please be patient...
-
+        Installing Reloaded-II Mod Loader. This can several minutes so please be patient...
         ****** IMPORTANT: ******
-        Reloaded will launch when install completes. Click 'Skip Tutorial', and let it finish any updates, then close Reloaded to continue. It should only take a few seconds.
+        Reloaded will launch shortly. Click 'Skip Tutorial', and let it finish any updates, then close Reloaded to continue. It should only take a few seconds.
 
         Very occasionally, Reloaded crashes with an error when it launches. If this happens, abort the install and start again.
       executable: $reloaded
       name: wineexec
       prefix: $GAMEDIR
-      args: --nogui
+      args: --dependenciesOnly
+      return_code: 2304
+  - execute:
+      description: |
+        Downloading and extracting Reloaded-II...
+
+        ****** IMPORTANT: ******
+        Reloaded will launch shortly. Click 'Skip Tutorial', and let it finish any updates, then close Reloaded to continue. It should only take a few seconds.
+
+        Very occasionally, Reloaded crashes with an error when it launches. If this happens, abort the install and start again.
+      command: |
+        version=$(curl -s https://api.github.com/repos/Reloaded-Project/Reloaded-II/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")')
+        curl -L -o "$CACHE/Release.zip" "https://github.com/Reloaded-Project/Reloaded-II/releases/download/${version}/Release.zip"
+        7z x "$CACHE/Release.zip" -o"$GAMEDIR/drive_c/Reloaded-II/"
+  - task:
+      description: |
+        Running Realoded-II...
+
+        ****** IMPORTANT: ******
+        Reloaded will launch shortly. Click 'Skip Tutorial', and let it finish any updates, then close Reloaded to continue. It should only take a few seconds.
+
+        Very occasionally, Reloaded crashes with an error when it launches. If this happens, abort the install and start again.
+      description: Installing Reloaded II Mod Loader. This can several minutes so please be patient...
+      executable: $GAMEDIR/drive_c/Reloaded-II/Reloaded-II32.exe
+      name: wineexec
+      prefix: $GAMEDIR
       return_code: 512
   - extract:
       description: Extracting additional sh3 files...
@@ -189,7 +213,7 @@ script:
       command: |
         sed -i 's/"ShowConsole": true/"ShowConsole": false/' "$GAMEDIR/drive_c/users/$USER/AppData/Roaming/Reloaded-Mod-Loader-II/ReloadedII.json"
         mkdir -pv "$GAMEDIR/drive_c/Games/SILENT HILL 3/scripts"
-        cp -v "$GAMEDIR/drive_c/users/$USER/Desktop/Reloaded-II/Loader/X86/Bootstrapper/Reloaded.Mod.Loader.Bootstrapper.dll" "$GAMEDIR/drive_c/Games/SILENT HILL 3/scripts/Reloaded.Mod.Loader.Bootstrapper.asi"
+        cp -v "$GAMEDIR/drive_c/Reloaded-II/Loader/X86/Bootstrapper/Reloaded.Mod.Loader.Bootstrapper.dll" "$GAMEDIR/drive_c/Games/SILENT HILL 3/scripts/Reloaded.Mod.Loader.Bootstrapper.asi"
   wine:
     Desktop: false
     esync: false

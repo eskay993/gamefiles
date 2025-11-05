@@ -1,0 +1,158 @@
+game_slug: sp-football-life-2026
+name: "SP Football Life 2026"
+year: 2025
+user: eskay993
+runner: wine
+slug: sp-football-life-2026-win
+version: Windows
+description: Installer for Football Life 2026 by SmokePatch. Download the game from pessmokepatch.com.
+notes:
+script:
+  variables:
+    VERSION: 26
+  files:
+  - setup: N/A:SPFL${VERSION}_setup.exe
+  # - stl: https://raw.githubusercontent.com/sonic2kk/steamtinkerlaunch/refs/heads/master/steamtinkerlaunch
+  game:
+    exe: drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL_20${VERSION}.bat
+    working_dir: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}
+    prefix: $GAMEDIR
+    launch_configs:
+    - exe:  $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/Settings.exe
+      name: Display and Controller Settings
+    # - exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+    #   name: Gameplay Switcher
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      description: Creating prefix...
+      name: create_prefix
+      prefix: $GAMEDIR
+  - task:
+      description: Installing Microsoft .NET Framework 4.8 (this can take a while)...
+      app: dotnet48
+      name: winetricks
+      prefix: $GAMEDIR
+  - task:
+      description: Installing Microsoft .NET Framework 8.0...
+      app: dotnet8
+      name: winetricks
+      prefix: $GAMEDIR
+  - task:
+      description: Installing other requirements...
+      app: vcrun2022 unifont win10
+      name: winetricks
+      prefix: $GAMEDIR
+  - task:
+      description: Starting game installer...
+      executable: $setup
+      name: wineexec
+      prefix: $GAMEDIR
+  - execute:
+      description: Renaming dlls...
+      command: |
+        cp -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll.bak"
+        mv -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/ddraw.dll"
+  # - task:
+  #     description: Running gameplay switcher...
+  #     executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+  #     name: wineexec
+  #     prefix: $GAMEDIR
+  - execute:
+      description: Setting up aspect ratio fix...
+      command: |
+        mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules"
+        ratio=$(awk -v w="$RESOLUTION_WIDTH" -v h="$RESOLUTION_HEIGHT" 'BEGIN { printf "%.4f", w / h }')
+        if [ "$ratio" != "1.7778" ] && [ "$ratio" != "0.5625" ]; then
+          cd "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons"
+          cp sider.ini sider.ini.bak
+          match=$(grep "lua.module =" sider.ini | tail -n1)
+          sed -i -e "/$match/ s/\(.*\)\(lua.module.*\)/\1\2\n\1lua.module = \"aspectratio.lua\"/" sider.ini
+        fi
+  - write_file:
+      description: Writting aspectratio.lua...
+      file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules/aspectratio.lua
+      content: |
+        -- Based on lua by Durandil67
+
+        local m = { version = "1.0" }
+
+        function m.init(ctx)
+            local addr = memory.search_process("\x80\x7B\x7C\x00\x0F\x28")
+            if addr then
+                log(string.format("found magic string at: %s", memory.hex(addr)))
+                memory.write(addr, "\x80\x7B\x7C\x01\x0F\x28")
+            else
+                error("unable to find magic string")
+            end
+        end
+
+        return m
+  - write_file:
+      description: Writting bat file...
+      file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL_20${VERSION}.bat
+      content: |
+        @echo off
+
+        set "fl=FL_2026.exe"
+        set "sider=SiderAddons\sider.exe"
+        set "log=SiderAddons\sider-app.log"
+
+        cd /d "%~dp0"
+        del %log%
+        echo Launching sider...
+        start "" %sider%
+
+        :wait
+        if not exist "%log%" (
+            ping -n 1 127.0.0.1 >nul
+            goto wait
+        )
+        
+        ping -n 3 127.0.0.1 >nul
+        echo sider active...
+        echo Launching FL...
+        start "" %fl%
+  - write_file:
+      description: Writting bash script...
+      file: $GAMEDIR/FL${VERSION}_start.sh
+      content: |
+        #!/bin/bash
+
+        # Environment variables
+        export __GL_SHADER_DISK_CACHE="1"
+        export __GL_SHADER_DISK_CACHE_PATH="$GAMEDIR"
+        export WINEDEBUG="-all"
+        export DXVK_LOG_LEVEL="error"
+        export UMU_LOG="1"
+        export WINEARCH="win64"
+        export WINE="$WINEBIN"
+        export WINEPREFIX="$GAMEDIR"
+        export WINEESYNC="1"
+        export WINEFSYNC="1"
+        export WINE_FULLSCREEN_FSR="1"
+        export DXVK_NVAPIHACK="0"
+        export DXVK_ENABLE_NVAPI="1"
+        export PROTON_DXVK_D3D8="1"
+        export WINEDLLOVERRIDES="steam_api64,ddraw=n,b;d3d10core,d3d11,d3d12,d3d12core,d3d8,d3d9,d3dcompiler_33,d3dcompiler_34,d3dcompiler_35,d3dcompiler_36,d3dcompiler_37,d3dcompiler_38,d3dcompiler_39,d3dcompiler_40,d3dcompiler_41,d3dcompiler_42,d3dcompiler_43,d3dcompiler_46,d3dcompiler_47,d3dx10,d3dx10_33,d3dx10_34,d3dx10_35,d3dx10_36,d3dx10_37,d3dx10_38,d3dx10_39,d3dx10_40,d3dx10_41,d3dx10_42,d3dx10_43,d3dx11_42,d3dx11_43,d3dx9_24,d3dx9_25,d3dx9_26,d3dx9_27,d3dx9_28,d3dx9_29,d3dx9_30,d3dx9_31,d3dx9_32,d3dx9_33,d3dx9_34,d3dx9_35,d3dx9_36,d3dx9_37,d3dx9_38,d3dx9_39,d3dx9_40,d3dx9_41,d3dx9_42,d3dx9_43,dxgi,nvapi,nvapi64=n;winemenubuilder="
+        export WINE_LARGE_ADDRESS_AWARE="1"
+        export TERM="xterm"
+
+        # Working Directory
+        cd '$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}'
+
+        # Command
+        "$WINEBIN" '$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL 20${VERSION} start.exe'
+  - execute:
+      description: Making bash script executable...
+      command: |
+        chmod +x "$GAMEDIR/FL${VERSION}_start.sh"
+  system:
+    env:
+      ENABLE_GAMESCOPE_WSI: '0'
+  wine:
+    dxvk: true
+    #dxvk_version: v2.2
+    overrides:
+      steam_api64: n,b
+      ddraw: n,b

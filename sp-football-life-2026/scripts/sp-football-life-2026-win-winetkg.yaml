@@ -14,14 +14,14 @@ script:
   - setup: N/A:SPFL${VERSION}_setup.exe
   # - stl: https://raw.githubusercontent.com/sonic2kk/steamtinkerlaunch/refs/heads/master/steamtinkerlaunch
   game:
-    exe: drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL_20${VERSION}.bat
+    exe: drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL 20${VERSION} start.exe
     working_dir: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}
     prefix: $GAMEDIR
     launch_configs:
     - exe:  $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/Settings.exe
       name: Display and Controller Settings
-    # - exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
-    #   name: Gameplay Switcher
+    - exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+      name: Gameplay Switcher
     prefix: $GAMEDIR
   installer:
   - task:
@@ -53,11 +53,11 @@ script:
       command: |
         cp -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll.bak"
         mv -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/ddraw.dll"
-  # - task:
-  #     description: Running gameplay switcher...
-  #     executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
-  #     name: wineexec
-  #     prefix: $GAMEDIR
+  - task:
+      description: Running gameplay switcher...
+      executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+      name: wineexec
+      prefix: $GAMEDIR
   - execute:
       description: Setting up aspect ratio fix...
       command: |
@@ -156,3 +156,4 @@ script:
     overrides:
       steam_api64: n,b
       ddraw: n,b
+    version: wine-10.16-staging-amd64-wow64

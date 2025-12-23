@@ -1,6 +1,9 @@
 <h1>SP Football Life 2026</h1>
 <h3>Steam Deck / Linux Installer</h3>
 
+>[!Important]
+Due to a change with Lutris, I had to change the runner to the default wine-ge, which is very old at this stage. I cannot get Switcher to work with it. If you need to use Switcher, try this version which I made a whole ago that should run natively on Linux - [FL_2026_Switcher-Linux.zip](https://github.com/eskay993/gamefiles/raw/refs/heads/main/sp-football-life-2026/FL_2026_Switcher-Linux.zip). I will try to find a better solution.
+
 - [Install Guide](#install-guide)
 - [Useful info](#useful-info)
   - [How to install updates](#how-to-install-updates)
@@ -9,11 +12,13 @@
   - [How to add SPFL to Steam Library / Game Mode](#how-to-add-spfl-to-steam-library--game-mode)
   - [How to clear your Lutris cache](#how-to-clear-your-lutris-cache)
 - [Troubleshooting](#troubleshooting)
-    - [I've getting errors during the install... help!](#ive-getting-errors-during-the-install-help)
-    - [I'm getting a black screen with audio on Steam Deck](#black-screen-with-audio-on-steam-deck)
-    - [My controller is not being detected](#my-controller-is-not-being-detected)
+  - [I've getting errors during the install... help!](#ive-getting-errors-during-the-install-help)
+  - [Black screen with audio on Steam Deck](#black-screen-with-audio-on-steam-deck)
+      - [Solution 1:](#solution-1)
+      - [Solution 2](#solution-2)
+  - [My controller is not being detected](#my-controller-is-not-being-detected)
     - [The gameplay is flickering or missing texture during a match](#the-gameplay-is-flickering-or-missing-texture-during-a-match)
-    - [I'm still seeing black borders even with the aspect ratio patch](#im-still-seeing-black-borders-even-with-the-aspect-ratio-patch)
+  - [I'm still seeing black borders even with the aspect ratio patch](#im-still-seeing-black-borders-even-with-the-aspect-ratio-patch)
 - [Credits](#credits)
 - [Additional Resources](#additional-resources)
 
@@ -48,20 +53,12 @@ This guide assumes you're installing on a Steam Deck. The steps are the same for
 
 10. Next, the `Settings` window *should* open. Ensure the following:
 	- "`Full Screen`" is selected. If it's greyed out, select the highest resolution available in the dropdown and you should then be able to select Full Screen.
+	- Chose "`Enable 2`" under V-Sync. Most people have better frame rate with this.
 	- If you're using a PS controller, make sure to click on the Controllers tab and select `DirectInput`
 	
-13. The new `Switcher` window should now launch. This new version of the tool does 2 things:
-	- Allows you to chose how you want the gameplay experience to be. You can choose SmokePatch's tweaked gameplay, or go for something closer to vanilla PES 2021. You can change this later at any time so experiment!
-	
-	- Allows you to change the visual controller button prompts you see in-game. If you are playing with a PS controller, chose one of the PS options, otherwise choose Xbox.
-
-Choose what you want, click `Apply` then `Close`
-
-14. Now click `Close` in Lutris and the game should now appear in .
-15. The final step! Please read the **important** notes below. And check [Troubleshooting](#troubleshooting) if you have any issues
-
-> [!IMPORTANT]
-> On Steam Deck, you should play the game in Game Mode, not Desktop Mode. In Desktop Mode, the controller will not be recognised. If you selected `Create steam shortcut` in step 6 above, then the game should be in your library and you can launch it from Game Mode. If you  did not, or the game is not appearing in your Steam library, then follow [these steps](#how-to-add-spfl-to-steam-library--game-mode) to add it. 
+11. Now click `Close` in Lutris and the game should now appear in .
+    
+12. The final step! Please read the **important** notes below. And check [Troubleshooting](#troubleshooting) if you have any issues
 
 > [!IMPORTANT]
 > On Steam Deck, when playing in Game Mode and adding the game through Lutris, you may encouter a black screen issue with audio. See [Black screen with audio on Steam Deck](#black-screen-with-audio-on-steam-deck)
@@ -106,6 +103,8 @@ To restore you save files after a fresh install, just copy the `KONAMI` folder t
 The new 2026 script comes with a menu that lets you choose to run Settings or Switcher right from Lutris. 
 
 In Desktop Mode, just launch the game in Lutris and select the option you want from the popup. 
+
+If you do not see the menu option for Switcher, or it's not running, try this Linux native version I made. Instructions in the zip - [FL_2026_Switcher-Linux.zip](https://github.com/eskay993/gamefiles/raw/refs/heads/main/sp-football-life-2026/FL_2026_Switcher-Linux.zip)
 
 ## How to add SPFL to Steam Library / Game Mode
 

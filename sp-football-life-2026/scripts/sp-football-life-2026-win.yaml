@@ -20,8 +20,8 @@ script:
     launch_configs:
     - exe:  $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/Settings.exe
       name: Display and Controller Settings
-    - exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
-      name: Gameplay Switcher
+    # - exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+    #   name: Gameplay Switcher
     prefix: $GAMEDIR
   installer:
   - task:

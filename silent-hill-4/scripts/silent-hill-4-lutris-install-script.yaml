@@ -13,7 +13,7 @@ credits: |
     https://github.com/eskay993/gamefiles/tree/main/silent-hill-4
 script:
   files:
-  - gogsetup: N/A:GOG setup executable
+  - gogsetup: N/A:GOG setup executable (v7 or newer)
   - asiloader_zip: https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases/download/v4.68/Ultimate-ASI-Loader.zip
   - settings_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-4/files/settings.zip
   - randomizer_zip: https://github.com/HunterStanton/SilentHill4Randomizer/releases/download/beta-0.2.1/SH4.Randomizer.0.2.1.zip
@@ -95,14 +95,9 @@ script:
           sed -i -e 's/^RandomItems = 1/RandomItems = 0/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
           sed -i -e 's/^RestoreHauntings = 0/RestoreHauntings = 1/' "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/scripts/randomizer.ini"
         fi
-  - execute:
-      # Note: These FMVs crash the game, so renaming it so that they don't play. Other in-game FMVs seems to work fine.
-      command: |
-        mv "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_00.pac.broken"
-        mv "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_09.pac" "$GAMEDIR/drive_c/GOG Games/Silent Hill 4/movie/m_09.pac.broken"
   wine:
     overrides:
       d3d8.dll: n,b
       dinput8.dll: n,b
       dsound.dll: n,b
-    version: lutris-7.2-2-x86_64
+      D3DCompiler_47: n,b

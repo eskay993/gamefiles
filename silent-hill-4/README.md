@@ -1,6 +1,5 @@
-> <mark>Note: Broken FMVs</mark><br>
-There are 2 in-game FMVs that are known to cause the game to crash when they play. The intro FMV (before the main menu screen), and the FMV that plays on level 4-2. There may be others beyond this point that crash too. I have not found a fix for this, so as a workaround, this script just disables them by renaming those FMV files so they don't play and the game continues.
-
+>[!Important]
+> Make sure to use at least v7 of the game from GOG, released in Dec 2025. This version updated the in-game video player which fixes the broken FMVs.
 
 # About
 
@@ -39,11 +38,8 @@ On Steam Deck, follow the below steps in Desktop Mode.
 10. Let the installer do it's thing. It may appear to hang for a bit... just leave it to finish.
 11. Done!  Run the game and enjoy!
 
-Note 1: In-game FMVs now play correctly, however the FMV that plays on the title screen crashes the game. The script renames the movie file to disable it as a workaround.
-
-Note 2: Controller must be on before running the game for it to be recognised.
-
-Note 3: Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. You have two options:
+>[!Note]
+Controller works out of the box on desktop. It does not on Steam Deck. Not all the buttons are mapped correctly. You have two options:
 
 1. Remap the controls on Steam Deck as follows to match PS2 controls (keep every other button as default):
 

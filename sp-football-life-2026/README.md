@@ -152,11 +152,7 @@ First thing to try is [clear your Lutris cache](#how-to-clear-your-lutris-cache)
 
 For some people, when launching the game in Game Mode you might get a black screen while still hearing the audio in the background. This is related to the flatpak version of gamescope installed alongside Lutris.
 
-The latest version of the yaml script should address this, but for anyone still experiencing it, here are 2 solutions. Try them in order:
-
-#### Solution 1:
-
-Launch the game with `ENABLE_GAMESCOPE_WSI=0`. To do this:
+The latest version of the yaml script should address this, but for anyone still experiencing it, try launching the game with `ENABLE_GAMESCOPE_WSI=0`. To do this:
 
 - In Desktop Mode, right click the game in Lutris and choose `Configure` then `System Options`
 - Scroll down to Environment Variables and click the `Add`button
@@ -165,27 +161,15 @@ Launch the game with `ENABLE_GAMESCOPE_WSI=0`. To do this:
 
 <img src="https://raw.githubusercontent.com/eskay993/gamefiles/refs/heads/main/tools/images/gamescope_env_var.jpg" width="500">
 
-#### Solution 2
-
-I create a bash script that bypasses Lutris completely. Change your Steam shortcut for the game to point to this script following these steps:
-
-- In Desktop Mode, open Steam
-- Right click on you SP Football Life 2026 game and go to Properties
-- Click `Browse` next to `Target` and navigate to where you installed the game. If you kept everything default, this should be `/home/deck/Games/sp-football-life-2026`
-- Select the script `FL26_start.sh` and click OK
-- Delete whatever is in `Launch Options`
-
-Now try it in Game Mode.
-
 ## My controller is not being detected...
 
-Please make sure you have update 1.4 installed before troubleshooting any controller issues. This shoudl fix most issues in the first instance.
+Please make sure you have at least update 1.4 installed before troubleshooting any controller issues. This should fix most issues in the first instance. Follow - [How to install updates](#how-to-install-updates)
 
-#### Not working in Desktop Mode:
+- #### Not working in Desktop Mode:
 
 It is recommended you play in Game Mode. To add the game to Game Mode, follow [these steps](#how-to-add-spfl-to-steam-library--game-mode). If you really want to play in Desktop mode. then hold down the `Start` button on the Steam Deck for a few seconds and it should switch the controller to Controller Mode. Hold `Start` again to switch back to Desktop Mode when you're done. 
 
-#### Not working in Steam when using DirectInput / PlayStation Controller
+- #### Not working in Steam when using DirectInput / PlayStation Controller
 
 Steam by default converts any controller input to XInput, so if you changed you controller setting to Directinput in the Settings.exe app, then you need to disable Steam Input in Steam.
 

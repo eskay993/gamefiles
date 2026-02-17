@@ -2,7 +2,7 @@
 <h3>Steam Deck / Linux Installer</h3>
 
 > [!Important]
-> 17/02/2026: Please make sure to update to Lutris 0.5.20 at least. This fixes a few issues with earleirs version of the script. If your distro does not ship this version yet, try the flatpak. 
+> 17/02/2026: Please make sure to update to Lutris 0.5.20 at least. This fixes a few issues with earlier versions of the script. If your distro does not ship this version yet, try the flatpak. 
 
 - [Install Guide](#install-guide)
 - [Useful info](#useful-info)

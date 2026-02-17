@@ -175,7 +175,7 @@ Steam by default converts any controller input to XInput, so if you changed you 
 
 In Steam, right click on the game, go to `Properties`, `Controllers`, then choose `Disable Steam Input` from the drop down.
 
-### The gameplay is flickering or missing texture during a match
+## The gameplay is flickering or missing texture during a match
 
 If game looks dark and you get flickering / missing textures during a match then Lutris probably did not download dxvk properly. Clear your Lutris cache following [these steps](#how-to-clear-your-lutris-cache) and try again.
 

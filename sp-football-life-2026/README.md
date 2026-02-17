@@ -173,7 +173,7 @@ It is recommended you play in Game Mode. To add the game to Game Mode, follow [t
 
 Steam by default converts any controller input to XInput, so if you changed you controller setting to Directinput in the Settings.exe app, then you need to disable Steam Input in Steam.
 
-Right click on the game, go to `Properties`, `Controllers`, then choose `Disable Steam Input` from the drop down.
+In Steam, right click on the game, go to `Properties`, `Controllers`, then choose `Disable Steam Input` from the drop down.
 
 ### The gameplay is flickering or missing texture during a match
 

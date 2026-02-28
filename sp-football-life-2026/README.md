@@ -50,8 +50,8 @@ This guide assumes you're installing on a Steam Deck. The steps are the same for
 
 9. After some requirements are installed, the SPFL setup window should appear. Just keep clicking `Next` and leave everything as default. The game should start installing. Click `Exit` when it's done.
 
-10. 
-    - "`Full Screen`" is selected. If it's greyed out, select the highest resolution available in the dropdown and you should then be able to select Full Screen.
+10. Next, the `SPFL Settings` window should appear. Choose the following:
+    - Select "`Full Screen`". If it's greyed out, select the highest resolution available in the dropdown and you should then be able to select Full Screen.
 
     - Chose "`Enable 2`" under V-Sync. Most people have better frame rate with this.
 

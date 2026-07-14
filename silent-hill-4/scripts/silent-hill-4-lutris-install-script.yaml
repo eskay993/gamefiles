@@ -18,7 +18,6 @@ script:
   - settings_zip: https://github.com/eskay993/gamefiles/raw/main/silent-hill-4/files/settings.zip
   - randomizer_zip: https://github.com/HunterStanton/SilentHill4Randomizer/releases/download/beta-0.2.1/SH4.Randomizer.0.2.1.zip
   game:
-    arch: win32
     exe: drive_c/GOG Games/Silent Hill 4/SILENT HILL 4.exe
     prefix: $GAMEDIR
   installer:
@@ -45,7 +44,6 @@ script:
       - n: "No"
       preselect: y
   - task:
-      arch: win32
       description: Creating Wine prefix...
       name: create_prefix   
   - task:

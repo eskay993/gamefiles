@@ -1,4 +1,4 @@
-Update 31/12/2026
+Update 31/10/2026
 
 As of SPFL27, I am no longer maintaining any scripts for this series. Keep an eye on [r/SPFootballLife](https://www.reddit.com/r/SPFootballLife) for other guides, solutions or forks for Linux / Steam Deck from other users.
 

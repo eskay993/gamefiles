@@ -1,0 +1,128 @@
+game_slug: sp-football-life-2027
+name: "SP Football Life 2027"
+year: 2026
+user: eskay993
+runner: wine
+slug: sp-football-life-2027-win
+version: Windows
+description: Installer for Football Life 2027 by SmokePatch. Download the game from pessmokepatch.com.
+notes:
+script:
+  variables:
+    VERSION: 27
+  files:
+  - setup: N/A:SPFL${VERSION}_setup.exe
+  game:
+    exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2027/FL 2027 start.exe
+    working_dir: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}
+    prefix: $GAMEDIR
+    launch_configs:
+    - exe:  $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/Settings.exe
+      name: Display and Controller Settings
+    - exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+      name: Gameplay Switcher
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      description: Creating prefix...
+      name: create_prefix
+      prefix: $GAMEDIR
+  - task:
+      description: Installing Microsoft .NET Framework 4.8 (this can take a while)...
+      app: dotnet48
+      name: winetricks
+      prefix: $GAMEDIR
+      env:
+        PROTON_USE_XALIA: "0"
+  - task:
+      description: Installing Microsoft .NET Framework 8.0...
+      app: dotnet8
+      name: winetricks
+      prefix: $GAMEDIR
+      env:
+        PROTON_USE_XALIA: "0"
+  - task:
+      description: Installing other requirements...
+      app: vcrun2022 unifont win10
+      name: winetricks
+      prefix: $GAMEDIR
+  - task:
+      description: Starting game installer...
+      executable: $setup
+      name: wineexec
+      prefix: $GAMEDIR
+  - execute:
+      description: Renaming dlls...
+      command: |
+        cp -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll.bak"
+        mv -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/ddraw.dll"
+  - task:
+      description: Running gameplay switcher...
+      executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+      name: wineexec
+      prefix: $GAMEDIR
+  - execute:
+      description: Setting up aspect ratio fix...
+      command: |
+        mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules"
+        ratio=$(awk -v w="$RESOLUTION_WIDTH" -v h="$RESOLUTION_HEIGHT" 'BEGIN { printf "%.4f", w / h }')
+        if [ "$ratio" != "1.7778" ] && [ "$ratio" != "0.5625" ]; then
+          cd "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons"
+          cp sider.ini sider.ini.bak
+          match=$(grep "lua.module =" sider.ini | tail -n1)
+          sed -i -e "/$match/ s/\(.*\)\(lua.module.*\)/\1\2\n\1lua.module = \"aspectratio.lua\"/" sider.ini
+        fi
+  - write_file:
+      description: Writting aspectratio.lua...
+      file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules/aspectratio.lua
+      content: |
+        -- Based on lua by Durandil67
+
+        local m = { version = "1.0" }
+
+        function m.init(ctx)
+            local addr = memory.search_process("\x80\x7B\x7C\x00\x0F\x28")
+            if addr then
+                log(string.format("found magic string at: %s", memory.hex(addr)))
+                memory.write(addr, "\x80\x7B\x7C\x01\x0F\x28")
+            else
+                error("unable to find magic string")
+            end
+        end
+
+        return m
+  - write_file:
+      description: Writting bat file...
+      file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL_20${VERSION}.bat
+      content: |
+        @echo off
+
+        set "fl=FL_2027.exe"
+        set "sider=SiderAddons\sider.exe"
+        set "log=SiderAddons\sider-app.log"
+
+        cd /d "%~dp0"
+        del %log%
+        echo Launching sider...
+        start "" %sider%
+
+        :wait
+        if not exist "%log%" (
+            ping -n 1 127.0.0.1 >nul
+            goto wait
+        )
+
+        ping -n 3 127.0.0.1 >nul
+        echo sider active...
+        echo Launching FL...
+        start "" %fl%
+  system:
+    env:
+      ENABLE_GAMESCOPE_WSI: "0"
+      PROTON_USE_XALIA: "0"
+  wine:
+    dxvk: true
+    overrides:
+      steam_api64: n,b
+      ddraw: n,b
+      lsteamclient: d

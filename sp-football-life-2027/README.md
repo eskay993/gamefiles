@@ -76,7 +76,9 @@ This guide assumes you're installing on a Steam Deck. The steps are the same for
 
 ### What the script does differently from FL26
 
-SmokePatch has named the launcher both `FL_20XX start.exe` and `FL 20XX start.exe` in past releases. After the SPFL setup finishes, the script looks for the launcher and the gameplay switcher in the game folder. If their names differ from what Lutris expects, it creates a link with the expected name. It also points `FL_2027.bat` at the actual game exe. If the game folder isn't found, the install stops with an error. This usually means the install folder was changed in the SPFL setup.
+Unlike FL26, the FL27 setup installs the game to `C:\Games\SP Football Life 2027` instead of `C:\Program Files (x86)`. On the Steam Deck that is `/home/deck/Games/sp-football-life-2027/drive_c/Games/SP Football Life 2027`. The FL27 launcher is `FL 2027 start.exe` and the switcher is `FL27 Switcher.exe`.
+
+After the SPFL setup finishes, the script checks the game folder. If a future update installs to `Program Files (x86)` instead, the script links that folder to the expected location. If the launcher or switcher names change, it links the new names to the ones Lutris expects. It also points `FL_2027.bat` at the actual game exe. If no game folder is found, the install stops with an error. This usually means the install folder was changed in the SPFL setup.
 
 # Useful info
 
@@ -100,11 +102,13 @@ On Steam Deck, follow the below steps in Desktop Mode.
 
 To make a backup of your save files, the folder is located in:
 
-`<GAME_INSTALL_PATH>/drive_c/users/<USERNAME>/Documents/KONAMI/`
+`<GAME_INSTALL_PATH>/drive_c/users/steamuser/Documents/KONAMI/`
 
 For Steam Deck, if following the guide and installing to the default location then this will be:
 
-`/home/deck/Games/sp-football-life-2027/drive_c/users/deck/Documents/KONAMI/`
+`/home/deck/Games/sp-football-life-2027/drive_c/users/steamuser/Documents/KONAMI/`
+
+The `users/deck` folder is only a link to `users/steamuser`, so back up the `steamuser` one.
 
 To restore your save files after a fresh install, just copy the `KONAMI` folder to that location.
 

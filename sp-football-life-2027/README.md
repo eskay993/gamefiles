@@ -96,6 +96,9 @@ For Steam Deck, if following the guide and installing to the default location th
 
 `/home/deck/Games/sp-football-life-2027/drive_c/users/deck/Documents/KONAMI/`
 
+> [!NOTE]
+> SP Football Life 2027 installs to `drive_c/Games/SP Football Life 2027/` rather than `Program Files (x86)` as in previous versions.
+
 To restore you save files after a fresh install, just copy the `KONAMI` folder to that location.
 
 ## How to run `Settings` or `Switcher` tool

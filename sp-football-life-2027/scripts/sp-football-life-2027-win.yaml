@@ -13,13 +13,13 @@ script:
   files:
   - setup: N/A:SPFL${VERSION}_setup.exe
   game:
-    exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 2027/FL 2027 start.exe
-    working_dir: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}
+    exe: $GAMEDIR/drive_c/Games/SP Football Life 2027/FL 2027 start.exe
+    working_dir: $GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}
     prefix: $GAMEDIR
     launch_configs:
-    - exe:  $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/Settings.exe
+    - exe:  $GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/Settings.exe
       name: Display and Controller Settings
-    - exe: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+    - exe: $GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
       name: Gameplay Switcher
     prefix: $GAMEDIR
   installer:
@@ -54,27 +54,27 @@ script:
   - execute:
       description: Renaming dlls...
       command: |
-        cp -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll.bak"
-        mv -v "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/ddraw.dll"
+        cp -v "$GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/xinput1_3.dll.bak"
+        mv -v "$GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/xinput1_3.dll" "$GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/ddraw.dll"
   - task:
       description: Running gameplay switcher...
-      executable: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
+      executable: $GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/FL${VERSION} switcher.exe
       name: wineexec
       prefix: $GAMEDIR
   - execute:
       description: Setting up aspect ratio fix...
       command: |
-        mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules"
+        mkdir -p "$GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/SiderAddons/modules"
         ratio=$(awk -v w="$RESOLUTION_WIDTH" -v h="$RESOLUTION_HEIGHT" 'BEGIN { printf "%.4f", w / h }')
         if [ "$ratio" != "1.7778" ] && [ "$ratio" != "0.5625" ]; then
-          cd "$GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons"
+          cd "$GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/SiderAddons"
           cp sider.ini sider.ini.bak
           match=$(grep "lua.module =" sider.ini | tail -n1)
           sed -i -e "/$match/ s/\(.*\)\(lua.module.*\)/\1\2\n\1lua.module = \"aspectratio.lua\"/" sider.ini
         fi
   - write_file:
       description: Writting aspectratio.lua...
-      file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/SiderAddons/modules/aspectratio.lua
+      file: $GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/SiderAddons/modules/aspectratio.lua
       content: |
         -- Based on lua by Durandil67
 
@@ -93,7 +93,7 @@ script:
         return m
   - write_file:
       description: Writting bat file...
-      file: $GAMEDIR/drive_c/Program Files (x86)/SP Football Life 20${VERSION}/FL_20${VERSION}.bat
+      file: $GAMEDIR/drive_c/Games/SP Football Life 20${VERSION}/FL_20${VERSION}.bat
       content: |
         @echo off
 
